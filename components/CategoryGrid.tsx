@@ -46,7 +46,7 @@ export function CategoryGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {cards.map((c) => (
             <Link key={c.label} href={c.href} className="group block">
-              <div className="relative aspect-[4/5] bg-brand-light overflow-hidden rounded-md">
+              <div className="relative aspect-square bg-brand-light overflow-hidden rounded-md">
                 <Image
                   src={c.image}
                   alt={c.title}
