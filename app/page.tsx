@@ -16,19 +16,19 @@ export default function HomePage() {
       title: "Çok Satan",
       products: getFeaturedProducts(),
       ctaHref: "/urunler",
-      ctaLabel: "Tüm Çok Satanları Gör",
+      ctaLabel: "Tüm Ürünleri Gör",
     },
     {
       title: "Trending",
       products: [...freshProducts],
-      ctaHref: "https://evkafresh.com",
-      ctaLabel: "evkafresh.com'a Git",
+      ctaHref: "/urunler",
+      ctaLabel: "Tüm Ürünleri Gör",
     },
     {
       title: "Yeni Ürünler",
       products: getNewProducts(),
       ctaHref: "/urunler",
-      ctaLabel: "Tüm Yeni Ürünleri Gör",
+      ctaLabel: "Tüm Ürünleri Gör",
     },
   ];
 
