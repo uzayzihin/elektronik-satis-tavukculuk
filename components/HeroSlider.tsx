@@ -125,7 +125,7 @@ function HeroGraphic({ className = "" }: { className?: string }) {
         }}
       />
       <Image
-        src="/products/special-but.jpg"
+        src="/products/baket.jpg"
         alt=""
         aria-hidden="true"
         width={1024}

@@ -151,7 +151,7 @@ export const products: Product[] = [
   { slug: "yaprak-kanat", name: "Yaprak Kanat", meatType: "kanat", description: "İnce kesim yaprak kanat." },
 
   // But
-  { slug: "baket", name: "Baket", meatType: "but", description: "Klasik baket but." },
+  { slug: "baket", name: "Baket", meatType: "but", description: "Klasik baket but.", image: "/products/baket.jpg" },
   { slug: "catalbut", name: "Çatalbut", meatType: "but", description: "Çatal kesim but." },
   { slug: "kalcali-but", name: "Kalçalı But", meatType: "but", description: "Kalçası ile birlikte but." },
   { slug: "special-but", name: "Special But", meatType: "but", description: "Özel kesim premium but.", featured: true },
