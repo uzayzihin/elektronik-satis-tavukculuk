@@ -204,7 +204,16 @@ export function getCategoryBySlug(slug: string): ProductCategory | undefined {
 }
 
 export function getFeaturedProducts(): Product[] {
-  return products.filter((p) => p.featured);
+  const order = ["bonfile", "citir", "acik-butun-pilic"];
+  const featured = products.filter((p) => p.featured);
+  return featured.sort((a, b) => {
+    const ai = order.indexOf(a.slug);
+    const bi = order.indexOf(b.slug);
+    if (ai === -1 && bi === -1) return 0;
+    if (ai === -1) return 1;
+    if (bi === -1) return -1;
+    return ai - bi;
+  });
 }
 
 export function getNewProducts(): Product[] {
