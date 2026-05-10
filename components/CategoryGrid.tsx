@@ -1,56 +1,84 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { categories, getProductsByCategory } from "@/content/products";
+import { ChevronRight } from "lucide-react";
+
+type CategoryCard = {
+  title: string;
+  label: string;
+  image: string;
+  href: string;
+};
+
+const cards: CategoryCard[] = [
+  {
+    title: "Evka Surur",
+    label: "Evka Surur",
+    image: "/products/kovan-gogus.jpg",
+    href: "/urunler",
+  },
+  {
+    title: "Yeni Ürünler",
+    label: "Yeni Ürünler",
+    image: "/products/citir.jpg",
+    href: "/urunler",
+  },
+  {
+    title: "Evka Fresh",
+    label: "Evka Fresh",
+    image: "/products/fresh/limonata.webp",
+    href: "/urunler",
+  },
+];
 
 export function CategoryGrid() {
   return (
-    <section className="bg-brand-soft">
-      <div className="container-x py-16 md:py-20">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-sm font-bold uppercase tracking-wider text-brand-primary mb-2">
-            Ürün Kategorileri
-          </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight">
-            Aradığınız Her Kesim Burada
-          </h2>
-          <p className="text-brand-muted mt-4">
-            6 ana kategoride 27+ farklı tavuk kesimi. Toptan ve perakende olarak temin edilebilir.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {categories.map((cat) => {
-            const count = getProductsByCategory(cat.slug).length;
-            return (
-              <Link
-                key={cat.slug}
-                href={`/urunler#${cat.slug}`}
-                className="group relative overflow-hidden bg-white hover:bg-brand-soft border border-brand-border hover:border-brand-primary text-brand-navy rounded-lg p-6 md:p-8 transition-all hover:shadow-lg"
-              >
-                <div className="relative z-10">
-                  <div className="text-xs font-bold uppercase tracking-wider text-brand-primary mb-2">
-                    {count} Ürün
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-extrabold mb-2 text-brand-navy">{cat.name}</h3>
-                  <p className="text-sm text-brand-muted mb-6 leading-relaxed">
-                    {cat.description}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-primary group-hover:gap-2.5 transition-all">
-                    Ürünleri Gör
-                    <ArrowRight className="w-4 h-4" />
+    <section className="bg-white border-y border-brand-border">
+      <div className="container-x pt-10 md:pt-14 pb-2">
+        <h2
+          className="font-extrabold uppercase tracking-tight text-brand-navy leading-none mb-6 md:mb-8"
+          style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+        >
+          Kategoriler
+        </h2>
+      </div>
+
+      <div className="container-x pb-12 md:pb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {cards.map((c) => (
+            <Link key={c.label} href={c.href} className="group block">
+              <div className="relative aspect-[4/5] bg-brand-light overflow-hidden rounded-md">
+                <Image
+                  src={c.image}
+                  alt={c.title}
+                  width={1024}
+                  height={1280}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  className="absolute inset-x-0 top-6 md:top-8 flex justify-center px-6 pointer-events-none"
+                >
+                  <h3
+                    className="font-extrabold uppercase tracking-tight text-brand-navy text-center leading-[0.9] drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]"
+                    style={{ fontSize: "clamp(1.75rem, 5vw, 3.25rem)" }}
+                  >
+                    {c.title}
+                  </h3>
+                </div>
+
+                <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-stretch shadow-lg">
+                  <span className="bg-brand-dark text-white px-5 md:px-6 py-3 font-mono text-[11px] md:text-xs font-bold uppercase tracking-[0.18em]">
+                    Shop Now
+                  </span>
+                  <span className="bg-white text-brand-primary px-3 py-3 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                    <ChevronRight className="w-4 h-4" />
                   </span>
                 </div>
-                <Image
-                  src="/logo-v2.png"
-                  alt=""
-                  width={512}
-                  height={512}
-                  aria-hidden="true"
-                  className="absolute -right-12 -bottom-12 w-56 h-56 object-contain opacity-[0.06] select-none pointer-events-none"
-                />
-              </Link>
-            );
-          })}
+              </div>
+              <p className="text-center mt-3 font-mono text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
+                {c.label}
+              </p>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
