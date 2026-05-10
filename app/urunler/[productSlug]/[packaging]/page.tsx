@@ -15,6 +15,7 @@ import {
 } from "@/content/products";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailActions } from "@/components/ProductDetailActions";
+import { ProductWatermark } from "@/components/ProductWatermark";
 import { FAQ } from "@/components/FAQ";
 import { CTABanner } from "@/components/CTABanner";
 
@@ -115,6 +116,7 @@ export default async function ProductDetailPage({
                   className="w-3/4 h-3/4 object-contain"
                 />
               )}
+              <ProductWatermark packaging={packaging} />
               <div className="absolute top-4 left-4 bg-brand-primary text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded z-10">
                 Günlük Taze
               </div>

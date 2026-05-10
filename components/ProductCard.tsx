@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Plus, Check, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
+import { ProductWatermark } from "@/components/ProductWatermark";
 import type { Product, Packaging } from "@/content/products";
 
 export function ProductCard({
@@ -50,6 +51,11 @@ export function ProductCard({
           className="w-3/4 h-3/4 object-contain opacity-90 group-hover:scale-105 transition-transform duration-300"
         />
       )}
+      <ProductWatermark
+        packaging={packaging}
+        isExternal={isExternal}
+        compact={compact}
+      />
       <div
         className={`absolute bg-brand-primary text-white font-bold uppercase tracking-wider rounded z-10 ${
           compact
