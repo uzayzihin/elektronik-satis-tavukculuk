@@ -36,7 +36,7 @@ export const site = {
   },
 
   nav: [
-    { label: "Alışveriş", href: "/urunler", external: false },
+    { label: "Alışveriş", href: "/", external: false },
     { label: "Limonata", href: "https://evkafresh.com/limonata-ozutu-1", external: true },
     { label: "Tüm Ürünler", href: "/urunler", external: false },
     { label: "Tavuk", href: "/urunler#butun-pilic", external: false },
