@@ -1,44 +1,38 @@
-import { ShieldCheck, Snowflake, Truck, Clock } from "lucide-react";
+import { Truck, Snowflake, Clock } from "lucide-react";
 
 const items = [
-  {
-    icon: ShieldCheck,
-    title: "Güvenli Sipariş",
-    sub: "WhatsApp üzerinden hızlı teyit",
-  },
-  {
-    icon: Snowflake,
-    title: "Hijyenik Paketleme",
-    sub: "Soğuk zincir korunur",
-  },
   {
     icon: Truck,
     title: "Hızlı Teslimat",
     sub: "İstanbul içi aynı gün",
   },
   {
+    icon: Snowflake,
+    title: "Hijyenik Paket",
+    sub: "Soğuk zincir korunur",
+  },
+  {
     icon: Clock,
-    title: "7/24 Hizmet",
-    sub: "Hafta sonu ve tatiller dahil",
+    title: "7/24 Sipariş",
+    sub: "Hafta sonu dahil",
   },
 ];
 
 export function TrustBand() {
   return (
-    <section className="bg-brand-soft border-y border-brand-border">
-      <div className="container-x py-8 grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="bg-brand-light border-y border-brand-border">
+      <div className="container-x py-10 md:py-12 grid grid-cols-3 gap-4 md:gap-6">
         {items.map(({ icon: Icon, title, sub }) => (
-          <div key={title} className="flex items-start gap-3">
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-brand-border flex items-center justify-center">
-              <Icon className="w-5 h-5 text-brand-primary" />
+          <div
+            key={title}
+            className="flex flex-col items-center text-center"
+          >
+            <Icon className="w-7 h-7 md:w-9 md:h-9 text-brand-navy mb-2 md:mb-3" />
+            <div className="font-mono font-bold text-brand-navy text-[11px] md:text-sm uppercase tracking-[0.18em] leading-tight">
+              {title}
             </div>
-            <div>
-              <div className="font-mono font-bold text-brand-navy text-[11px] md:text-xs uppercase tracking-[0.15em]">
-                {title}
-              </div>
-              <div className="font-mono text-[10px] md:text-[11px] text-brand-muted mt-1 uppercase tracking-[0.1em]">
-                {sub}
-              </div>
+            <div className="font-mono text-[9px] md:text-[11px] text-brand-muted mt-1 uppercase tracking-[0.1em] leading-tight">
+              {sub}
             </div>
           </div>
         ))}

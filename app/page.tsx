@@ -3,9 +3,9 @@ import { CollectionSwitcher } from "@/components/CollectionSwitcher";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { ProductRow } from "@/components/ProductRow";
 import { LimonataPromo } from "@/components/LimonataPromo";
-import { AboutTeaser } from "@/components/AboutTeaser";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
+import { TrustBand } from "@/components/TrustBand";
 import { CTABanner } from "@/components/CTABanner";
 import {
   getFeaturedProducts,
@@ -47,9 +47,9 @@ export default function HomePage() {
         ctaHref="/urunler"
       />
       <LimonataPromo />
-      <AboutTeaser />
       <Testimonials />
       <FAQ />
+      <TrustBand />
       <CTABanner />
     </>
   );
