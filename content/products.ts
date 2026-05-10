@@ -25,6 +25,13 @@ export type Product = {
 
 export const freshProducts: Product[] = [
   {
+    slug: "fresh-misir",
+    name: "Donuk Mısır",
+    meatType: "fresh",
+    description: "Tazeliği, rengi ve lezzeti korunarak dondurulmuş tane mısır.",
+    externalUrl: "https://evkafresh.com/donuk-misir-1",
+  },
+  {
     slug: "fresh-limonata",
     name: "Limonata Özütü",
     meatType: "fresh",

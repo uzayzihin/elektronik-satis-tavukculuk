@@ -19,7 +19,7 @@ export default function HomePage() {
       ctaLabel: "Tüm Çok Satanları Gör",
     },
     {
-      title: "Evka Fresh",
+      title: "Trending",
       products: [...freshProducts],
       ctaHref: "https://evkafresh.com",
       ctaLabel: "evkafresh.com'a Git",
