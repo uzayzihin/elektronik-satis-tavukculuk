@@ -36,18 +36,18 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="bg-brand-primary text-white">
+      <section className="bg-white border-b border-brand-border">
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
-            <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-3">
+            <p className="text-sm font-bold uppercase tracking-wider text-brand-primary mb-3">
               Hakkımızda
             </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight text-brand-navy">
               {site.brand.foundedYear}'den Beri
               <br />
-              <span className="text-brand-accent">Beyaz Etin Adresi</span>
+              <span className="text-brand-primary">Beyaz Etin Adresi</span>
             </h1>
-            <p className="text-white/85 text-lg leading-relaxed max-w-2xl">
+            <p className="text-brand-text/85 text-lg leading-relaxed max-w-2xl">
               {site.brand.legal} olarak {yearsActive} yıldır İstanbul Gıda
               Toptancılar Çarşısı'nda hizmet veriyoruz. Toptan ve perakende
               müşterilerimize 27+ farklı tavuk kesimi sunuyoruz.
@@ -136,10 +136,10 @@ function Stat({
   label: string;
 }) {
   return (
-    <div className="bg-white/10 border border-white/20 backdrop-blur-sm rounded-xl p-5">
-      <Icon className="w-6 h-6 text-brand-accent mb-3" />
-      <div className="text-3xl font-extrabold mb-1">{number}</div>
-      <div className="text-sm text-white/80">{label}</div>
+    <div className="bg-brand-soft border border-brand-border rounded-xl p-5">
+      <Icon className="w-6 h-6 text-brand-primary mb-3" />
+      <div className="text-3xl font-extrabold mb-1 text-brand-navy">{number}</div>
+      <div className="text-sm text-brand-muted">{label}</div>
     </div>
   );
 }

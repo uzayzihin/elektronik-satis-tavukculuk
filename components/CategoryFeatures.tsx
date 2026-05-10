@@ -43,7 +43,7 @@ export function CategoryFeatures() {
                     <div className="absolute -inset-3 bg-brand-accent/10 rounded-3xl rotate-3" />
                     <div className="relative w-full h-full bg-brand-light rounded-3xl p-12 flex items-center justify-center">
                       <Image
-                        src="/logo.png"
+                        src="/logo-v2.png"
                         alt={cat.name}
                         width={1024}
                         height={1024}

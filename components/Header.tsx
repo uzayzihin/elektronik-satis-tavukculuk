@@ -3,86 +3,186 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Search, ChevronDown } from "lucide-react";
 import { site } from "@/content/site.config";
 import { waGeneralOrder } from "@/lib/whatsapp";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { CartButton } from "@/components/CartDrawer";
+
+type NavChild = { label: string; href: string; external?: boolean };
+type NavItem = NavChild & { children?: readonly NavChild[] };
+
+function NavLink({ item, onClick, mobile }: { item: NavChild; onClick?: () => void; mobile?: boolean }) {
+  const baseDesktop =
+    "px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold uppercase tracking-wider text-brand-navy hover:text-brand-primary transition-colors whitespace-nowrap";
+  const baseMobile =
+    "px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-soft hover:text-brand-primary";
+  const className = mobile ? baseMobile : baseDesktop;
+
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+        className={className}
+      >
+        {item.label}
+      </a>
+    );
+  }
+  return (
+    <Link href={item.href} onClick={onClick} className={className}>
+      {item.label}
+    </Link>
+  );
+}
+
+function NavDropdown({ item }: { item: NavItem }) {
+  const trigger = (
+    <span className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-primary transition-colors whitespace-nowrap inline-flex items-center gap-1">
+      {item.label}
+      <ChevronDown className="w-3 h-3" />
+    </span>
+  );
+
+  return (
+    <div className="relative group">
+      {item.external ? (
+        <a href={item.href} target="_blank" rel="noopener noreferrer">
+          {trigger}
+        </a>
+      ) : (
+        <Link href={item.href}>{trigger}</Link>
+      )}
+      <div className="absolute top-full left-0 pt-2 hidden group-hover:block group-focus-within:block z-50">
+        <div className="bg-white border border-brand-border rounded-md shadow-xl py-2 min-w-[280px]">
+          {item.children?.map((child) => (
+            <a
+              key={child.label}
+              href={child.href}
+              target={child.external ? "_blank" : undefined}
+              rel={child.external ? "noopener noreferrer" : undefined}
+              className="block px-4 py-2.5 text-sm font-medium text-brand-navy hover:bg-brand-soft hover:text-brand-primary whitespace-nowrap"
+            >
+              {child.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-brand-light">
-      <div className="container-x flex items-center justify-between h-16 md:h-20">
-        <Link href="/" className="flex items-center gap-3" aria-label={site.brand.short}>
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-brand-border">
+      <div className="container-x grid grid-cols-3 items-center h-16 md:h-20">
+        <div className="flex items-center justify-start">
+          <button
+            type="button"
+            aria-label="Menüyü aç"
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+            className="lg:hidden p-2 -ml-2 text-brand-navy"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-3">
+            {site.nav.map((item) =>
+              "children" in item && item.children ? (
+                <NavDropdown key={item.label} item={item as NavItem} />
+              ) : (
+                <NavLink key={item.label} item={item} />
+              )
+            )}
+          </nav>
+        </div>
+
+        <Link
+          href="/"
+          aria-label={site.brand.short}
+          className="flex items-center justify-center"
+        >
           <Image
-            src="/logo.png"
+            src="/logo-icon.png"
             alt={site.brand.short}
-            width={512}
-            height={512}
+            width={1024}
+            height={530}
             priority
-            className="h-12 md:h-16 w-auto"
+            className="h-9 md:h-12 w-auto"
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          {site.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-brand-text hover:text-brand-primary font-medium transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden md:flex items-center gap-3">
-          <span className="hidden xl:inline-flex items-center gap-1.5 text-sm font-semibold text-brand-accent">
-            <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-            7/24 Açık
-          </span>
+        <div className="flex items-center justify-end gap-1 md:gap-2">
+          <button
+            type="button"
+            aria-label="Ara"
+            className="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-primary transition-colors"
+          >
+            <Search className="w-5 h-5" />
+          </button>
           <a
             href={waGeneralOrder()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-dark text-white font-semibold px-5 py-2.5 rounded-md transition-colors"
+            aria-label="WhatsApp ile sipariş ver"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-primary transition-colors"
           >
-            <Phone className="w-4 h-4" />
-            WhatsApp Sipariş
+            <WhatsAppIcon className="w-5 h-5" />
           </a>
+          <CartButton />
         </div>
-
-        <button
-          type="button"
-          aria-label="Menüyü aç"
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-          className="lg:hidden p-2 -mr-2 text-brand-primary"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-brand-light bg-white">
+        <div className="lg:hidden border-t border-brand-border bg-white">
           <nav className="container-x py-4 flex flex-col gap-1">
             {site.nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="px-3 py-3 rounded-md text-brand-text hover:bg-brand-light font-medium"
-              >
-                {item.label}
-              </Link>
+              <div key={item.label} className="flex flex-col">
+                <NavLink item={item} onClick={() => setOpen(false)} mobile />
+                {"children" in item && item.children && (
+                  <div className="pl-4 border-l-2 border-brand-border ml-3 mb-1">
+                    {item.children.map((child) => (
+                      <a
+                        key={child.label}
+                        href={child.href}
+                        target={child.external ? "_blank" : undefined}
+                        rel={child.external ? "noopener noreferrer" : undefined}
+                        onClick={() => setOpen(false)}
+                        className="block px-3 py-2 text-sm font-medium text-brand-muted hover:text-brand-primary"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
+            <Link
+              href="/hakkimizda"
+              onClick={() => setOpen(false)}
+              className="px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-soft hover:text-brand-primary"
+            >
+              Hakkımızda
+            </Link>
+            <Link
+              href="/iletisim"
+              onClick={() => setOpen(false)}
+              className="px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-soft hover:text-brand-primary"
+            >
+              İletişim
+            </Link>
             <a
               href={waGeneralOrder()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 bg-brand-accent text-white font-semibold px-5 py-3 rounded-md"
+              className="mt-2 inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-semibold px-5 py-3 rounded-md"
             >
-              <Phone className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
               WhatsApp Sipariş
             </a>
           </nav>

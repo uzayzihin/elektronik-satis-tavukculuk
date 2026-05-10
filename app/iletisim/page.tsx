@@ -12,16 +12,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-brand-primary text-white">
+      <section className="bg-white border-b border-brand-border">
         <div className="container-x py-16 md:py-20">
-          <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-3">
+          <p className="text-sm font-bold uppercase tracking-wider text-brand-primary mb-3">
             İletişim
           </p>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-3 text-brand-navy">
             Bize Ulaşın
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl">
-            7/24 sipariş ve bilgi için iki WhatsApp hattımız hazır. Form da
+          <p className="text-brand-text/80 text-lg max-w-2xl">
+            7/24 sipariş ve bilgi için WhatsApp hattımız hazır. Form da
             doldurabilirsiniz — direkt WhatsApp'a yönlendirir.
           </p>
         </div>
@@ -42,10 +42,7 @@ export default function ContactPage() {
             <InfoCard
               icon={Phone}
               title="Telefon / WhatsApp"
-              lines={[
-                site.whatsapp.primaryDisplay + " (1. Hat)",
-                site.whatsapp.secondaryDisplay + " (2. Hat)",
-              ]}
+              lines={[site.whatsapp.primaryDisplay]}
               cta={{
                 href: waLink("Merhaba, sipariş için yazıyorum."),
                 label: "WhatsApp'tan Yaz",

@@ -1,106 +1,130 @@
 import Link from "next/link";
-import Image from "next/image";
-import { MapPin, Phone, Clock, AtSign } from "lucide-react";
+import { Plus } from "lucide-react";
 import { site } from "@/content/site.config";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+const sections = [
+  {
+    title: "Alışveriş",
+    items: [
+      { label: "Tüm Ürünler", href: "/urunler" },
+      { label: "Tavuk Çeşitleri", href: "/urunler" },
+      { label: "Evka Fresh", href: "https://evkafresh.com", external: true },
+      { label: "Limonata", href: "https://evkafresh.com/limonata-ozutu-1", external: true },
+    ],
+  },
+  {
+    title: "Kurumsal",
+    items: [
+      { label: "Hakkımızda", href: "/hakkimizda" },
+      { label: "İletişim", href: "/iletisim" },
+    ],
+  },
+  {
+    title: "İletişim",
+    items: [
+      { label: site.contact.address, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.mapsQuery)}`, external: true },
+      { label: site.whatsapp.primaryDisplay, href: `tel:+${site.whatsapp.primary}` },
+      { label: site.contact.hours, href: "/iletisim" },
+    ],
+  },
+];
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-white mt-24">
-      <div className="container-x py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-        <div className="lg:col-span-1">
-          <div className="bg-white inline-block rounded-md p-3 mb-4">
-            <Image
-              src="/logo.png"
-              alt={site.brand.short}
-              width={512}
-              height={512}
-              className="h-20 w-auto"
-            />
+    <footer className="bg-brand-light border-t border-brand-border">
+      <div className="container-x pt-10 pb-6">
+        <div className="flex flex-col items-center text-center mb-8">
+          <div className="text-center">
+            <div className="font-black text-brand-navy text-3xl md:text-4xl tracking-tight leading-none uppercase">
+              Evka Surur
+            </div>
+            <div className="font-bold text-brand-navy text-base md:text-lg tracking-[0.2em] uppercase mt-1">
+              Tavukçuluk
+            </div>
           </div>
-          <p className="text-sm text-white/70 leading-relaxed max-w-xs">
-            {site.brand.description}
+          <p className="mt-4 text-sm text-brand-muted italic">
+            Beyaz etin adresi.
           </p>
+          <div className="flex items-center gap-2 mt-4">
+            <a
+              href={site.social.instagramMain.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Instagram: ${site.social.instagramMain.handle}`}
+              className="w-9 h-9 inline-flex items-center justify-center rounded-full text-brand-navy hover:text-brand-primary transition-colors"
+            >
+              <InstagramIcon className="w-4 h-4" />
+            </a>
+            <a
+              href={site.social.instagramFresh.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Instagram: ${site.social.instagramFresh.handle}`}
+              className="w-9 h-9 inline-flex items-center justify-center rounded-full text-brand-navy hover:text-brand-primary transition-colors"
+            >
+              <InstagramIcon className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
-        <div>
-          <h3 className="text-sm font-bold uppercase tracking-wider mb-4 text-white/90">
-            İletişim
-          </h3>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-3 text-white/80">
-              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-accent" />
-              <span>{site.contact.address}</span>
-            </li>
-            <li className="flex items-center gap-3 text-white/80">
-              <Phone className="w-4 h-4 flex-shrink-0 text-brand-accent" />
-              <a href={`tel:+${site.whatsapp.primary}`} className="hover:text-white">
-                {site.whatsapp.primaryDisplay}
-              </a>
-            </li>
-            <li className="flex items-center gap-3 text-white/80">
-              <Phone className="w-4 h-4 flex-shrink-0 text-brand-accent" />
-              <a href={`tel:+${site.whatsapp.secondary}`} className="hover:text-white">
-                {site.whatsapp.secondaryDisplay}
-              </a>
-            </li>
-            <li className="flex items-center gap-3 text-white/80">
-              <Clock className="w-4 h-4 flex-shrink-0 text-brand-accent" />
-              <span>{site.contact.hours}</span>
-            </li>
-          </ul>
+        <div className="border-t border-brand-border">
+          {sections.map((section) => (
+            <details key={section.title} className="group border-b border-brand-border">
+              <summary className="flex items-center justify-between py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span className="font-mono font-bold uppercase tracking-[0.15em] text-xs text-brand-navy">
+                  {section.title}
+                </span>
+                <Plus className="w-4 h-4 text-brand-muted transition-transform group-open:rotate-45" />
+              </summary>
+              <ul className="pb-4 space-y-2.5">
+                {section.items.map((item) => (
+                  <li key={item.label}>
+                    {"external" in item && item.external ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-brand-text hover:text-brand-primary"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="text-sm text-brand-text hover:text-brand-primary"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ))}
         </div>
 
-        <div>
-          <h3 className="text-sm font-bold uppercase tracking-wider mb-4 text-white/90">
-            Sayfalar
-          </h3>
-          <ul className="space-y-2.5 text-sm">
-            {site.nav.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="text-white/80 hover:text-white">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-bold uppercase tracking-wider mb-4 text-white/90">
-            Sosyal Medya
-          </h3>
-          <ul className="space-y-2.5 text-sm">
-            <li>
-              <a
-                href={site.social.instagramMain.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white"
-              >
-                <AtSign className="w-4 h-4" />
-                {site.social.instagramMain.handle}
-              </a>
-            </li>
-            <li>
-              <a
-                href={site.social.instagramFresh.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white"
-              >
-                <AtSign className="w-4 h-4" />
-                {site.social.instagramFresh.handle}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="container-x py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-white/60">
-          <p>© {new Date().getFullYear()} {site.brand.legal}. Tüm hakları saklıdır.</p>
-          <p>{site.brand.tagline}</p>
-        </div>
+        <p className="text-center text-[10px] text-brand-muted mt-8 font-mono uppercase tracking-wider">
+          © {new Date().getFullYear()} {site.brand.short}
+        </p>
       </div>
     </footer>
   );

@@ -15,32 +15,17 @@ export function CTABanner() {
           Hemen Sipariş Verin
         </h2>
         <p className="text-white/70 max-w-xl mx-auto mb-8 text-lg">
-          Toptan veya perakende — iki WhatsApp hattımızdan size en uygun olanı seçin.
+          Toptan veya perakende — WhatsApp üzerinden hızlı teyit ve teslimat.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="flex justify-center">
           <a
-            href={waLink(message, false)}
+            href={waLink(message)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-dark text-white font-bold px-7 py-4 rounded-md text-base transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-7 py-4 rounded-md text-base transition-colors"
           >
             <MessageCircle className="w-5 h-5" />
-            <span>
-              <span className="block text-xs opacity-80 font-normal -mb-0.5">1. Hat</span>
-              {site.whatsapp.primaryDisplay}
-            </span>
-          </a>
-          <a
-            href={waLink(message, true)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-7 py-4 rounded-md text-base transition-colors"
-          >
-            <MessageCircle className="w-5 h-5" />
-            <span>
-              <span className="block text-xs opacity-80 font-normal -mb-0.5">2. Hat</span>
-              {site.whatsapp.secondaryDisplay}
-            </span>
+            {site.whatsapp.primaryDisplay}
           </a>
         </div>
       </div>

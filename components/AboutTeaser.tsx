@@ -7,7 +7,7 @@ const points = [
   "İstanbul Gıda Toptancılar Çarşısı'nda güvenilir adres",
   "Restoran, market ve perakende müşterilere hizmet",
   "Her sipariş için günlük taze kesim",
-  "7/24 ulaşılabilir iki WhatsApp hattı",
+  "7/24 ulaşılabilir WhatsApp hattı",
 ];
 
 export function AboutTeaser() {
@@ -17,7 +17,7 @@ export function AboutTeaser() {
         <div className="relative aspect-[4/3] lg:aspect-square bg-white rounded-2xl overflow-hidden border border-brand-light shadow-sm">
           <div className="relative h-full flex items-center justify-center p-8">
             <Image
-              src="/logo.png"
+              src="/logo-v2.png"
               alt={site.brand.short}
               width={1024}
               height={1024}
