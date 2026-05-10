@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { site } from "@/content/site.config";
+import { waLink } from "@/lib/whatsapp";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -26,9 +27,7 @@ const sections = [
     title: "Alışveriş",
     items: [
       { label: "Tüm Ürünler", href: "/urunler" },
-      { label: "Tavuk Çeşitleri", href: "/urunler" },
       { label: "Evka Fresh", href: "https://evkafresh.com", external: true },
-      { label: "Limonata", href: "https://evkafresh.com/limonata-ozutu-1", external: true },
     ],
   },
   {
@@ -41,9 +40,16 @@ const sections = [
   {
     title: "İletişim",
     items: [
-      { label: site.contact.address, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.mapsQuery)}`, external: true },
-      { label: site.whatsapp.primaryDisplay, href: `tel:+${site.whatsapp.primary}` },
-      { label: site.contact.hours, href: "/iletisim" },
+      {
+        label: site.contact.address,
+        href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.mapsQuery)}`,
+        external: true,
+      },
+      {
+        label: site.whatsapp.primaryDisplay,
+        href: waLink("Merhaba, sipariş için yazıyorum."),
+        external: true,
+      },
     ],
   },
 ];
