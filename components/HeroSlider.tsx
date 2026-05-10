@@ -124,6 +124,15 @@ function HeroGraphic({ className = "" }: { className?: string }) {
           backgroundSize: "44px 44px, 70px 70px",
         }}
       />
+      <Image
+        src="/products/special-but.jpg"
+        alt=""
+        aria-hidden="true"
+        width={1024}
+        height={1024}
+        className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
+      />
+
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
