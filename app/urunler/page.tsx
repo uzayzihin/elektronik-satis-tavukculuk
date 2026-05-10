@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { products, packagings } from "@/content/products";
+import { products, freshProducts, packagings } from "@/content/products";
 import { ProductsGrid } from "@/components/ProductsGrid";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Testimonials } from "@/components/Testimonials";
@@ -14,7 +14,10 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <>
-      <ProductsGrid products={products} packagings={packagings} />
+      <ProductsGrid
+        products={[...products, ...freshProducts]}
+        packagings={packagings}
+      />
       <PromoBanner />
       <Testimonials />
       <FAQ />

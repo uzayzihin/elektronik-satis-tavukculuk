@@ -19,14 +19,14 @@ export function ProductsToolbar({
   cols,
   setCols,
   packagings,
-  totalCount,
+  counts,
 }: {
   filter: FilterValue;
   setFilter: (v: FilterValue) => void;
   cols: GridCols;
   setCols: (v: GridCols) => void;
   packagings: readonly ProductCategory[];
-  totalCount: number;
+  counts: Record<string, number>;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -89,7 +89,7 @@ export function ProductsToolbar({
                     <span>
                       {p.name}
                       <span className="ml-2 text-xs text-brand-muted">
-                        ({totalCount})
+                        ({counts[p.slug] ?? 0})
                       </span>
                     </span>
                     {active && <Check className="w-4 h-4 text-brand-primary" />}

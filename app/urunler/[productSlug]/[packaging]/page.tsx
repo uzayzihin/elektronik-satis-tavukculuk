@@ -19,8 +19,9 @@ import { FAQ } from "@/components/FAQ";
 import { CTABanner } from "@/components/CTABanner";
 
 export function generateStaticParams() {
+  const internalPackagings = packagings.filter((pk) => pk.slug !== "fresh");
   return products.flatMap((p) =>
-    packagings.map((pk) => ({
+    internalPackagings.map((pk) => ({
       productSlug: p.slug,
       packaging: pk.slug,
     }))
@@ -48,7 +49,7 @@ export default async function ProductDetailPage({
   params: Promise<{ productSlug: string; packaging: string }>;
 }) {
   const { productSlug, packaging } = await params;
-  if (!isValidPackaging(packaging)) notFound();
+  if (!isValidPackaging(packaging) || packaging === "fresh") notFound();
   const product = getProductBySlug(productSlug);
   if (!product) notFound();
 

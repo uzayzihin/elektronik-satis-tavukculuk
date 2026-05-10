@@ -4,6 +4,7 @@ import type { Packaging } from "@/content/products";
 const PACKAGING_LABEL: Record<Packaging, string> = {
   tabakli: "Tabaklı",
   dokme: "Dökme",
+  fresh: "Fresh",
 };
 
 export function packagingLabel(p: Packaging): string {

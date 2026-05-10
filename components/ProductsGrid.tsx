@@ -30,7 +30,11 @@ export function ProductsGrid({
         setColsState(parseInt(savedCols) as GridCols);
       }
       const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER);
-      if (savedFilter === "tabakli" || savedFilter === "dokme") {
+      if (
+        savedFilter === "tabakli" ||
+        savedFilter === "dokme" ||
+        savedFilter === "fresh"
+      ) {
         setFilter(savedFilter);
       }
     } catch {
@@ -61,6 +65,16 @@ export function ProductsGrid({
     }
   }
 
+  const visibleProducts = products.filter((p) =>
+    filter === "fresh" ? !!p.externalUrl : !p.externalUrl
+  );
+
+  const counts: Record<string, number> = {
+    tabakli: products.filter((p) => !p.externalUrl).length,
+    dokme: products.filter((p) => !p.externalUrl).length,
+    fresh: products.filter((p) => !!p.externalUrl).length,
+  };
+
   const gridClass =
     cols === 1
       ? "grid-cols-1 sm:max-w-xl sm:mx-auto"
@@ -76,12 +90,12 @@ export function ProductsGrid({
         cols={cols}
         setCols={setCols}
         packagings={packagings}
-        totalCount={products.length}
+        counts={counts}
       />
 
       <div className="container-x py-8 md:py-10">
         <div className={`grid ${gridClass} gap-3 md:gap-5`}>
-          {products.map((p) => (
+          {visibleProducts.map((p) => (
             <ProductCard key={p.slug} product={p} compact packaging={filter} />
           ))}
         </div>

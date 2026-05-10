@@ -1,4 +1,4 @@
-export type Packaging = "tabakli" | "dokme";
+export type Packaging = "tabakli" | "dokme" | "fresh";
 
 export type ProductCategory = {
   slug: string;
@@ -95,6 +95,12 @@ export const packagings: ProductCategory[] = [
     description:
       "Dökme paketleme — restoran, kasap ve toptan kullanım için ekonomik döküm sevkiyat.",
   },
+  {
+    slug: "fresh",
+    name: "Fresh",
+    description:
+      "evkafresh.com — dondurulmuş sebze, patates, mısır, sos, bakliyat ve yağ çeşitleri.",
+  },
 ];
 
 // Backwards-compat alias (eski `categories` import'larını bozmamak için)
@@ -175,7 +181,7 @@ export const products: Product[] = [
 ];
 
 export function isValidPackaging(s: string): s is Packaging {
-  return s === "tabakli" || s === "dokme";
+  return s === "tabakli" || s === "dokme" || s === "fresh";
 }
 
 export function getPackagingBySlug(slug: string): ProductCategory | undefined {
