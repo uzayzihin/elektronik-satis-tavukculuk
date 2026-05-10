@@ -229,3 +229,24 @@ export function getNewProducts(): Product[] {
   );
   return [...nu, ...extras].slice(0, 8);
 }
+
+export function getRestaurantProducts(): Product[] {
+  const order = [
+    "kemiksiz-but-donerlik",
+    "kemiksiz-gogus-donerlik",
+    "kanat",
+    "izgara-kanat",
+    "kok-kanat",
+    "yaprak-kanat",
+    "derisiz-gogus-kus-basi",
+    "derisiz-gogus-sinitzel",
+    "derisiz-gogus-julyen",
+    "sacasiz-gogus",
+    "corbalik",
+    "izgara-tava",
+    "tavuk-kirinti",
+  ];
+  return order
+    .map((slug) => products.find((p) => p.slug === slug))
+    .filter((p): p is Product => !!p);
+}

@@ -1,6 +1,8 @@
 import { HeroSlider } from "@/components/HeroSlider";
 import { CollectionSwitcher } from "@/components/CollectionSwitcher";
 import { CategoryGrid } from "@/components/CategoryGrid";
+import { ProductRow } from "@/components/ProductRow";
+import { LimonataPromo } from "@/components/LimonataPromo";
 import { AboutTeaser } from "@/components/AboutTeaser";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
@@ -8,6 +10,7 @@ import { CTABanner } from "@/components/CTABanner";
 import {
   getFeaturedProducts,
   getNewProducts,
+  getRestaurantProducts,
   freshProducts,
 } from "@/content/products";
 
@@ -38,6 +41,12 @@ export default function HomePage() {
       <HeroSlider />
       <CollectionSwitcher collections={collections} />
       <CategoryGrid />
+      <ProductRow
+        title="Restoranlar İçin"
+        products={getRestaurantProducts()}
+        ctaHref="/urunler"
+      />
+      <LimonataPromo />
       <AboutTeaser />
       <Testimonials />
       <FAQ />
