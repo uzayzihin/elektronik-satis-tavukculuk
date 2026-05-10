@@ -143,12 +143,19 @@ export function ProductsToolbar({
         </div>
       </div>
 
-      <h2
-        className="text-right font-extrabold uppercase tracking-tight text-brand-navy whitespace-nowrap overflow-hidden text-ellipsis"
+      <button
+        type="button"
+        onClick={() => {
+          const i = packagings.findIndex((p) => p.slug === filter);
+          const next = packagings[(i + 1) % packagings.length];
+          setFilter(next.slug as Packaging);
+        }}
+        aria-label="Sonraki paketlemeye geç"
+        className="text-right font-extrabold uppercase tracking-tight text-brand-navy whitespace-nowrap overflow-hidden text-ellipsis hover:text-brand-primary transition-colors cursor-pointer"
         style={{ fontSize: "clamp(1.25rem, 3.5vw, 2.5rem)" }}
       >
         {activeName}
-      </h2>
+      </button>
     </div>
   );
 }
