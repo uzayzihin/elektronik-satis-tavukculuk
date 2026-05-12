@@ -37,31 +37,24 @@ export const site = {
 
   nav: [
     { label: "Alışveriş", href: "/", external: false },
-    { label: "Limonata", href: "https://evkafresh.com/limonata-ozutu-1", external: true },
     { label: "Tüm Ürünler", href: "/urunler", external: false },
-    { label: "Tavuk", href: "/urunler#butun-pilic", external: false },
     {
       label: "Fresh",
       href: "https://evkafresh.com",
       external: true,
       children: [
         { label: "Limonata", href: "https://evkafresh.com/limonata-ozutu-1", external: true },
-        { label: "Dondurulmuş Patates Çeşitleri", href: "https://evkafresh.com/dondurulmus-patates-cesitleri", external: true },
-        { label: "Pirinç Bakliyat Çeşitleri", href: "https://evkafresh.com/pirinc-bakliyat-cesitleri", external: true },
-        { label: "Dondurulmuş Sebze Çeşitleri", href: "https://evkafresh.com/dondurulmus-sebze-cesitleri", external: true },
+        { label: "Donuk Mısır", href: "https://evkafresh.com/donuk-misir-1", external: true },
+        { label: "Dondurulmuş Patates", href: "https://evkafresh.com/dondurulmus-patates-cesitleri", external: true },
+        { label: "Dondurulmuş Sebze", href: "https://evkafresh.com/dondurulmus-sebze-cesitleri", external: true },
         { label: "Sos Çeşitleri", href: "https://evkafresh.com/sos-cesitleri-1", external: true },
+        { label: "Pirinç & Bakliyat", href: "https://evkafresh.com/pirinc-bakliyat-cesitleri", external: true },
         { label: "Yağ Çeşitleri", href: "https://evkafresh.com/yag-cesitleri-1", external: true },
         { label: "Makarna Çeşitleri", href: "https://evkafresh.com/makarna-cesitleri-1", external: true },
       ],
     },
   ],
 
-  navCompact: [
-    { label: "Anasayfa", href: "/" },
-    { label: "Ürünler", href: "/urunler" },
-    { label: "Hakkımızda", href: "/hakkimizda" },
-    { label: "İletişim", href: "/iletisim" },
-  ],
 } as const;
 
 export type SiteConfig = typeof site;

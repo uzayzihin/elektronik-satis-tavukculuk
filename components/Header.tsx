@@ -155,20 +155,6 @@ export function Header() {
                 )}
               </div>
             ))}
-            <Link
-              href="/hakkimizda"
-              onClick={() => setOpen(false)}
-              className="px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-soft hover:text-brand-primary"
-            >
-              Hakkımızda
-            </Link>
-            <Link
-              href="/iletisim"
-              onClick={() => setOpen(false)}
-              className="px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-soft hover:text-brand-primary"
-            >
-              İletişim
-            </Link>
             <a
               href={waGeneralOrder()}
               target="_blank"
