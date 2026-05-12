@@ -23,7 +23,7 @@ export function HeroSlider() {
               Aradığınız Her{" "}
               <span className="relative inline-block align-baseline">
                 <span
-                  className="font-[family-name:var(--font-script)] font-bold normal-case italic text-brand-accent"
+                  className="font-[family-name:var(--font-script)] font-bold normal-case italic text-brand-gold"
                   style={{
                     fontSize: "1.05em",
                     lineHeight: "0.85",

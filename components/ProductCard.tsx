@@ -20,8 +20,10 @@ export function ProductCard({
   const { add } = useCart();
   const [added, setAdded] = useState(false);
   const isExternal = !!product.externalUrl;
-  const hasPhoto = !!product.image;
+  const [imgError, setImgError] = useState(false);
   const detailHref = `/urunler/${product.slug}/${packaging}`;
+
+  const imgSrc = product.image || (compact ? `/images/products/solo/thumbnails/${product.slug}.webp` : `/images/products/solo/${product.slug}.webp`);
 
   function handleAdd(e: React.MouseEvent) {
     e.preventDefault();
@@ -33,12 +35,13 @@ export function ProductCard({
 
   const imageInner = (
     <>
-      {hasPhoto ? (
+      {!imgError ? (
         <Image
-          src={product.image!}
+          src={imgSrc}
           alt={product.name}
           width={1024}
           height={1024}
+          onError={() => setImgError(true)}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
       ) : (
@@ -57,7 +60,11 @@ export function ProductCard({
         compact={compact}
       />
       <div
-        className={`absolute bg-brand-primary text-white font-bold uppercase tracking-wider rounded z-10 ${
+        className={`absolute font-bold uppercase tracking-wider rounded z-10 ${
+          product.isNew && !isExternal
+            ? "bg-brand-gold text-brand-navy"
+            : "bg-brand-primary text-white"
+        } ${
           compact
             ? "top-2 left-2 text-[9px] px-1.5 py-0.5"
             : "top-3 left-3 text-[10px] px-2 py-1"

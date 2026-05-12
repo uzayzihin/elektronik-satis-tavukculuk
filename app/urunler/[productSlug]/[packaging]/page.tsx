@@ -97,25 +97,14 @@ export default async function ProductDetailPage({
         <div className="container-x py-10 md:py-14 grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <div className="aspect-square bg-brand-light rounded-2xl flex items-center justify-center overflow-hidden relative">
-              {product.image ? (
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={1600}
-                  height={1600}
-                  priority
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              ) : (
-                <Image
-                  src="/logo-v2.png"
-                  alt={product.name}
-                  width={1024}
-                  height={1024}
-                  priority
-                  className="w-3/4 h-3/4 object-contain"
-                />
-              )}
+              <Image
+                src={product.image || `/images/products/solo/${product.slug}.webp`}
+                alt={product.name}
+                width={1600}
+                height={1600}
+                priority
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <ProductWatermark packaging={packaging} />
               <div className="absolute top-4 left-4 bg-brand-primary text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded z-10">
                 Günlük Taze
