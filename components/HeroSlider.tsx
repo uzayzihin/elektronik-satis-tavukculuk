@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ShieldCheck, Truck, Clock } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { site } from "@/content/site.config";
@@ -7,17 +8,11 @@ import { waGeneralOrder } from "@/lib/whatsapp";
 export function HeroSlider() {
   return (
     <section className="relative bg-white border-b border-brand-border overflow-hidden">
-      <a
-        href={waGeneralOrder()}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp'tan hızlı sipariş"
-        className="block group/hero cursor-pointer"
-      >
-        <div className="container-x relative py-8 md:py-12 lg:py-14">
-          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
+      <div className="container-x relative py-8 md:py-12 lg:py-14">
+        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
+          <Link href="/urunler" aria-label="Tüm ürünleri gör" className="block">
             <h1
-              className="font-extrabold leading-[0.95] mb-5 tracking-tight text-brand-navy uppercase"
+              className="font-extrabold leading-[0.95] mb-5 tracking-tight text-brand-navy uppercase hover:text-brand-primary transition-colors"
               style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
             >
               Aradığınız Her{" "}
@@ -36,68 +31,78 @@ export function HeroSlider() {
               </span>{" "}
               Burada
             </h1>
+          </Link>
 
-            <div className="flex items-center gap-3 mb-8">
-              <AvatarStack />
-              <span className="text-sm font-mono uppercase tracking-wider text-brand-text">
-                <strong className="font-bold text-brand-navy text-base">4.9 / 5</strong>
-                <span className="text-brand-muted"> · 1000+ müşteri</span>
-              </span>
-            </div>
-
-            <HeroGraphic className="w-full max-w-2xl mb-8" />
-
-            <p className="font-mono text-xs md:text-sm uppercase tracking-[0.1em] text-brand-text/80 leading-relaxed mb-8 max-w-xl">
-              Beyaz etin adresi. {site.brand.foundedYear}'den beri.
-              <br />
-              Günlük taze kesim. İstanbul'da 7/24 teslimat.
-            </p>
-
-            <span
-              className="relative w-full max-w-xl inline-flex items-center justify-between gap-3 overflow-hidden rounded-md bg-brand-dark text-white font-bold pl-7 pr-5 py-3 uppercase tracking-wider transition-all group-hover/hero:scale-[1.01] shadow-xl shadow-black/20"
-            >
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at 30% 25%, rgba(37,96,126,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(3,28,55,0.7), transparent 55%)",
-                }}
-              />
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 opacity-40 pointer-events-none"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18) 1.2px, transparent 1.2px), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12) 1.6px, transparent 1.6px)",
-                  backgroundSize: "44px 44px, 70px 70px",
-                }}
-              />
-
-              <span className="relative flex-1 inline-flex items-center justify-center gap-3 text-base md:text-lg">
-                <WhatsAppIcon className="w-5 h-5" />
-                Hızlı Sipariş
-              </span>
-              <span className="relative flex-shrink-0 inline-flex items-center justify-center">
-                <Image
-                  src="/logo-icon.png"
-                  alt=""
-                  aria-hidden="true"
-                  width={64}
-                  height={64}
-                  className="h-7 w-auto brightness-0 invert opacity-95"
-                />
-              </span>
+          <div className="flex items-center gap-3 mb-8">
+            <AvatarStack />
+            <span className="text-sm font-mono uppercase tracking-wider text-brand-text">
+              <strong className="font-bold text-brand-navy text-base">4.9 / 5</strong>
+              <span className="text-brand-muted"> · 1000+ müşteri</span>
             </span>
+          </div>
 
-            <div className="mt-8 pt-6 border-t border-brand-border w-full max-w-xl grid grid-cols-3 gap-3">
-              <TrustItem icon={ShieldCheck} label="Güvenli Sipariş" />
-              <TrustItem icon={Truck} label="Aynı Gün Teslimat" />
-              <TrustItem icon={Clock} label="7/24 Hizmet" />
-            </div>
+          <Link
+            href="/urunler"
+            aria-label="Tüm ürünleri gör"
+            className="block w-full max-w-2xl mb-8 group/graphic"
+          >
+            <HeroGraphic className="w-full" />
+          </Link>
+
+          <p className="font-mono text-xs md:text-sm uppercase tracking-[0.1em] text-brand-text/80 leading-relaxed mb-8 max-w-xl">
+            Beyaz etin adresi. {site.brand.foundedYear}'den beri.
+            <br />
+            Günlük taze kesim. İstanbul'da 7/24 teslimat.
+          </p>
+
+          <a
+            href={waGeneralOrder()}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp'tan hızlı sipariş"
+            className="relative w-full max-w-xl inline-flex items-center justify-between gap-3 overflow-hidden rounded-md bg-brand-dark text-white font-bold pl-7 pr-5 py-3 uppercase tracking-wider transition-all hover:scale-[1.01] shadow-xl shadow-black/20"
+          >
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(ellipse at 30% 25%, rgba(37,96,126,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(3,28,55,0.7), transparent 55%)",
+              }}
+            />
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 opacity-40 pointer-events-none"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18) 1.2px, transparent 1.2px), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12) 1.6px, transparent 1.6px)",
+                backgroundSize: "44px 44px, 70px 70px",
+              }}
+            />
+
+            <span className="relative flex-1 inline-flex items-center justify-center gap-3 text-base md:text-lg">
+              <WhatsAppIcon className="w-5 h-5" />
+              Hızlı Sipariş
+            </span>
+            <span className="relative flex-shrink-0 inline-flex items-center justify-center">
+              <Image
+                src="/logo-icon.png"
+                alt=""
+                aria-hidden="true"
+                width={64}
+                height={64}
+                className="h-7 w-auto brightness-0 invert opacity-95"
+              />
+            </span>
+          </a>
+
+          <div className="mt-8 pt-6 border-t border-brand-border w-full max-w-xl grid grid-cols-3 gap-3">
+            <TrustItem icon={ShieldCheck} label="Güvenli Sipariş" />
+            <TrustItem icon={Truck} label="Aynı Gün Teslimat" />
+            <TrustItem icon={Clock} label="7/24 Hizmet" />
           </div>
         </div>
-      </a>
+      </div>
     </section>
   );
 }
