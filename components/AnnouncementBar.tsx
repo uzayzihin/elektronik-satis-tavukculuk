@@ -1,11 +1,7 @@
 const messages = [
-  "Taze Ürünler",
-  "7/24 Açık",
-  "Toptan & Perakende Satış",
-  "Hijyenik Paketleme",
-  "Hızlı Teslimat",
   "WhatsApp'tan Sipariş",
-  "İstanbul Gıda Toptancılar Çarşısı",
+  "Aynı Gün Teslimat",
+  "Toptan & Perakende",
   "2007'den Beri",
 ];
 
