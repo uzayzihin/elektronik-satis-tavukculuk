@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { Minus, Plus, ShoppingBag, Check } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
-import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-import { waProductOrder } from "@/lib/whatsapp";
 import type { Packaging } from "@/content/products";
 
 export function ProductDetailActions({
@@ -61,38 +59,27 @@ export function ProductDetailActions({
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-3">
-        <button
-          type="button"
-          onClick={handleAdd}
-          className={`inline-flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-md text-base transition-colors ${
-            added
-              ? "bg-brand-purple-dark text-white"
-              : "bg-brand-purple hover:bg-brand-purple-dark text-white"
-          }`}
-        >
-          {added ? (
-            <>
-              <Check className="w-5 h-5" />
-              Sepete Eklendi
-            </>
-          ) : (
-            <>
-              <ShoppingBag className="w-5 h-5" />
-              Sepete Ekle
-            </>
-          )}
-        </button>
-        <a
-          href={waProductOrder(`${product.name} (${qty} adet)`, packaging)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 bg-brand-purple hover:bg-brand-purple-dark text-white font-bold px-6 py-4 rounded-md text-base transition-colors"
-        >
-          <WhatsAppIcon className="w-5 h-5" />
-          Hızlı Sipariş
-        </a>
-      </div>
+      <button
+        type="button"
+        onClick={handleAdd}
+        className={`w-full inline-flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-md text-base transition-colors ${
+          added
+            ? "bg-brand-purple-dark text-white"
+            : "bg-brand-purple hover:bg-brand-purple-dark text-white"
+        }`}
+      >
+        {added ? (
+          <>
+            <Check className="w-5 h-5" />
+            Sepete Eklendi
+          </>
+        ) : (
+          <>
+            <ShoppingBag className="w-5 h-5" />
+            Sepete Ekle
+          </>
+        )}
+      </button>
     </div>
   );
 }
