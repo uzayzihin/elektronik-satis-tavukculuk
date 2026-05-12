@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Search, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { site } from "@/content/site.config";
 import { waGeneralOrder } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
@@ -118,13 +118,6 @@ export function Header() {
         </Link>
 
         <div className="flex items-center justify-end gap-1 md:gap-2">
-          <button
-            type="button"
-            aria-label="Ara"
-            className="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-primary transition-colors"
-          >
-            <Search className="w-5 h-5" />
-          </button>
           <a
             href={waGeneralOrder()}
             target="_blank"
