@@ -103,9 +103,6 @@ export const packagings: ProductCategory[] = [
   },
 ];
 
-// Backwards-compat alias (eski `categories` import'larını bozmamak için)
-export const categories: ProductCategory[] = packagings;
-
 export const meatTypes: MeatType[] = [
   {
     slug: "butun-pilic",
@@ -198,15 +195,6 @@ export function getMeatTypeBySlug(slug: string): MeatType | undefined {
 
 export function getProductsByMeatType(slug: string): Product[] {
   return products.filter((p) => p.meatType === slug);
-}
-
-// Backwards-compat: kategori artık paketleme. Her ürün her iki paketlemede de var.
-export function getProductsByCategory(_slug: string): Product[] {
-  return products;
-}
-
-export function getCategoryBySlug(slug: string): ProductCategory | undefined {
-  return getPackagingBySlug(slug);
 }
 
 export function getFeaturedProducts(): Product[] {
