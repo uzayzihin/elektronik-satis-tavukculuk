@@ -160,13 +160,13 @@ function HeroGraphic({ className = "" }: { className?: string }) {
 
       <div className="absolute inset-0 flex items-center justify-center">
         <Image
-          src="/logo-icon.png"
+          src="/logo-rooster.png"
           alt=""
           aria-hidden="true"
-          width={1024}
-          height={1024}
+          width={1461}
+          height={1600}
           priority
-          className="w-full h-full object-contain brightness-0 invert opacity-95 -translate-y-[2.5%] translate-x-[2.5%] scale-90"
+          className="w-full h-full object-contain brightness-0 invert opacity-95 scale-90"
         />
       </div>
 
