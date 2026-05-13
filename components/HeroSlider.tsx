@@ -41,13 +41,15 @@ export function HeroSlider() {
             </span>
           </div>
 
-          <Link
-            href="/urunler"
-            aria-label="Tüm ürünleri gör"
+          <a
+            href={waGeneralOrder()}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp'tan hızlı sipariş"
             className="block w-full max-w-2xl mb-8 group/graphic"
           >
             <HeroGraphic className="w-full" />
-          </Link>
+          </a>
 
           <p className="font-mono text-xs md:text-sm uppercase tracking-[0.1em] text-brand-text/80 leading-relaxed mb-8 max-w-xl">
             Beyaz etin adresi. {site.brand.foundedYear}'den beri.
@@ -166,6 +168,30 @@ function HeroGraphic({ className = "" }: { className?: string }) {
           priority
           className="w-full h-full object-contain brightness-0 invert opacity-95 -translate-y-[2.5%] translate-x-[2.5%] scale-90"
         />
+      </div>
+
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-[5] flex flex-col items-center justify-center pointer-events-none px-3 text-center"
+      >
+        <span
+          className="font-extrabold uppercase tracking-tight text-white leading-[0.9]"
+          style={{
+            fontSize: "clamp(0.85rem, 3vw, 1.75rem)",
+            textShadow: "0 2px 10px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.45)",
+          }}
+        >
+          İletişime
+        </span>
+        <span
+          className="font-black uppercase tracking-tight text-white leading-[0.85] mt-0.5"
+          style={{
+            fontSize: "clamp(2rem, 7.5vw, 4.5rem)",
+            textShadow: "0 3px 12px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.5)",
+          }}
+        >
+          Geç
+        </span>
       </div>
 
       <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white/55">
