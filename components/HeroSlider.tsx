@@ -151,47 +151,41 @@ function HeroGraphic({ className = "" }: { className?: string }) {
 
       <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
         <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/55">
-          EST. {site.brand.foundedYear}
+          İletişime Geç
         </span>
         <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/55">
           İstanbul
         </span>
       </div>
 
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
         <Image
-          src="/logo-rooster.png"
+          src="/logo-mountain.png"
           alt=""
           aria-hidden="true"
-          width={1461}
-          height={1600}
+          width={800}
+          height={445}
           priority
-          className="w-full h-full object-contain brightness-0 invert opacity-95 scale-90"
+          className="w-[42%] h-auto brightness-0 invert opacity-95 mb-3 md:mb-4"
         />
-      </div>
-
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 z-[5] flex flex-col items-center justify-center pointer-events-none px-3 text-center"
-      >
-        <span
-          className="font-extrabold uppercase tracking-tight text-white leading-[0.9]"
+        <div
+          className="font-black uppercase tracking-tight text-white leading-[0.9]"
           style={{
-            fontSize: "clamp(0.85rem, 3vw, 1.75rem)",
-            textShadow: "0 2px 10px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.45)",
+            fontSize: "clamp(1.25rem, 5vw, 3rem)",
+            textShadow: "0 2px 10px rgba(0,0,0,0.45)",
           }}
         >
-          İletişime
-        </span>
-        <span
-          className="font-black uppercase tracking-tight text-white leading-[0.85] mt-0.5"
+          Evka Surur
+        </div>
+        <div
+          className="font-bold uppercase tracking-[0.18em] text-white/85 mt-1"
           style={{
-            fontSize: "clamp(2rem, 7.5vw, 4.5rem)",
-            textShadow: "0 3px 12px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.5)",
+            fontSize: "clamp(0.75rem, 2.5vw, 1.5rem)",
+            textShadow: "0 2px 8px rgba(0,0,0,0.4)",
           }}
         >
-          Geç
-        </span>
+          Tavukçuluk
+        </div>
       </div>
 
       <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white/55">
