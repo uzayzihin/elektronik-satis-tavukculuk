@@ -56,6 +56,7 @@ export function ProductCard({
         />
       )}
       <ProductWatermark
+        productName={product.name}
         packaging={packaging}
         isExternal={isExternal}
         compact={compact}

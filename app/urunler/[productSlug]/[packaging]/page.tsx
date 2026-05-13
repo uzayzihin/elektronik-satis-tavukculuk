@@ -105,7 +105,7 @@ export default async function ProductDetailPage({
                 priority
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <ProductWatermark packaging={packaging} />
+              <ProductWatermark productName={product.name} packaging={packaging} />
               <div className="absolute top-4 left-4 bg-brand-primary text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded z-10">
                 Günlük Taze
               </div>
