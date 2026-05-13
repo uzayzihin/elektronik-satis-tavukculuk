@@ -23,7 +23,8 @@ export function ProductCard({
   const [imgError, setImgError] = useState(false);
   const detailHref = `/urunler/${product.slug}/${packaging}`;
 
-  const imgSrc = product.image || (compact ? `/images/products/solo/thumbnails/${product.slug}.webp` : `/images/products/solo/${product.slug}.webp`);
+  const folder = packaging === "fresh" ? "solo" : packaging;
+  const imgSrc = product.image || (compact ? `/images/products/${folder}/thumbnails/${product.slug}.webp` : `/images/products/${folder}/${product.slug}.webp`);
 
   function handleAdd(e: React.MouseEvent) {
     e.preventDefault();
