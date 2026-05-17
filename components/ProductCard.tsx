@@ -80,7 +80,7 @@ export function ProductCard({
           className={`absolute bottom-2 right-2 z-10 w-10 h-10 rounded-md flex items-center justify-center shadow-md transition-all ${
             added
               ? "bg-brand-purple-dark text-white"
-              : "bg-brand-purple text-brand-navy hover:bg-brand-purple-dark"
+              : "bg-brand-purple text-white hover:bg-brand-purple-dark"
           }`}
         >
           {added ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
