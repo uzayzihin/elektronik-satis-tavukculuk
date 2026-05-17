@@ -110,93 +110,117 @@ export function HeroSlider() {
 }
 
 function HeroGraphic({ className = "" }: { className?: string }) {
+  const bottomProducts = [
+    "baket",
+    "bonfile",
+    "kanat",
+    "acik-butun-pilic",
+  ];
+
   return (
     <div
-      className={`relative aspect-square rounded-2xl overflow-hidden bg-brand-dark text-white ${className}`}
+      className={`relative aspect-square rounded-2xl overflow-hidden ${className}`}
+      style={{
+        background:
+          "linear-gradient(180deg, #f7ecd0 0%, #f1e1b3 55%, #e8d28b 100%)",
+      }}
     >
+      {/* Warm parchment grain */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 30% 25%, rgba(9,75,141,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(9,75,141,0.85), transparent 55%)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-40 pointer-events-none"
+        className="absolute inset-0 opacity-25 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18) 1.2px, transparent 1.2px), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12) 1.6px, transparent 1.6px)",
-          backgroundSize: "44px 44px, 70px 70px",
+            "radial-gradient(circle at 20% 30%, rgba(9,75,141,0.06) 1px, transparent 1.2px), radial-gradient(circle at 75% 65%, rgba(9,75,141,0.04) 1.4px, transparent 1.6px)",
+          backgroundSize: "32px 32px, 56px 56px",
         }}
       />
-      <Image
-        src="/images/products/solo/kemiksiz-but-donerlik.webp"
-        alt=""
-        aria-hidden="true"
-        width={1024}
-        height={1024}
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        style={{ opacity: 0.34 }}
-      />
 
+      {/* Soft top-bottom vignette */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%)",
+            "radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.4), transparent 55%), linear-gradient(180deg, transparent 60%, rgba(9,75,141,0.08) 100%)",
         }}
       />
 
-      <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
-        <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/55">
+      {/* Top corner labels */}
+      <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-20">
+        <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-brand-navy/70">
           İletişime Geç
         </span>
-        <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/55">
+        <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-brand-navy/70">
           İstanbul
         </span>
       </div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-        <Image
-          src="/logo-mountain.png"
-          alt=""
-          aria-hidden="true"
-          width={800}
-          height={445}
-          priority
-          className="w-[42%] h-auto brightness-0 invert opacity-95 mb-3 md:mb-4"
-        />
-        <div
-          className="font-black uppercase tracking-tight text-white leading-[0.9]"
-          style={{
-            fontSize: "clamp(1.25rem, 5vw, 3rem)",
-            textShadow: "0 2px 10px rgba(0,0,0,0.45)",
-          }}
-        >
-          Evka Surur
-        </div>
-        <div
-          className="font-bold uppercase tracking-[0.18em] text-white/85 mt-1"
-          style={{
-            fontSize: "clamp(0.75rem, 2.5vw, 1.5rem)",
-            textShadow: "0 2px 8px rgba(0,0,0,0.4)",
-          }}
-        >
-          Tavukçuluk
-        </div>
+      {/* Mountain — dark, dramatic, top center */}
+      <Image
+        src="/logo-mountain.png"
+        alt=""
+        aria-hidden="true"
+        width={800}
+        height={445}
+        priority
+        className="absolute top-[14%] left-1/2 -translate-x-1/2 w-[56%] h-auto opacity-90 drop-shadow-[0_8px_20px_rgba(9,75,141,0.18)]"
+      />
+
+      {/* Big "Evka" poster text — yellow with navy stroke */}
+      <div
+        className="absolute left-1/2 top-[42%] -translate-x-1/2 z-10 font-black italic uppercase leading-[0.85]"
+        style={{
+          fontSize: "clamp(2.5rem, 14vw, 6rem)",
+          color: "#cfbb50",
+          WebkitTextStroke: "3px #094b8d",
+          paintOrder: "stroke fill",
+          letterSpacing: "-0.02em",
+          transform: "rotate(-3deg)",
+          textShadow: "0 6px 14px rgba(9,75,141,0.25)",
+        }}
+      >
+        Evka
       </div>
 
-      <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white/55">
-        <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em]">
-          Beyaz Et
-        </span>
-        <span className="text-[10px] md:text-xs font-mono uppercase tracking-[0.3em]">
-          Toptan & Perakende
+      {/* Navy ribbon banner with "Surur" */}
+      <div
+        className="absolute left-1/2 top-[64%] -translate-x-1/2 z-10 bg-brand-navy text-white font-black uppercase tracking-[0.18em] px-6 py-2 md:px-8 md:py-2.5 inline-flex items-center gap-2 md:gap-3 shadow-[0_8px_20px_rgba(9,75,141,0.35)]"
+        style={{
+          fontSize: "clamp(1rem, 4.5vw, 2rem)",
+          transform: "rotate(-1.5deg)",
+        }}
+      >
+        <span className="text-brand-accent text-[0.7em]">★</span>
+        Surur
+        <span className="text-brand-accent text-[0.7em]">★</span>
+        <span className="text-[0.55em] font-bold tracking-widest text-white/65">
+          2007
         </span>
       </div>
+
+      {/* Bottom chicken products row */}
+      <div className="absolute bottom-3 md:bottom-4 left-0 right-0 flex items-end justify-center gap-2 md:gap-3 px-3 z-10">
+        {bottomProducts.map((slug, i) => {
+          const lift = i === 0 || i === 3 ? "translate-y-1" : "-translate-y-1";
+          return (
+            <div
+              key={slug}
+              className={`relative w-[20%] aspect-square rounded-full overflow-hidden ring-2 ring-white shadow-[0_8px_16px_rgba(9,75,141,0.25)] ${lift}`}
+            >
+              <Image
+                src={`/images/products/solo/${slug}.webp`}
+                alt=""
+                aria-hidden="true"
+                width={300}
+                height={300}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          );
+        })}
+      </div>
+
     </div>
   );
 }
