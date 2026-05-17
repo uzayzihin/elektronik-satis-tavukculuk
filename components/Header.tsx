@@ -110,12 +110,12 @@ export function Header() {
           className="flex items-center justify-center"
         >
           <Image
-            src="/logo-icon.png"
+            src="/logo-main.png"
             alt={site.brand.short}
-            width={1024}
-            height={530}
+            width={100}
+            height={100}
             priority
-            className="h-9 md:h-12 w-auto"
+            className="h-10 md:h-14 w-auto"
           />
         </Link>
 

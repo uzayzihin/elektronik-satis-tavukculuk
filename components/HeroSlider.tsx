@@ -88,7 +88,7 @@ export function HeroSlider() {
             </span>
             <span className="relative flex-shrink-0 inline-flex items-center justify-center">
               <Image
-                src="/logo-icon.png"
+                src="/logo-main.png"
                 alt=""
                 aria-hidden="true"
                 width={64}
