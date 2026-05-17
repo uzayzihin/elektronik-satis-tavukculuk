@@ -26,7 +26,7 @@ const sections = [
   {
     title: "Alışveriş",
     items: [
-      { label: "Tüm Ürünler", href: "/urunler" },
+      { label: "Tavuk", href: "/urunler" },
       { label: "Evka Fresh", href: "https://evkafresh.com", external: true },
     ],
   },

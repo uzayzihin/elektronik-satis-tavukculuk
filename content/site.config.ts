@@ -37,7 +37,7 @@ export const site = {
 
   nav: [
     { label: "Alışveriş", href: "/", external: false },
-    { label: "Tüm Ürünler", href: "/urunler", external: false },
+    { label: "Tavuk", href: "/urunler", external: false },
     {
       label: "Fresh",
       href: "https://evkafresh.com",
