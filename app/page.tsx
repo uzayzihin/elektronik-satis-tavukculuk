@@ -25,13 +25,13 @@ export default function HomePage() {
     {
       title: "Trending",
       products: [...freshProducts],
-      ctaHref: "/urunler",
+      ctaHref: "/urunler/fresh",
       ctaLabel: "Tüm Ürünleri Gör",
     },
     {
       title: "Yeni Ürünler",
       products: getNewProducts(),
-      ctaHref: "/urunler",
+      ctaHref: "/urunler/yeni",
       ctaLabel: "Tüm Ürünleri Gör",
     },
   ];

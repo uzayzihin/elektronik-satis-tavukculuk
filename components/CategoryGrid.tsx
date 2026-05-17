@@ -20,13 +20,13 @@ const cards: CategoryCard[] = [
     title: "Yeni Ürünler",
     label: "Yeni Ürünler",
     image: "/products/citir.jpg",
-    href: "/urunler",
+    href: "/urunler/yeni",
   },
   {
     title: "Evka Fresh",
     label: "Evka Fresh",
     image: "/products/fresh/limonata.webp",
-    href: "/urunler",
+    href: "/urunler/fresh",
   },
 ];
 
