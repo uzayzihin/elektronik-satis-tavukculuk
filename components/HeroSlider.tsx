@@ -69,7 +69,7 @@ export function HeroSlider() {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at 30% 25%, rgba(37,96,126,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(3,28,55,0.7), transparent 55%)",
+                  "radial-gradient(ellipse at 30% 25%, rgba(9,75,141,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(9,75,141,0.85), transparent 55%)",
               }}
             />
             <span
@@ -119,7 +119,7 @@ function HeroGraphic({ className = "" }: { className?: string }) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 30% 25%, rgba(37,96,126,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(3,28,55,0.7), transparent 55%)",
+            "radial-gradient(ellipse at 30% 25%, rgba(9,75,141,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(9,75,141,0.85), transparent 55%)",
         }}
       />
       <div
@@ -203,11 +203,11 @@ function HeroGraphic({ className = "" }: { className?: string }) {
 
 function AvatarStack() {
   const avatars = [
-    "linear-gradient(135deg, #25607e 0%, #031c37 100%)",
-    "linear-gradient(135deg, #1d4a63 0%, #25607e 100%)",
-    "linear-gradient(135deg, #25607e 0%, #1d4a63 100%)",
-    "linear-gradient(135deg, #031c37 0%, #25607e 100%)",
-    "linear-gradient(135deg, #1d4a63 0%, #031c37 100%)",
+    "linear-gradient(135deg, #094b8d 0%, #063872 100%)",
+    "linear-gradient(135deg, #cfbb50 0%, #b09e3e 100%)",
+    "linear-gradient(135deg, #094b8d 0%, #cfbb50 100%)",
+    "linear-gradient(135deg, #629347 0%, #4f7838 100%)",
+    "linear-gradient(135deg, #094b8d 0%, #629347 100%)",
   ];
   return (
     <div className="flex -space-x-2" aria-hidden="true">
