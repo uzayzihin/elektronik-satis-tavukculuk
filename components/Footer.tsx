@@ -52,6 +52,15 @@ const sections = [
       },
     ],
   },
+  {
+    title: "Yasal",
+    items: [
+      { label: "Gizlilik Politikası", href: "/gizlilik-politikasi" },
+      { label: "İade & İptal", href: "/iade-iptal" },
+      { label: "Teslimat", href: "/teslimat" },
+      { label: "Kullanım Koşulları", href: "/kullanim-kosullari" },
+    ],
+  },
 ];
 
 export function Footer() {
