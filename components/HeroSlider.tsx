@@ -58,7 +58,7 @@ export function HeroSlider() {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at 30% 25%, rgba(98,147,71,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(79,120,56,0.85), transparent 55%)",
+                  "radial-gradient(ellipse at 30% 25%, rgba(49,149,67,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(38,114,53,0.85), transparent 55%)",
               }}
             />
             <span
@@ -90,11 +90,11 @@ export function HeroSlider() {
 
 function AvatarStack() {
   const avatars = [
-    "linear-gradient(135deg, #094b8d 0%, #063872 100%)",
+    "linear-gradient(135deg, #25607e 0%, #031c37 100%)",
     "linear-gradient(135deg, #cfbb50 0%, #b09e3e 100%)",
-    "linear-gradient(135deg, #094b8d 0%, #cfbb50 100%)",
-    "linear-gradient(135deg, #629347 0%, #4f7838 100%)",
-    "linear-gradient(135deg, #094b8d 0%, #629347 100%)",
+    "linear-gradient(135deg, #25607e 0%, #200aee 100%)",
+    "linear-gradient(135deg, #319543 0%, #267235 100%)",
+    "linear-gradient(135deg, #031c37 0%, #25607e 100%)",
   ];
   return (
     <div className="flex -space-x-2" aria-hidden="true">

@@ -64,8 +64,8 @@ export function ProductDetailActions({
         onClick={handleAdd}
         className={`w-full inline-flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-md text-base transition-colors ${
           added
-            ? "bg-brand-purple-dark text-brand-navy"
-            : "bg-brand-purple hover:bg-brand-purple-dark text-brand-navy"
+            ? "bg-brand-purple-dark text-white"
+            : "bg-brand-purple hover:bg-brand-purple-dark text-white"
         }`}
       >
         {added ? (
