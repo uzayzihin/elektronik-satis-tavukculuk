@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ShieldCheck, Truck, Clock } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { site } from "@/content/site.config";
 import { waGeneralOrder } from "@/lib/whatsapp";
@@ -7,38 +6,16 @@ import { waGeneralOrder } from "@/lib/whatsapp";
 export function HeroSlider() {
   return (
     <section className="relative bg-white border-b border-brand-border overflow-hidden">
-      <div className="container-x relative py-8 md:py-12 lg:py-14">
+      <div className="container-x relative py-10 md:py-16 lg:py-20">
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
           <Link href="/urunler" aria-label="Tüm ürünleri gör" className="block">
             <h1
-              className="font-extrabold leading-[0.95] mb-5 tracking-tight text-brand-navy uppercase hover:text-brand-accent transition-colors"
+              className="font-extrabold leading-[0.95] mb-6 tracking-tight text-brand-navy uppercase hover:text-brand-accent transition-colors"
               style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
             >
-              Aradığınız Her{" "}
-              <span className="relative inline-block align-baseline">
-                <span
-                  className="font-[family-name:var(--font-script)] font-bold normal-case italic text-brand-accent"
-                  style={{
-                    fontSize: "1.05em",
-                    lineHeight: "0.85",
-                    display: "inline-block",
-                    transform: "rotate(-3deg) translateY(-0.04em)",
-                  }}
-                >
-                  Kesim
-                </span>
-              </span>{" "}
-              Burada
+              Aradığınız Her Kesim Burada
             </h1>
           </Link>
-
-          <div className="flex items-center gap-3 mb-8">
-            <AvatarStack />
-            <span className="text-sm font-mono uppercase tracking-wider text-brand-text">
-              <strong className="font-bold text-brand-navy text-base">4.9 / 5</strong>
-              <span className="text-brand-muted"> · 1000+ müşteri</span>
-            </span>
-          </div>
 
           <p className="font-mono text-xs md:text-sm uppercase tracking-[0.1em] text-brand-text/80 leading-relaxed mb-8 max-w-xl">
             Beyaz etin adresi. {site.brand.foundedYear}'den beri.
@@ -51,77 +28,13 @@ export function HeroSlider() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp'tan hızlı sipariş"
-            className="relative w-full max-w-xl inline-flex items-center justify-center gap-3 overflow-hidden rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-7 py-3 uppercase tracking-wider transition-all hover:scale-[1.01] shadow-xl shadow-black/20"
+            className="inline-flex items-center justify-center gap-3 rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-7 py-3 uppercase tracking-wider transition-colors text-base md:text-lg"
           >
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(ellipse at 30% 25%, rgba(49,149,67,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(38,114,53,0.85), transparent 55%)",
-              }}
-            />
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 opacity-40 pointer-events-none"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18) 1.2px, transparent 1.2px), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12) 1.6px, transparent 1.6px)",
-                backgroundSize: "44px 44px, 70px 70px",
-              }}
-            />
-
-            <span className="relative inline-flex items-center justify-center gap-3 text-base md:text-lg">
-              <WhatsAppIcon className="w-5 h-5" />
-              Hızlı Sipariş
-            </span>
+            <WhatsAppIcon className="w-5 h-5" />
+            Hızlı Sipariş
           </a>
-
-          <div className="mt-8 pt-6 border-t border-brand-border w-full max-w-xl grid grid-cols-3 gap-3">
-            <TrustItem icon={ShieldCheck} label="Güvenli Sipariş" />
-            <TrustItem icon={Truck} label="Aynı Gün Teslimat" />
-            <TrustItem icon={Clock} label="7/24 Hizmet" />
-          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function AvatarStack() {
-  const avatars = [
-    "linear-gradient(135deg, #25607e 0%, #031c37 100%)",
-    "linear-gradient(135deg, #cfbb50 0%, #b09e3e 100%)",
-    "linear-gradient(135deg, #25607e 0%, #200aee 100%)",
-    "linear-gradient(135deg, #319543 0%, #267235 100%)",
-    "linear-gradient(135deg, #031c37 0%, #25607e 100%)",
-  ];
-  return (
-    <div className="flex -space-x-2" aria-hidden="true">
-      {avatars.map((bg, i) => (
-        <span
-          key={i}
-          className="w-8 h-8 rounded-full ring-2 ring-white shadow-sm"
-          style={{ background: bg }}
-        />
-      ))}
-    </div>
-  );
-}
-
-function TrustItem({
-  icon: Icon,
-  label,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  label: string;
-}) {
-  return (
-    <div className="flex items-center justify-center gap-2 text-brand-muted">
-      <Icon className="w-4 h-4 flex-shrink-0" />
-      <span className="font-mono text-[10px] md:text-xs uppercase tracking-wider">
-        {label}
-      </span>
-    </div>
   );
 }

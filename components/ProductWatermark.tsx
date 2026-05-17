@@ -12,45 +12,26 @@ export function ProductWatermark({
   compact?: boolean;
 }) {
   const isFresh = isExternal || packaging === "fresh";
-  const topLine = productName ?? (isFresh ? "Evka" : "Evka Surur");
-  const bottomLine = isFresh
+  const name = productName ?? (isFresh ? "Evka" : "Evka Surur");
+  const pack = isFresh
     ? "Fresh"
     : packaging === "dokme"
     ? "Dökme"
     : "Tabaklı";
 
-  const topSize = compact
-    ? "clamp(0.65rem, 4.5vw, 1.15rem)"
-    : "clamp(0.85rem, 3vw, 1.75rem)";
-  const bottomSize = compact
-    ? "clamp(1rem, 9vw, 2.1rem)"
-    : "clamp(2rem, 7.5vw, 4.5rem)";
-
   return (
-    <div
+    <span
       aria-hidden="true"
-      className="absolute inset-0 z-[5] flex flex-col items-center justify-center pointer-events-none px-3 text-center"
+      className={`absolute z-[5] pointer-events-none font-semibold uppercase tracking-wider text-white leading-tight ${
+        compact
+          ? "bottom-2 left-2 text-[9px] md:text-[10px]"
+          : "bottom-3 left-3 text-xs md:text-sm"
+      }`}
+      style={{
+        textShadow: "0 1px 4px rgba(0,0,0,0.5)",
+      }}
     >
-      <span
-        className="font-extrabold uppercase tracking-tight text-white leading-[0.9]"
-        style={{
-          fontSize: topSize,
-          textShadow:
-            "0 2px 10px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.45)",
-        }}
-      >
-        {topLine}
-      </span>
-      <span
-        className="font-black uppercase tracking-tight text-white leading-[0.85] mt-0.5"
-        style={{
-          fontSize: bottomSize,
-          textShadow:
-            "0 3px 12px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.5)",
-        }}
-      >
-        {bottomLine}
-      </span>
-    </div>
+      {name} · {pack}
+    </span>
   );
 }
