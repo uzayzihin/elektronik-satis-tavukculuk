@@ -1,7 +1,6 @@
 import type { Packaging } from "@/content/products";
 
 export function ProductWatermark({
-  productName,
   packaging = "tabakli",
   isExternal = false,
   compact = false,
@@ -12,7 +11,6 @@ export function ProductWatermark({
   compact?: boolean;
 }) {
   const isFresh = isExternal || packaging === "fresh";
-  const name = productName ?? (isFresh ? "Evka" : "Evka Surur");
   const pack = isFresh
     ? "Fresh"
     : packaging === "dokme"
@@ -24,14 +22,14 @@ export function ProductWatermark({
       aria-hidden="true"
       className={`absolute z-[5] pointer-events-none font-semibold uppercase tracking-wider text-white leading-tight ${
         compact
-          ? "bottom-2 left-2 text-[9px] md:text-[10px]"
-          : "bottom-3 left-3 text-xs md:text-sm"
+          ? "bottom-2 left-2 text-[25px] md:text-[28px]"
+          : "bottom-3 left-3 text-[34px] md:text-[39px]"
       }`}
       style={{
         textShadow: "0 1px 4px rgba(0,0,0,0.5)",
       }}
     >
-      {name} · {pack}
+      {pack}
     </span>
   );
 }
