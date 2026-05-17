@@ -3,11 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { site } from "@/content/site.config";
 import { waGeneralOrder } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { CartButton } from "@/components/CartDrawer";
+import { SearchModal } from "@/components/SearchModal";
 
 type NavChild = { label: string; href: string; external?: boolean };
 type NavItem = NavChild & { children?: readonly NavChild[] };
@@ -77,6 +78,7 @@ function NavDropdown({ item }: { item: NavItem }) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-brand-border">
@@ -118,6 +120,14 @@ export function Header() {
         </Link>
 
         <div className="flex items-center justify-end gap-1 md:gap-2">
+          <button
+            type="button"
+            onClick={() => setSearchOpen(true)}
+            aria-label="Ürün ara"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-primary transition-colors"
+          >
+            <Search className="w-5 h-5" />
+          </button>
           <a
             href={waGeneralOrder()}
             target="_blank"
@@ -167,6 +177,8 @@ export function Header() {
           </nav>
         </div>
       )}
+
+      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }
