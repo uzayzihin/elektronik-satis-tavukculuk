@@ -132,7 +132,7 @@ function HeroGraphic({ className = "" }: { className?: string }) {
         }}
       />
       <Image
-        src="/products/baket.jpg"
+        src="/images/products/solo/kemiksiz-but-donerlik.webp"
         alt=""
         aria-hidden="true"
         width={1024}
