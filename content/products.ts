@@ -148,7 +148,7 @@ export const products: Product[] = [
   { slug: "yaprak-kanat", name: "Yaprak Kanat", meatType: "kanat", description: "İnce kesim yaprak kanat." },
 
   // But
-  { slug: "baket", name: "Baket", meatType: "but", description: "Klasik baket but.", image: "/products/baket.jpg" },
+  { slug: "baket", name: "Baket", meatType: "but", description: "Klasik baket but." },
   { slug: "catalbut", name: "Çatalbut", meatType: "but", description: "Çatal kesim but." },
   { slug: "kalcali-but", name: "Kalçalı But", meatType: "but", description: "Kalçası ile birlikte but." },
   { slug: "special-but", name: "Special But", meatType: "but", description: "Özel kesim premium but.", featured: true },
@@ -156,14 +156,14 @@ export const products: Product[] = [
   { slug: "derili-but-izgara", name: "Derili But Izgara", meatType: "but", description: "Derisi ile ızgaralık but." },
 
   // Göğüs
-  { slug: "bonfile", name: "Bonfile", meatType: "gogus", description: "Tavuk bonfile.", featured: true, image: "/products/bonfile-card.jpg" },
-  { slug: "kovan-gogus", name: "Kovan Göğüs", meatType: "gogus", description: "Bütün kovan göğüs.", image: "/products/kovan-gogus.jpg" },
-  { slug: "kemiksiz-gogus-donerlik", name: "Kemiksiz Göğüs Dönerlik", meatType: "gogus", description: "Dönerlik kemiksiz göğüs.", image: "/products/kemiksiz-gogus-donerlik.jpg" },
+  { slug: "bonfile", name: "Bonfile", meatType: "gogus", description: "Tavuk bonfile.", featured: true },
+  { slug: "kovan-gogus", name: "Kovan Göğüs", meatType: "gogus", description: "Bütün kovan göğüs." },
+  { slug: "kemiksiz-gogus-donerlik", name: "Kemiksiz Göğüs Dönerlik", meatType: "gogus", description: "Dönerlik kemiksiz göğüs." },
   { slug: "muz-gogus", name: "Muz Göğüs", meatType: "gogus", description: "Muz şeklinde kesim göğüs." },
   { slug: "sacasiz-gogus", name: "Saçaksız Göğüs", meatType: "gogus", description: "Temizlenmiş saçaksız göğüs." },
   { slug: "derisiz-gogus-kus-basi", name: "Derisiz Göğüs Kuş Başı", meatType: "gogus", description: "Kuş başı doğranmış derisiz göğüs." },
   { slug: "derisiz-gogus-julyen", name: "Derisiz Göğüs Jülyen", meatType: "gogus", description: "Jülyen kesim derisiz göğüs." },
-  { slug: "derisiz-gogus-sinitzel", name: "Derisiz Göğüs Şinitzel", meatType: "gogus", description: "Şinitzel için ince dövme göğüs.", featured: true, image: "/products/derisiz-gogus-sinitzel.jpg" },
+  { slug: "derisiz-gogus-sinitzel", name: "Derisiz Göğüs Şinitzel", meatType: "gogus", description: "Şinitzel için ince dövme göğüs.", featured: true },
 
   // Sakatat
   { slug: "tavuk-ciger", name: "Tavuk Ciğer", meatType: "sakatat", description: "Taze tavuk ciğer." },

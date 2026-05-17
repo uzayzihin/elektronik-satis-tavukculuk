@@ -98,7 +98,7 @@ export default async function ProductDetailPage({
           <div>
             <div className="aspect-square bg-brand-light rounded-2xl flex items-center justify-center overflow-hidden relative">
               <Image
-                src={product.image || `/images/products/${packaging}/${product.slug}.webp`}
+                src={`/images/products/${packaging}/${product.slug}.webp`}
                 alt={product.name}
                 width={1600}
                 height={1600}

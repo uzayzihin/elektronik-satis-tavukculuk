@@ -7,11 +7,6 @@ import { useCart } from "@/lib/cart-context";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { waCartCheckout, packagingLabel } from "@/lib/whatsapp";
 import { site } from "@/content/site.config";
-import { products, freshProducts } from "@/content/products";
-
-const productBySlug = new Map(
-  [...products, ...freshProducts].map((p) => [p.slug, p])
-);
 
 export function CartDrawer() {
   const { items, totalQty, setQty, remove, clear, open, setOpen } = useCart();
@@ -95,24 +90,14 @@ export function CartDrawer() {
                   key={`${item.slug}-${item.packaging}`}
                   className="flex gap-3 pb-4 border-b border-brand-light last:border-0 last:pb-0"
                 >
-                  <div className="w-16 h-16 flex-shrink-0 rounded-md bg-brand-light flex items-center justify-center overflow-hidden relative">
-                    {productBySlug.get(item.slug)?.image ? (
-                      <Image
-                        src={productBySlug.get(item.slug)!.image!}
-                        alt=""
-                        width={128}
-                        height={128}
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    ) : (
-                      <Image
-                        src="/logo-v2.png"
-                        alt=""
-                        width={128}
-                        height={128}
-                        className="w-3/4 h-3/4 object-contain"
-                      />
-                    )}
+                  <div className="w-16 h-16 flex-shrink-0 rounded-md bg-brand-light overflow-hidden relative">
+                    <Image
+                      src={`/images/products/solo/thumbnails/${item.slug}.webp`}
+                      alt=""
+                      width={128}
+                      height={128}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-brand-primary text-sm leading-tight mb-0.5">
