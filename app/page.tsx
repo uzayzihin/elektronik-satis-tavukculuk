@@ -47,9 +47,9 @@ export default function HomePage() {
         ctaHref="/urunler"
       />
       <LimonataPromo />
-      <Testimonials />
       <FAQ />
       <TrustBand />
+      <Testimonials />
       <CTABanner />
     </>
   );

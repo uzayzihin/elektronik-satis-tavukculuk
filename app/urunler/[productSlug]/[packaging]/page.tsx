@@ -16,8 +16,6 @@ import {
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailActions } from "@/components/ProductDetailActions";
 import { ProductWatermark } from "@/components/ProductWatermark";
-import { FAQ } from "@/components/FAQ";
-import { CTABanner } from "@/components/CTABanner";
 
 export function generateStaticParams() {
   const internalPackagings = packagings.filter((pk) => pk.slug !== "fresh");
@@ -67,36 +65,21 @@ export default async function ProductDetailPage({
     <>
       <nav
         aria-label="Breadcrumb"
-        className="bg-brand-light border-b border-brand-light"
+        className="bg-white border-b border-brand-border"
       >
-        <div className="container-x py-3 flex items-center gap-1.5 text-sm overflow-x-auto whitespace-nowrap">
-          <Link href="/" className="text-brand-muted hover:text-brand-accent">
-            Anasayfa
+        <div className="container-x py-2 flex items-center gap-1 text-xs text-brand-muted overflow-x-auto whitespace-nowrap">
+          <Link href="/urunler" className="hover:text-brand-accent">
+            Tavuk
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" />
-          <Link
-            href="/urunler"
-            className="text-brand-muted hover:text-brand-accent"
-          >
-            Ürünler
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" />
-          <span className="text-brand-muted">{pkg.name}</span>
-          {meatType && (
-            <>
-              <ChevronRight className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" />
-              <span className="text-brand-muted">{meatType.name}</span>
-            </>
-          )}
-          <ChevronRight className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" />
-          <span className="text-brand-primary font-semibold">{product.name}</span>
+          <ChevronRight className="w-3 h-3 flex-shrink-0" />
+          <span className="text-brand-navy font-semibold">{product.name}</span>
         </div>
       </nav>
 
       <section className="bg-white">
-        <div className="container-x py-10 md:py-14 grid lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="container-x py-4 md:py-10 grid lg:grid-cols-2 gap-4 md:gap-10 lg:gap-16">
           <div>
-            <div className="aspect-square bg-brand-light rounded-2xl flex items-center justify-center overflow-hidden relative">
+            <div className="aspect-square bg-brand-light rounded-lg overflow-hidden relative">
               <Image
                 src={`/images/products/${packaging}/${product.slug}.webp`}
                 alt={product.name}
@@ -106,30 +89,16 @@ export default async function ProductDetailPage({
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <ProductWatermark productName={product.name} packaging={packaging} />
-              <div className="absolute top-4 left-4 bg-brand-primary text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded z-10">
-                Günlük Taze
-              </div>
             </div>
           </div>
 
           <div>
-            <span className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-brand-accent mb-3">
-              {pkg.name} · {meatType?.name ?? "Tavuk"}
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-primary leading-tight mb-4">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-tight mb-2">
               {product.name}
             </h1>
-            <p className="text-lg text-brand-text leading-relaxed mb-6">
-              {product.description}
+            <p className="text-xs md:text-sm font-mono uppercase tracking-[0.12em] text-brand-muted mb-4">
+              {pkg.name} · {meatType?.name ?? "Tavuk"}
             </p>
-
-            <div className="bg-brand-light rounded-lg p-4 mb-6 border border-brand-light">
-              <p className="text-sm text-brand-text">
-                <strong className="text-brand-primary">Fiyat bilgisi</strong> sipariş
-                miktarına göre değişir. Toptan ve perakende fiyatlar için sepete
-                ekleyip WhatsApp üzerinden teyit alın — anında dönüş yapıyoruz.
-              </p>
-            </div>
 
             <ProductDetailActions
               product={{
@@ -139,18 +108,17 @@ export default async function ProductDetailPage({
               packaging={packaging}
             />
 
-            <div className="mt-6 pt-6 border-t border-brand-light">
-              <p className="text-xs font-mono uppercase tracking-wider text-brand-muted mb-2">
-                Diğer Paketleme
-              </p>
-              <Link
-                href={`/urunler/${product.slug}/${otherPackaging}`}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:text-brand-accent-dark"
-              >
-                {otherPkg.name} olarak görüntüle
-                <ChevronRight className="w-4 h-4" />
-              </Link>
-            </div>
+            <p className="text-sm md:text-base text-brand-text leading-relaxed mt-5">
+              {product.description}
+            </p>
+
+            <Link
+              href={`/urunler/${product.slug}/${otherPackaging}`}
+              className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-brand-muted hover:text-brand-accent mt-4"
+            >
+              {otherPkg.name} olarak gör
+              <ChevronRight className="w-3 h-3" />
+            </Link>
           </div>
         </div>
       </section>
@@ -174,9 +142,6 @@ export default async function ProductDetailPage({
           </div>
         </section>
       )}
-
-      <FAQ />
-      <CTABanner />
     </>
   );
 }
