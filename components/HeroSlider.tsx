@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Truck, Clock } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
@@ -41,16 +40,6 @@ export function HeroSlider() {
             </span>
           </div>
 
-          <a
-            href={waGeneralOrder()}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp'tan hızlı sipariş"
-            className="block w-full max-w-2xl mb-8 group/graphic"
-          >
-            <HeroGraphic className="w-full" />
-          </a>
-
           <p className="font-mono text-xs md:text-sm uppercase tracking-[0.1em] text-brand-text/80 leading-relaxed mb-8 max-w-xl">
             Beyaz etin adresi. {site.brand.foundedYear}'den beri.
             <br />
@@ -62,7 +51,7 @@ export function HeroSlider() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp'tan hızlı sipariş"
-            className="relative w-full max-w-xl inline-flex items-center justify-between gap-3 overflow-hidden rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold pl-7 pr-5 py-3 uppercase tracking-wider transition-all hover:scale-[1.01] shadow-xl shadow-black/20"
+            className="relative w-full max-w-xl inline-flex items-center justify-center gap-3 overflow-hidden rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-7 py-3 uppercase tracking-wider transition-all hover:scale-[1.01] shadow-xl shadow-black/20"
           >
             <span
               aria-hidden="true"
@@ -82,19 +71,9 @@ export function HeroSlider() {
               }}
             />
 
-            <span className="relative flex-1 inline-flex items-center justify-center gap-3 text-base md:text-lg">
+            <span className="relative inline-flex items-center justify-center gap-3 text-base md:text-lg">
               <WhatsAppIcon className="w-5 h-5" />
               Hızlı Sipariş
-            </span>
-            <span className="relative flex-shrink-0 inline-flex items-center justify-center">
-              <Image
-                src="/logo-main.png"
-                alt=""
-                aria-hidden="true"
-                width={64}
-                height={64}
-                className="h-8 w-auto"
-              />
             </span>
           </a>
 
@@ -106,90 +85,6 @@ export function HeroSlider() {
         </div>
       </div>
     </section>
-  );
-}
-
-function HeroGraphic({ className = "" }: { className?: string }) {
-  const bottomProducts = [
-    "baket",
-    "bonfile",
-    "kanat",
-    "acik-butun-pilic",
-  ];
-
-  return (
-    <div
-      className={`relative aspect-square rounded-2xl overflow-hidden ${className}`}
-      style={{
-        background:
-          "linear-gradient(180deg, #f7ecd0 0%, #f1e1b3 55%, #e8d28b 100%)",
-      }}
-    >
-      {/* Warm parchment grain */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-25 pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 30%, rgba(9,75,141,0.06) 1px, transparent 1.2px), radial-gradient(circle at 75% 65%, rgba(9,75,141,0.04) 1.4px, transparent 1.6px)",
-          backgroundSize: "32px 32px, 56px 56px",
-        }}
-      />
-
-      {/* Soft top-bottom vignette */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.4), transparent 55%), linear-gradient(180deg, transparent 60%, rgba(9,75,141,0.08) 100%)",
-        }}
-      />
-
-      {/* Top corner labels */}
-      <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-20">
-        <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-brand-navy/70">
-          İletişime Geç
-        </span>
-        <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-brand-navy/70">
-          İstanbul
-        </span>
-      </div>
-
-      {/* Main brand logo — centerpiece */}
-      <Image
-        src="/logo-main.png"
-        alt=""
-        aria-hidden="true"
-        width={400}
-        height={400}
-        priority
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[58%] h-auto drop-shadow-[0_10px_24px_rgba(9,75,141,0.25)]"
-      />
-
-      {/* Bottom chicken products row */}
-      <div className="absolute bottom-3 md:bottom-4 left-0 right-0 flex items-end justify-center gap-2 md:gap-3 px-3 z-10">
-        {bottomProducts.map((slug, i) => {
-          const lift = i === 0 || i === 3 ? "translate-y-1" : "-translate-y-1";
-          return (
-            <div
-              key={slug}
-              className={`relative w-[20%] aspect-square rounded-full overflow-hidden ring-2 ring-white shadow-[0_8px_16px_rgba(9,75,141,0.25)] ${lift}`}
-            >
-              <Image
-                src={`/images/products/solo/${slug}.webp`}
-                alt=""
-                aria-hidden="true"
-                width={300}
-                height={300}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          );
-        })}
-      </div>
-
-    </div>
   );
 }
 
