@@ -63,11 +63,7 @@ export function ProductCard({
         compact={compact}
       />
       <div
-        className={`absolute font-bold uppercase tracking-wider rounded z-10 ${
-          product.isNew && !isExternal
-            ? "bg-brand-gold text-brand-navy"
-            : "bg-brand-primary text-white"
-        } ${
+        className={`absolute bg-brand-primary text-white font-bold uppercase tracking-wider rounded z-10 ${
           compact
             ? "top-2 left-2 text-[9px] px-1.5 py-0.5"
             : "top-3 left-3 text-[10px] px-2 py-1"
