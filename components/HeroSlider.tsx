@@ -137,7 +137,8 @@ function HeroGraphic({ className = "" }: { className?: string }) {
         aria-hidden="true"
         width={1024}
         height={1024}
-        className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        style={{ opacity: 0.34 }}
       />
 
       <div
