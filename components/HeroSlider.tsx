@@ -93,7 +93,7 @@ export function HeroSlider() {
                 aria-hidden="true"
                 width={64}
                 height={64}
-                className="h-7 w-auto brightness-0 invert opacity-95"
+                className="h-8 w-auto"
               />
             </span>
           </a>
@@ -156,48 +156,16 @@ function HeroGraphic({ className = "" }: { className?: string }) {
         </span>
       </div>
 
-      {/* Mountain — dark, dramatic, top center */}
+      {/* Main brand logo — centerpiece */}
       <Image
-        src="/logo-mountain.png"
+        src="/logo-main.png"
         alt=""
         aria-hidden="true"
-        width={800}
-        height={445}
+        width={400}
+        height={400}
         priority
-        className="absolute top-[14%] left-1/2 -translate-x-1/2 w-[56%] h-auto opacity-90 drop-shadow-[0_8px_20px_rgba(9,75,141,0.18)]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[58%] h-auto drop-shadow-[0_10px_24px_rgba(9,75,141,0.25)]"
       />
-
-      {/* Big "Evka" poster text — yellow with navy stroke */}
-      <div
-        className="absolute left-1/2 top-[42%] -translate-x-1/2 z-10 font-black italic uppercase leading-[0.85]"
-        style={{
-          fontSize: "clamp(2.5rem, 14vw, 6rem)",
-          color: "#cfbb50",
-          WebkitTextStroke: "3px #094b8d",
-          paintOrder: "stroke fill",
-          letterSpacing: "-0.02em",
-          transform: "rotate(-3deg)",
-          textShadow: "0 6px 14px rgba(9,75,141,0.25)",
-        }}
-      >
-        Evka
-      </div>
-
-      {/* Navy ribbon banner with "Surur" */}
-      <div
-        className="absolute left-1/2 top-[64%] -translate-x-1/2 z-10 bg-brand-navy text-white font-black uppercase tracking-[0.18em] px-6 py-2 md:px-8 md:py-2.5 inline-flex items-center gap-2 md:gap-3 shadow-[0_8px_20px_rgba(9,75,141,0.35)]"
-        style={{
-          fontSize: "clamp(1rem, 4.5vw, 2rem)",
-          transform: "rotate(-1.5deg)",
-        }}
-      >
-        <span className="text-brand-accent text-[0.7em]">★</span>
-        Surur
-        <span className="text-brand-accent text-[0.7em]">★</span>
-        <span className="text-[0.55em] font-bold tracking-widest text-white/65">
-          2007
-        </span>
-      </div>
 
       {/* Bottom chicken products row */}
       <div className="absolute bottom-3 md:bottom-4 left-0 right-0 flex items-end justify-center gap-2 md:gap-3 px-3 z-10">
