@@ -15,9 +15,9 @@ type NavItem = NavChild & { children?: readonly NavChild[] };
 
 function NavLink({ item, onClick, mobile }: { item: NavChild; onClick?: () => void; mobile?: boolean }) {
   const baseDesktop =
-    "px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold uppercase tracking-wider text-brand-navy hover:text-brand-primary transition-colors whitespace-nowrap";
+    "px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold uppercase tracking-wider text-brand-navy hover:text-brand-accent transition-colors whitespace-nowrap";
   const baseMobile =
-    "px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-soft hover:text-brand-primary";
+    "px-3 py-3 rounded-md text-base font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-soft hover:text-brand-accent";
   const className = mobile ? baseMobile : baseDesktop;
 
   if (item.external) {
@@ -42,7 +42,7 @@ function NavLink({ item, onClick, mobile }: { item: NavChild; onClick?: () => vo
 
 function NavDropdown({ item }: { item: NavItem }) {
   const trigger = (
-    <span className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-primary transition-colors whitespace-nowrap inline-flex items-center gap-1">
+    <span className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition-colors whitespace-nowrap inline-flex items-center gap-1">
       {item.label}
       <ChevronDown className="w-3 h-3" />
     </span>
@@ -65,7 +65,7 @@ function NavDropdown({ item }: { item: NavItem }) {
               href={child.href}
               target={child.external ? "_blank" : undefined}
               rel={child.external ? "noopener noreferrer" : undefined}
-              className="block px-4 py-2.5 text-sm font-medium text-brand-navy hover:bg-brand-soft hover:text-brand-primary whitespace-nowrap"
+              className="block px-4 py-2.5 text-sm font-medium text-brand-navy hover:bg-brand-soft hover:text-brand-accent whitespace-nowrap"
             >
               {child.label}
             </a>
@@ -124,7 +124,7 @@ export function Header() {
             type="button"
             onClick={() => setSearchOpen(true)}
             aria-label="Ürün ara"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-primary transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
           >
             <Search className="w-5 h-5" />
           </button>
@@ -133,7 +133,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp ile sipariş ver"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-primary transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
           >
             <WhatsAppIcon className="w-5 h-5" />
           </a>
@@ -156,7 +156,7 @@ export function Header() {
                         target={child.external ? "_blank" : undefined}
                         rel={child.external ? "noopener noreferrer" : undefined}
                         onClick={() => setOpen(false)}
-                        className="block px-3 py-2 text-sm font-medium text-brand-muted hover:text-brand-primary"
+                        className="block px-3 py-2 text-sm font-medium text-brand-muted hover:text-brand-accent"
                       >
                         {child.label}
                       </a>

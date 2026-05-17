@@ -70,13 +70,13 @@ export default async function ProductDetailPage({
         className="bg-brand-light border-b border-brand-light"
       >
         <div className="container-x py-3 flex items-center gap-1.5 text-sm overflow-x-auto whitespace-nowrap">
-          <Link href="/" className="text-brand-muted hover:text-brand-primary">
+          <Link href="/" className="text-brand-muted hover:text-brand-accent">
             Anasayfa
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" />
           <Link
             href="/urunler"
-            className="text-brand-muted hover:text-brand-primary"
+            className="text-brand-muted hover:text-brand-accent"
           >
             Ürünler
           </Link>

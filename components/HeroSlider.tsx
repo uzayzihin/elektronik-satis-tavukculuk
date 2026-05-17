@@ -12,7 +12,7 @@ export function HeroSlider() {
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
           <Link href="/urunler" aria-label="Tüm ürünleri gör" className="block">
             <h1
-              className="font-extrabold leading-[0.95] mb-5 tracking-tight text-brand-navy uppercase hover:text-brand-primary transition-colors"
+              className="font-extrabold leading-[0.95] mb-5 tracking-tight text-brand-navy uppercase hover:text-brand-accent transition-colors"
               style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
             >
               Aradığınız Her{" "}
@@ -62,14 +62,14 @@ export function HeroSlider() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp'tan hızlı sipariş"
-            className="relative w-full max-w-xl inline-flex items-center justify-between gap-3 overflow-hidden rounded-md bg-brand-dark text-white font-bold pl-7 pr-5 py-3 uppercase tracking-wider transition-all hover:scale-[1.01] shadow-xl shadow-black/20"
+            className="relative w-full max-w-xl inline-flex items-center justify-between gap-3 overflow-hidden rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold pl-7 pr-5 py-3 uppercase tracking-wider transition-all hover:scale-[1.01] shadow-xl shadow-black/20"
           >
             <span
               aria-hidden="true"
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at 30% 25%, rgba(9,75,141,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(9,75,141,0.85), transparent 55%)",
+                  "radial-gradient(ellipse at 30% 25%, rgba(98,147,71,0.55), transparent 60%), radial-gradient(ellipse at 80% 85%, rgba(79,120,56,0.85), transparent 55%)",
               }}
             />
             <span

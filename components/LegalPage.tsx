@@ -14,7 +14,7 @@ export function LegalPage({
       <section className="border-b border-brand-border">
         <div className="container-x py-10 md:py-14">
           <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.18em] text-brand-muted mb-3">
-            <Link href="/" className="hover:text-brand-primary">
+            <Link href="/" className="hover:text-brand-accent">
               Anasayfa
             </Link>{" "}
             · Yasal

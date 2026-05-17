@@ -63,7 +63,11 @@ export function ProductCard({
         compact={compact}
       />
       <div
-        className={`absolute bg-brand-primary text-white font-bold uppercase tracking-wider rounded z-10 ${
+        className={`absolute font-bold uppercase tracking-wider rounded z-10 ${
+          product.isNew && !isExternal
+            ? "bg-brand-accent text-brand-navy"
+            : "bg-brand-primary text-white"
+        } ${
           compact
             ? "top-2 left-2 text-[9px] px-1.5 py-0.5"
             : "top-3 left-3 text-[10px] px-2 py-1"
@@ -80,7 +84,7 @@ export function ProductCard({
           className={`absolute bottom-2 right-2 z-10 w-10 h-10 rounded-md flex items-center justify-center shadow-md transition-all ${
             added
               ? "bg-brand-purple-dark text-brand-navy"
-              : "bg-white text-brand-navy hover:bg-brand-purple hover:text-brand-navy border border-brand-border"
+              : "bg-brand-purple text-brand-navy hover:bg-brand-purple-dark"
           }`}
         >
           {added ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -126,13 +130,13 @@ export function ProductCard({
               rel="noopener noreferrer"
               className="block"
             >
-              <h3 className="font-bold uppercase tracking-tight text-brand-navy text-xs md:text-sm leading-tight hover:text-brand-primary transition-colors line-clamp-2">
+              <h3 className="font-bold uppercase tracking-tight text-brand-navy text-xs md:text-sm leading-tight hover:text-brand-accent transition-colors line-clamp-2">
                 {product.name}
               </h3>
             </a>
           ) : (
             <Link href={detailHref} className="block">
-              <h3 className="font-bold uppercase tracking-tight text-brand-navy text-xs md:text-sm leading-tight hover:text-brand-primary transition-colors line-clamp-2">
+              <h3 className="font-bold uppercase tracking-tight text-brand-navy text-xs md:text-sm leading-tight hover:text-brand-accent transition-colors line-clamp-2">
                 {product.name}
               </h3>
             </Link>
@@ -189,7 +193,7 @@ export function ProductCard({
             href={product.externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-md transition-colors bg-brand-accent hover:bg-brand-accent-dark text-white"
+            className="inline-flex items-center justify-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-md transition-colors bg-brand-accent hover:bg-brand-accent-dark text-brand-navy"
           >
             <ExternalLink className="w-4 h-4" />
             evkafresh.com'da Gör

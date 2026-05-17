@@ -57,7 +57,7 @@ export function CartDrawer() {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Sepeti kapat"
-            className="p-2 -mr-2 text-brand-muted hover:text-brand-primary"
+            className="p-2 -mr-2 text-brand-muted hover:text-brand-accent"
           >
             <X className="w-5 h-5" />
           </button>
@@ -78,7 +78,7 @@ export function CartDrawer() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="bg-brand-primary hover:bg-brand-dark text-white font-semibold px-5 py-2.5 rounded-md text-sm"
+                className="bg-brand-primary hover:bg-brand-accent text-white hover:text-brand-navy font-semibold px-5 py-2.5 rounded-md text-sm transition-colors"
               >
                 Alışverişe Devam Et
               </button>
@@ -112,7 +112,7 @@ export function CartDrawer() {
                           type="button"
                           onClick={() => setQty(item.slug, item.packaging, item.qty - 1)}
                           aria-label="Miktarı azalt"
-                          className="w-8 h-8 flex items-center justify-center text-brand-muted hover:text-brand-primary hover:bg-brand-light"
+                          className="w-8 h-8 flex items-center justify-center text-brand-muted hover:text-brand-accent hover:bg-brand-light"
                         >
                           <Minus className="w-3.5 h-3.5" />
                         </button>
@@ -123,7 +123,7 @@ export function CartDrawer() {
                           type="button"
                           onClick={() => setQty(item.slug, item.packaging, item.qty + 1)}
                           aria-label="Miktarı artır"
-                          className="w-8 h-8 flex items-center justify-center text-brand-muted hover:text-brand-primary hover:bg-brand-light"
+                          className="w-8 h-8 flex items-center justify-center text-brand-muted hover:text-brand-accent hover:bg-brand-light"
                         >
                           <Plus className="w-3.5 h-3.5" />
                         </button>
@@ -184,7 +184,7 @@ export function CartButton() {
       type="button"
       onClick={() => setOpen(true)}
       aria-label={`Sepeti aç (${totalQty} ürün)`}
-      className="relative inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-primary transition-colors"
+      className="relative inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
     >
       <ShoppingCart className="w-5 h-5" />
       {totalQty > 0 && (

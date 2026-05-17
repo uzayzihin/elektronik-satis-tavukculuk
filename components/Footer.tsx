@@ -85,7 +85,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Instagram: ${site.social.instagramMain.handle}`}
-              className="w-9 h-9 inline-flex items-center justify-center rounded-full text-brand-navy hover:text-brand-primary transition-colors"
+              className="w-9 h-9 inline-flex items-center justify-center rounded-full text-brand-navy hover:text-brand-accent transition-colors"
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
@@ -94,7 +94,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Instagram: ${site.social.instagramFresh.handle}`}
-              className="w-9 h-9 inline-flex items-center justify-center rounded-full text-brand-navy hover:text-brand-primary transition-colors"
+              className="w-9 h-9 inline-flex items-center justify-center rounded-full text-brand-navy hover:text-brand-accent transition-colors"
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
@@ -118,14 +118,14 @@ export function Footer() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-brand-text hover:text-brand-primary"
+                        className="text-sm text-brand-text hover:text-brand-accent"
                       >
                         {item.label}
                       </a>
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm text-brand-text hover:text-brand-primary"
+                        className="text-sm text-brand-text hover:text-brand-accent"
                       >
                         {item.label}
                       </Link>

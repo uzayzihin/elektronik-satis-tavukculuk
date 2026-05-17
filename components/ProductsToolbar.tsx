@@ -64,7 +64,7 @@ export function ProductsToolbar({
             onClick={() => setOpen((o) => !o)}
             aria-label="Paketleme filtresini aç"
             aria-expanded={open}
-            className="inline-flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-md bg-brand-dark hover:bg-black text-white transition-colors"
+            className="inline-flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-md bg-brand-dark hover:bg-brand-accent text-white hover:text-brand-navy transition-colors"
           >
             <SlidersHorizontal className="w-5 h-5" />
           </button>
@@ -153,7 +153,7 @@ export function ProductsToolbar({
         onClick={() => setOpen((o) => !o)}
         aria-label="Paketleme seç"
         aria-expanded={open}
-        className="text-right font-extrabold uppercase tracking-tight text-brand-navy whitespace-nowrap overflow-hidden text-ellipsis hover:text-brand-primary transition-colors cursor-pointer"
+        className="text-right font-extrabold uppercase tracking-tight text-brand-navy whitespace-nowrap overflow-hidden text-ellipsis hover:text-brand-accent transition-colors cursor-pointer"
         style={{ fontSize: "clamp(1.25rem, 3.5vw, 2.5rem)" }}
       >
         {activeName}
