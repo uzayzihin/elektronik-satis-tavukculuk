@@ -78,7 +78,7 @@ export function CartDrawer() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="bg-brand-primary hover:bg-brand-accent text-white hover:text-brand-navy font-semibold px-5 py-2.5 rounded-md text-sm transition-colors"
+                className="bg-brand-primary hover:bg-brand-accent text-white font-semibold px-5 py-2.5 rounded-md text-sm transition-colors"
               >
                 Alışverişe Devam Et
               </button>

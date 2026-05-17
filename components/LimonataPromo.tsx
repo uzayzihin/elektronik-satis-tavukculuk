@@ -38,7 +38,7 @@ export function LimonataPromo() {
             <span className="bg-white text-brand-navy px-5 md:px-6 py-3 font-mono text-[11px] md:text-xs font-bold uppercase tracking-[0.18em]">
               Shop Limonata
             </span>
-            <span className="bg-brand-accent text-brand-navy px-3 py-3 flex items-center justify-center transition-colors group-hover:bg-brand-accent-dark">
+            <span className="bg-brand-accent text-white px-3 py-3 flex items-center justify-center transition-colors group-hover:bg-brand-accent-dark">
               <ChevronRight className="w-4 h-4" />
             </span>
           </div>

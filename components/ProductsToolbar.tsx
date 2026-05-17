@@ -64,7 +64,7 @@ export function ProductsToolbar({
             onClick={() => setOpen((o) => !o)}
             aria-label="Paketleme filtresini aç"
             aria-expanded={open}
-            className="inline-flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-md bg-brand-dark hover:bg-brand-accent text-white hover:text-brand-navy transition-colors"
+            className="inline-flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-md bg-brand-dark hover:bg-brand-accent text-white transition-colors"
           >
             <SlidersHorizontal className="w-5 h-5" />
           </button>
