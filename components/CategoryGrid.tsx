@@ -13,13 +13,13 @@ const cards: CategoryCard[] = [
   {
     title: "Evka Surur",
     label: "Evka Surur",
-    image: "/products/kovan-gogus.jpg",
+    image: "/images/products/tabakli/kovan-gogus.webp",
     href: "/urunler",
   },
   {
     title: "Yeni Ürünler",
     label: "Yeni Ürünler",
-    image: "/products/citir.jpg",
+    image: "/images/products/tabakli/citir.webp",
     href: "/urunler/yeni",
   },
   {

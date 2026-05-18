@@ -23,7 +23,9 @@ export function ProductCard({
   const [imgError, setImgError] = useState(false);
   const detailHref = `/urunler/${product.slug}/${packaging}`;
 
-  const imgSrc = compact
+  const imgSrc = isExternal
+    ? "/logo-v2.png"
+    : compact
     ? `/images/products/solo/thumbnails/${product.slug}.webp`
     : `/images/products/solo/${product.slug}.webp`;
 
