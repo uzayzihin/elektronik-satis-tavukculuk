@@ -35,10 +35,47 @@ export async function generateMetadata({
   const { productSlug, packaging } = await params;
   const product = getProductBySlug(productSlug);
   const pkg = getPackagingBySlug(packaging);
+  
   if (!product || !pkg) return { title: "Ürün bulunamadı" };
+  
+  const meatType = getMeatTypeBySlug(product.meatType);
+  const title = `${product.name} (${pkg.name})`;
+  const desc = `${product.description} Toptan ve perakende ${product.name} satışı Evka Surur Tavukçuluk'ta. İstanbul içi 7/24 teslimat imkanı.`;
+  
   return {
-    title: `${product.name} (${pkg.name})`,
-    description: product.description,
+    title,
+    description: desc,
+    keywords: [
+      product.name,
+      pkg.name,
+      meatType?.name ?? "",
+      "toptan tavuk",
+      "piliç eti",
+      "evka surur",
+      "istanbul toptancılar çarşısı"
+    ].filter(Boolean),
+    openGraph: {
+      title,
+      description: desc,
+      url: `https://estavukculuk.com/urunler/${product.slug}/${packaging}`,
+      siteName: "Evka Surur Tavukçuluk",
+      images: [
+        {
+          url: `https://estavukculuk.com/images/products/${packaging}/${product.slug}.webp`,
+          width: 800,
+          height: 800,
+          alt: `${product.name} - ${pkg.name}`,
+        },
+      ],
+      locale: "tr_TR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: desc,
+      images: [`https://estavukculuk.com/images/products/${packaging}/${product.slug}.webp`],
+    },
   };
 }
 
