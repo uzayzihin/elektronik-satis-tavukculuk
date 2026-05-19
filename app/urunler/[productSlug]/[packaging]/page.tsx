@@ -125,6 +125,7 @@ export default async function ProductDetailPage({
                 width={1600}
                 height={1600}
                 quality={100}
+                unoptimized
                 priority
                 className="absolute inset-0 w-full h-full object-cover"
               />

@@ -49,6 +49,7 @@ export function ProductCard({
           width={1024}
           height={1024}
           quality={100}
+          unoptimized
           onError={() => setImgError(true)}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />

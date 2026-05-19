@@ -57,6 +57,7 @@ export function HeroSlider() {
                   alt="Kemiksiz But Dönerlik"
                   fill
                   quality={100}
+                  unoptimized
                   priority
                   className="object-contain drop-shadow-[0_20px_30px_rgba(1,63,128,0.2)] hover:scale-105 transition-transform duration-700 ease-out"
                 />

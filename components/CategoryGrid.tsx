@@ -55,6 +55,7 @@ export function CategoryGrid() {
                     width={1024}
                     height={1280}
                     quality={100}
+                    unoptimized
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div

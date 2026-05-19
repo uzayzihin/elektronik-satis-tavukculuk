@@ -96,6 +96,7 @@ export function CartDrawer() {
                       alt=""
                       width={128}
                       height={128}
+                      unoptimized
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
