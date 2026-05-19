@@ -29,7 +29,7 @@ export function CartDrawer() {
       <div
         aria-hidden={!open}
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity ${
+        className={`fixed inset-0 z-50 bg-brand-primary/50 backdrop-blur-sm transition-opacity ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />

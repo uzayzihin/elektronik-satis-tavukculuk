@@ -62,7 +62,7 @@ export function SearchModal({
     <div className="fixed inset-0 z-50 flex items-start justify-center">
       <div
         onClick={onClose}
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-brand-primary/50 backdrop-blur-sm"
         aria-hidden="true"
       />
       <div className="relative w-full max-w-2xl mx-4 mt-16 md:mt-24 bg-white rounded-lg shadow-2xl overflow-hidden">

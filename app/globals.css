@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #25607e;
-  --color-brand-secondary: #25607e;
-  --color-brand-navy: #031c37;
-  --color-brand-accent: #200aee;
-  --color-brand-accent-dark: #1606c1;
-  --color-brand-whatsapp: #319543;
-  --color-brand-whatsapp-dark: #267235;
-  --color-brand-purple: #200aee;
-  --color-brand-purple-dark: #1606c1;
-  --color-brand-soft: #f4f4f5;
-  --color-brand-light: #fafafa;
-  --color-brand-border: #cecece;
-  --color-brand-dark: #031c37;
-  --color-brand-text: #1d1d1d;
-  --color-brand-muted: #9da5af;
+  --color-brand-primary: #013F80;
+  --color-brand-secondary: #013F80;
+  --color-brand-navy: #013F80;
+  --color-brand-accent: #013F80;
+  --color-brand-accent-dark: #013F80;
+  --color-brand-whatsapp: #25D366;
+  --color-brand-whatsapp-dark: #128C7E;
+  --color-brand-purple: #013F80;
+  --color-brand-purple-dark: #013F80;
+  --color-brand-soft: #FBE7BA;
+  --color-brand-light: #FBE7BA;
+  --color-brand-border: #013F80;
+  --color-brand-dark: #013F80;
+  --color-brand-text: #013F80;
+  --color-brand-muted: #013F80;
 
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-geist-sans);
@@ -25,7 +25,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1d1d1d;
+  --foreground: #013F80;
 }
 
 body {
