@@ -27,24 +27,24 @@ export function HeroSlider() {
             </StaggerItem>
 
             <StaggerItem>
-              <p className="font-mono text-sm uppercase tracking-[0.1em] text-brand-text leading-relaxed mb-8 max-w-lg">
-                Beyaz etin adresi. {site.brand.foundedYear}'den beri.
-                <br />
-                Günlük taze kesim. İstanbul'da 7/24 teslimat.
-              </p>
-            </StaggerItem>
-
-            <StaggerItem>
               <a
                 href={waGeneralOrder()}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp'tan hızlı sipariş"
-                className="inline-flex items-center justify-center gap-3 rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-8 py-4 uppercase tracking-wider transition-colors text-base md:text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300"
+                className="inline-flex items-center justify-center gap-3 rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-8 py-4 uppercase tracking-wider transition-colors text-base md:text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300 mb-8"
               >
                 <WhatsAppIcon className="w-5 h-5 md:w-6 md:h-6" />
                 Hızlı Sipariş
               </a>
+            </StaggerItem>
+
+            <StaggerItem>
+              <p className="font-mono text-sm uppercase tracking-[0.1em] text-brand-text leading-relaxed max-w-lg">
+                Beyaz etin adresi. {site.brand.foundedYear}'den beri.
+                <br />
+                Günlük taze kesim. İstanbul'da 7/24 teslimat.
+              </p>
             </StaggerItem>
           </StaggerContainer>
 
