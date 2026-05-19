@@ -184,6 +184,34 @@ export default async function ProductDetailPage({
           </div>
         </section>
       )}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": `${product.name} (${pkg.name})`,
+            "image": `https://estavukculuk.com/images/products/${packaging}/${product.slug}.webp`,
+            "description": product.description,
+            "brand": {
+              "@type": "Brand",
+              "name": "Evka Surur Tavuçuluk"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": `https://estavukculuk.com/urunler/${product.slug}/${packaging}`,
+              "priceCurrency": "TRY",
+              "price": "0",
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "Organization",
+                "name": "Evka Surur Tavuçuluk"
+              }
+            }
+          })
+        }}
+      />
     </>
   );
 }

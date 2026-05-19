@@ -66,6 +66,26 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <CartDrawer />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": site.brand.short,
+                "image": "https://estavukculuk.com/logo-main.png",
+                "description": site.brand.description,
+                "url": site.url,
+                "telephone": site.contact.phone,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Bayrampaşa",
+                  "addressRegion": "İstanbul",
+                  "addressCountry": "TR"
+                }
+              })
+            }}
+          />
           <Toaster
             position="top-center"
             toastOptions={{
