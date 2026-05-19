@@ -8,8 +8,6 @@ import { useCart } from "@/lib/cart-context";
 import { ProductWatermark } from "@/components/ProductWatermark";
 import type { Product, Packaging } from "@/content/products";
 
-import { toast } from "sonner";
-
 export function ProductCard({
   product,
   compact = false,
@@ -36,7 +34,6 @@ export function ProductCard({
     e.stopPropagation();
     add({ slug: product.slug, name: product.name, packaging }, 1);
     setAdded(true);
-    toast.success(`${product.name} sepete eklendi!`, { duration: 2000 });
     setTimeout(() => setAdded(false), 1500);
   }
 
@@ -48,8 +45,6 @@ export function ProductCard({
           alt={product.name}
           width={1024}
           height={1024}
-          quality={100}
-          unoptimized
           onError={() => setImgError(true)}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
@@ -86,8 +81,8 @@ export function ProductCard({
           aria-label={`${product.name} sepete ekle`}
           className={`absolute bottom-2 right-2 z-10 w-10 h-10 rounded-md flex items-center justify-center shadow-md transition-all ${
             added
-              ? "bg-brand-navy text-white"
-              : "bg-brand-primary text-white hover:bg-brand-navy"
+              ? "bg-brand-purple-dark text-white"
+              : "bg-brand-purple text-white hover:bg-brand-purple-dark"
           }`}
         >
           {added ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -207,8 +202,8 @@ export function ProductCard({
             onClick={handleAdd}
             className={`inline-flex items-center justify-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-md transition-colors ${
               added
-                ? "bg-brand-navy text-white"
-                : "bg-brand-primary hover:bg-brand-navy text-white"
+                ? "bg-brand-purple-dark text-white"
+                : "bg-brand-purple hover:bg-brand-purple-dark text-white"
             }`}
           >
             {added ? (

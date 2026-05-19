@@ -114,7 +114,6 @@ export function SearchModal({
                         alt=""
                         width={96}
                         height={96}
-                        unoptimized
                         className={`absolute inset-0 w-full h-full ${
                           isExternal ? "object-contain p-1" : "object-cover"
                         }`}

@@ -15,7 +15,7 @@ import {
 } from "@/content/products";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailActions } from "@/components/ProductDetailActions";
-import { ProductImageInteractive } from "@/components/ProductImageInteractive";
+import { ProductWatermark } from "@/components/ProductWatermark";
 
 export function generateStaticParams() {
   const internalPackagings = packagings.filter((pk) => pk.slug !== "fresh");
@@ -79,8 +79,6 @@ export async function generateMetadata({
   };
 }
 
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
-
 export default async function ProductDetailPage({
   params,
 }: {
@@ -117,17 +115,21 @@ export default async function ProductDetailPage({
 
       <section className="bg-white">
         <div className="container-x py-4 md:py-10 grid lg:grid-cols-2 gap-4 md:gap-10 lg:gap-16">
-          <FadeIn delay={0.1}>
+          <div>
             <div className="aspect-square bg-brand-light rounded-lg overflow-hidden relative">
-              <ProductImageInteractive 
-                productSlug={product.slug}
-                productName={product.name}
-                currentPackaging={packaging}
+              <Image
+                src={`/images/products/${packaging}/${product.slug}.webp`}
+                alt={product.name}
+                width={1600}
+                height={1600}
+                priority
+                className="absolute inset-0 w-full h-full object-cover"
               />
+              <ProductWatermark productName={product.name} packaging={packaging} />
             </div>
-          </FadeIn>
+          </div>
 
-          <FadeIn delay={0.2}>
+          <div>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-tight mb-2">
               {product.name}
             </h1>
@@ -154,59 +156,29 @@ export default async function ProductDetailPage({
               {otherPkg.name} olarak gör
               <ChevronRight className="w-3 h-3" />
             </Link>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
       {related.length > 0 && (
         <section className="bg-brand-light">
           <div className="container-x py-14 md:py-16">
-            <FadeIn delay={0.3} className="mb-8">
+            <div className="mb-8">
               <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-2">
                 Aynı Kategoriden
               </p>
               <h2 className="text-2xl md:text-3xl font-extrabold text-brand-primary">
                 Benzer Ürünler
               </h2>
-            </FadeIn>
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {related.map((p) => (
-                <StaggerItem key={p.slug}>
-                  <ProductCard product={p} packaging={packaging} />
-                </StaggerItem>
+                <ProductCard key={p.slug} product={p} packaging={packaging} />
               ))}
-            </StaggerContainer>
+            </div>
           </div>
         </section>
       )}
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "Product",
-            "name": `${product.name} (${pkg.name})`,
-            "image": `https://estavukculuk.com/images/products/${packaging}/${product.slug}.webp`,
-            "description": product.description,
-            "brand": {
-              "@type": "Brand",
-              "name": "Evka Surur Tavuçuluk"
-            },
-            "offers": {
-              "@type": "Offer",
-              "url": `https://estavukculuk.com/urunler/${product.slug}/${packaging}`,
-              "priceCurrency": "TRY",
-              "price": "0",
-              "availability": "https://schema.org/InStock",
-              "seller": {
-                "@type": "Organization",
-                "name": "Evka Surur Tavuçuluk"
-              }
-            }
-          })
-        }}
-      />
     </>
   );
 }

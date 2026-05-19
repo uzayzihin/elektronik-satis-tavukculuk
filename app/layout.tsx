@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -27,10 +27,6 @@ const caveat = Caveat({
   weight: ["700"],
 });
 
-export const viewport: Viewport = {
-  themeColor: "#013F80",
-};
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -56,8 +52,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-import { Toaster } from "sonner";
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -70,37 +64,6 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <CartDrawer />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "name": site.brand.short,
-                "image": "https://estavukculuk.com/logo-main.png",
-                "description": site.brand.description,
-                "url": site.url,
-                "telephone": site.whatsapp.primaryDisplay,
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Bayrampaşa",
-                  "addressRegion": "İstanbul",
-                  "addressCountry": "TR"
-                }
-              })
-            }}
-          />
-          <Toaster
-            position="top-center"
-            toastOptions={{
-              style: {
-                background: "var(--color-brand-primary)",
-                color: "var(--color-brand-soft)",
-                border: "none",
-                fontWeight: "bold",
-              },
-            }}
-          />
         </CartProvider>
       </body>
     </html>
