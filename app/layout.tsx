@@ -80,7 +80,7 @@ export default function RootLayout({
                 "image": "https://estavukculuk.com/logo-main.png",
                 "description": site.brand.description,
                 "url": site.url,
-                "telephone": site.contact.phone,
+                "telephone": site.whatsapp.primaryDisplay,
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Bayrampaşa",
