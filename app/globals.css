@@ -4,18 +4,18 @@
   --color-brand-primary: #013F80;
   --color-brand-secondary: #013F80;
   --color-brand-navy: #013F80;
-  --color-brand-accent: #013F80;
-  --color-brand-accent-dark: #013F80;
+  --color-brand-accent: #FBE7BA;
+  --color-brand-accent-dark: #FBE7BA;
   --color-brand-whatsapp: #25D366;
-  --color-brand-whatsapp-dark: #128C7E;
+  --color-brand-whatsapp-dark: #25D366;
   --color-brand-purple: #013F80;
   --color-brand-purple-dark: #013F80;
   --color-brand-soft: #FBE7BA;
-  --color-brand-light: #FBE7BA;
-  --color-brand-border: #013F80;
+  --color-brand-light: #013F800A; /* %4 Opacity Blue for extremely subtle light backgrounds */
+  --color-brand-border: #013F801A; /* %10 Opacity Blue for minimalist borders */
   --color-brand-dark: #013F80;
   --color-brand-text: #013F80;
-  --color-brand-muted: #013F80;
+  --color-brand-muted: #013F8099; /* %60 Opacity Blue for elegant muted text */
 
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-geist-sans);
