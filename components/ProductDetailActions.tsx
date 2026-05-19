@@ -5,7 +5,6 @@ import { Minus, Plus, ShoppingBag, Check } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { waProductOrder } from "@/lib/whatsapp";
-import { toast } from "sonner";
 import type { Packaging } from "@/content/products";
 
 export function ProductDetailActions({
@@ -22,7 +21,6 @@ export function ProductDetailActions({
   function handleAdd() {
     add({ slug: product.slug, name: product.name, packaging }, qty);
     setAdded(true);
-    toast.success(`${product.name} sepete eklendi!`, { duration: 2000 });
     setTimeout(() => setAdded(false), 2000);
   }
 
@@ -70,8 +68,8 @@ export function ProductDetailActions({
           onClick={handleAdd}
           className={`inline-flex items-center justify-center gap-2 font-bold px-4 py-3 rounded-md text-sm md:text-base transition-colors ${
             added
-              ? "bg-brand-primary/80 text-white"
-              : "bg-brand-primary hover:bg-brand-primary/80 text-white"
+              ? "bg-brand-purple-dark text-white"
+              : "bg-brand-purple hover:bg-brand-purple-dark text-white"
           }`}
         >
           {added ? (

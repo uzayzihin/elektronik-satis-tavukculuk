@@ -15,7 +15,6 @@ import {
 } from "@/content/products";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailActions } from "@/components/ProductDetailActions";
-import { ProductWatermark } from "@/components/ProductWatermark";
 import { ProductImageInteractive } from "@/components/ProductImageInteractive";
 
 export function generateStaticParams() {
