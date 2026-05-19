@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -26,6 +26,10 @@ const caveat = Caveat({
   display: "swap",
   weight: ["700"],
 });
+
+export const viewport: Viewport = {
+  themeColor: "#013F80",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
