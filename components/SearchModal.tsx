@@ -105,7 +105,7 @@ export function SearchModal({
                   : `/urunler/${p.slug}/tabakli`;
                 const img = isExternal
                   ? "/logo-v2.png"
-                  : `/images/products/solo/thumbnails/${p.slug}.webp`;
+                  : `/images/products/tabakli/thumbnails/${p.slug}.webp`;
                 const inner = (
                   <div className="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors">
                     <div className="w-12 h-12 flex-shrink-0 rounded bg-brand-light overflow-hidden relative">

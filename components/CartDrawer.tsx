@@ -92,7 +92,7 @@ export function CartDrawer() {
                 >
                   <div className="w-16 h-16 flex-shrink-0 rounded-md bg-brand-light overflow-hidden relative">
                     <Image
-                      src={`/images/products/solo/thumbnails/${item.slug}.webp`}
+                      src={`/images/products/${item.packaging}/thumbnails/${item.slug}.webp`}
                       alt=""
                       width={128}
                       height={128}

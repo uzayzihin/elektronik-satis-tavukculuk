@@ -26,8 +26,8 @@ export function ProductCard({
   const imgSrc = isExternal
     ? "/logo-v2.png"
     : compact
-    ? `/images/products/solo/thumbnails/${product.slug}.webp`
-    : `/images/products/solo/${product.slug}.webp`;
+    ? `/images/products/${packaging}/thumbnails/${product.slug}.webp`
+    : `/images/products/${packaging}/${product.slug}.webp`;
 
   function handleAdd(e: React.MouseEvent) {
     e.preventDefault();
