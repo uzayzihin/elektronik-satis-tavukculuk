@@ -53,8 +53,8 @@ export function HeroSlider() {
               <div className="relative w-[85%] h-[85%]">
                 <div className="absolute inset-0 bg-brand-soft rounded-full opacity-60 blur-3xl -z-10 transform scale-110" />
                 <Image
-                  src="/images/products/tabakli/acik-butun-pilic.webp"
-                  alt="Günlük Taze Bütün Piliç"
+                  src="/images/products/tabakli/kemiksiz-but-donerlik.webp"
+                  alt="Kemiksiz But Dönerlik"
                   fill
                   quality={100}
                   priority
