@@ -52,6 +52,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+import { Toaster } from "sonner";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -64,6 +66,17 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <CartDrawer />
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              style: {
+                background: "var(--color-brand-primary)",
+                color: "var(--color-brand-soft)",
+                border: "none",
+                fontWeight: "bold",
+              },
+            }}
+          />
         </CartProvider>
       </body>
     </html>

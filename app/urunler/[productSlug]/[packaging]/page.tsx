@@ -79,6 +79,8 @@ export async function generateMetadata({
   };
 }
 
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
+
 export default async function ProductDetailPage({
   params,
 }: {
@@ -115,21 +117,22 @@ export default async function ProductDetailPage({
 
       <section className="bg-white">
         <div className="container-x py-4 md:py-10 grid lg:grid-cols-2 gap-4 md:gap-10 lg:gap-16">
-          <div>
+          <FadeIn delay={0.1}>
             <div className="aspect-square bg-brand-light rounded-lg overflow-hidden relative">
               <Image
                 src={`/images/products/${packaging}/${product.slug}.webp`}
                 alt={product.name}
                 width={1600}
                 height={1600}
+                quality={100}
                 priority
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <ProductWatermark productName={product.name} packaging={packaging} />
             </div>
-          </div>
+          </FadeIn>
 
-          <div>
+          <FadeIn delay={0.2}>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-tight mb-2">
               {product.name}
             </h1>
@@ -156,26 +159,28 @@ export default async function ProductDetailPage({
               {otherPkg.name} olarak gör
               <ChevronRight className="w-3 h-3" />
             </Link>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {related.length > 0 && (
         <section className="bg-brand-light">
           <div className="container-x py-14 md:py-16">
-            <div className="mb-8">
+            <FadeIn delay={0.3} className="mb-8">
               <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-2">
                 Aynı Kategoriden
               </p>
               <h2 className="text-2xl md:text-3xl font-extrabold text-brand-primary">
                 Benzer Ürünler
               </h2>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            </FadeIn>
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {related.map((p) => (
-                <ProductCard key={p.slug} product={p} packaging={packaging} />
+                <StaggerItem key={p.slug}>
+                  <ProductCard product={p} packaging={packaging} />
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
       )}

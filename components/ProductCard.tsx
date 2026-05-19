@@ -8,6 +8,8 @@ import { useCart } from "@/lib/cart-context";
 import { ProductWatermark } from "@/components/ProductWatermark";
 import type { Product, Packaging } from "@/content/products";
 
+import { toast } from "sonner";
+
 export function ProductCard({
   product,
   compact = false,
@@ -34,6 +36,7 @@ export function ProductCard({
     e.stopPropagation();
     add({ slug: product.slug, name: product.name, packaging }, 1);
     setAdded(true);
+    toast.success(`${product.name} sepete eklendi!`, { duration: 2000 });
     setTimeout(() => setAdded(false), 1500);
   }
 
@@ -45,6 +48,7 @@ export function ProductCard({
           alt={product.name}
           width={1024}
           height={1024}
+          quality={100}
           onError={() => setImgError(true)}
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
