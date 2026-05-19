@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import {
@@ -15,7 +14,7 @@ import {
 } from "@/content/products";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailActions } from "@/components/ProductDetailActions";
-import { ProductWatermark } from "@/components/ProductWatermark";
+import { ProductImageInteractive } from "@/components/ProductImageInteractive";
 
 export function generateStaticParams() {
   const internalPackagings = packagings.filter((pk) => pk.slug !== "fresh");
@@ -117,15 +116,11 @@ export default async function ProductDetailPage({
         <div className="container-x py-4 md:py-10 grid lg:grid-cols-2 gap-4 md:gap-10 lg:gap-16">
           <div>
             <div className="aspect-square bg-brand-light rounded-lg overflow-hidden relative">
-              <Image
-                src={`/images/products/${packaging}/${product.slug}.webp`}
-                alt={product.name}
-                width={1600}
-                height={1600}
-                priority
-                className="absolute inset-0 w-full h-full object-cover"
+              <ProductImageInteractive
+                productSlug={product.slug}
+                productName={product.name}
+                currentPackaging={packaging}
               />
-              <ProductWatermark productName={product.name} packaging={packaging} />
             </div>
           </div>
 
