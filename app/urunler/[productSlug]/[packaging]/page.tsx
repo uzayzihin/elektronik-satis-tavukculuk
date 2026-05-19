@@ -14,7 +14,7 @@ import {
 } from "@/content/products";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailActions } from "@/components/ProductDetailActions";
-import { ProductImageInteractive } from "@/components/ProductImageInteractive";
+import { ProductImageNavigator } from "@/components/ProductImageNavigator";
 
 export function generateStaticParams() {
   const internalPackagings = packagings.filter((pk) => pk.slug !== "fresh");
@@ -116,10 +116,10 @@ export default async function ProductDetailPage({
         <div className="container-x py-4 md:py-10 grid lg:grid-cols-2 gap-4 md:gap-10 lg:gap-16">
           <div>
             <div className="aspect-square bg-brand-light rounded-lg overflow-hidden relative">
-              <ProductImageInteractive
+              <ProductImageNavigator
                 productSlug={product.slug}
                 productName={product.name}
-                currentPackaging={packaging}
+                packaging={packaging}
               />
             </div>
           </div>
