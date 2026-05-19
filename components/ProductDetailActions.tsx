@@ -66,10 +66,10 @@ export function ProductDetailActions({
         <button
           type="button"
           onClick={handleAdd}
-          className={`inline-flex items-center justify-center gap-2 font-bold px-4 py-3 rounded-md text-sm md:text-base transition-colors ${
+          className={`flex-1 inline-flex items-center justify-center gap-2 rounded-md font-bold px-6 py-4 uppercase tracking-wide transition-colors ${
             added
-              ? "bg-brand-purple-dark text-white"
-              : "bg-brand-purple hover:bg-brand-purple-dark text-white"
+              ? "bg-brand-navy text-white"
+              : "bg-brand-primary hover:bg-brand-navy text-white"
           }`}
         >
           {added ? (

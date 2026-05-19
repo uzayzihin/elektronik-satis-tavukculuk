@@ -86,8 +86,8 @@ export function ProductCard({
           aria-label={`${product.name} sepete ekle`}
           className={`absolute bottom-2 right-2 z-10 w-10 h-10 rounded-md flex items-center justify-center shadow-md transition-all ${
             added
-              ? "bg-brand-purple-dark text-white"
-              : "bg-brand-purple text-white hover:bg-brand-purple-dark"
+              ? "bg-brand-navy text-white"
+              : "bg-brand-primary text-white hover:bg-brand-navy"
           }`}
         >
           {added ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -207,8 +207,8 @@ export function ProductCard({
             onClick={handleAdd}
             className={`inline-flex items-center justify-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-md transition-colors ${
               added
-                ? "bg-brand-purple-dark text-white"
-                : "bg-brand-purple hover:bg-brand-purple-dark text-white"
+                ? "bg-brand-navy text-white"
+                : "bg-brand-primary hover:bg-brand-navy text-white"
             }`}
           >
             {added ? (
