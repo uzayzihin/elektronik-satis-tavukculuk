@@ -3,56 +3,39 @@ export const site = {
   url: "https://estavukculuk.com",
 
   brand: {
-    short: "Evka Surur Tavukçuluk",
-    legal: "Evka Surur Tavukçuluk ve Donuk Gıda Sanayi ve Ticaret Limited Şirketi",
-    tagline: "Beyaz Et • Donuk Gıda • Toptan & Perakende",
-    foundedYear: 2007,
+    short: "ES Tavukçuluk",
+    legal: "Elektronik Satış Tavukçuluk",
+    tagline: "Beyaz Et • Toptan & Perakende • 7/24 Tedarik",
+    foundedYear: 2020,
     description:
-      "2007'den beri İstanbul Gıda Toptancılar Çarşısı'nda taze beyaz et ve donuk gıda tedariği. Toptan & perakende, 7/24 hizmet.",
+      "ES Tavukçuluk — günlük taze beyaz et tedariği, toptan ve perakende. 7/24 sipariş ve hızlı teslimat.",
   },
 
   whatsapp: {
-    primary: "905367344270",
-    primaryDisplay: "+90 536 734 42 70",
+    primary: "905000000000",
+    primaryDisplay: "+90 500 000 00 00",
   },
 
   contact: {
-    address: "İstanbul Gıda Toptancılar Çarşısı, 14. Blok No:22",
-    addressShort: "Gıda Toptancılar Çarşısı, İstanbul",
+    address: "Adres bilgisi mağaza yöneticisi tarafından düzenlenir",
+    addressShort: "Türkiye",
     hours: "7/24 Açık",
     hoursDetail: "Hafta içi, hafta sonu ve resmi tatiller dahil 7/24 hizmet",
-    mapsQuery: "İstanbul Gıda Toptancılar Çarşısı 14 Blok No 22",
+    mapsQuery: "Türkiye",
   },
 
   social: {
-    instagramFresh: {
-      handle: "@evkra.fresh",
-      url: "https://instagram.com/evkra.fresh",
-    },
     instagramMain: {
-      handle: "@evkra.surur.tavukculuk",
-      url: "https://instagram.com/evkra.surur.tavukculuk",
+      handle: "@estavukculuk",
+      url: "https://instagram.com/",
     },
   },
 
   nav: [
     { label: "Alışveriş", href: "/", external: false },
     { label: "Tavuk", href: "/urunler", external: false },
-    {
-      label: "Fresh",
-      href: "https://evkafresh.com",
-      external: true,
-      children: [
-        { label: "Limonata", href: "https://evkafresh.com/limonata-ozutu-1", external: true },
-        { label: "Donuk Mısır", href: "https://evkafresh.com/donuk-misir-1", external: true },
-        { label: "Dondurulmuş Patates", href: "https://evkafresh.com/dondurulmus-patates-cesitleri", external: true },
-        { label: "Dondurulmuş Sebze", href: "https://evkafresh.com/dondurulmus-sebze-cesitleri", external: true },
-        { label: "Sos Çeşitleri", href: "https://evkafresh.com/sos-cesitleri-1", external: true },
-        { label: "Pirinç & Bakliyat", href: "https://evkafresh.com/pirinc-bakliyat-cesitleri", external: true },
-        { label: "Yağ Çeşitleri", href: "https://evkafresh.com/yag-cesitleri-1", external: true },
-        { label: "Makarna Çeşitleri", href: "https://evkafresh.com/makarna-cesitleri-1", external: true },
-      ],
-    },
+    { label: "Hakkımızda", href: "/hakkimizda", external: false },
+    { label: "İletişim", href: "/iletisim", external: false },
   ],
 
 } as const;

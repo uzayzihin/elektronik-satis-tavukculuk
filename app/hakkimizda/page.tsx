@@ -5,19 +5,19 @@ import { CTABanner } from "@/components/CTABanner";
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
-  description: `${site.brand.legal} — 2007'den beri İstanbul Gıda Toptancılar Çarşısı'nda beyaz et tedariği.`,
+  description: `${site.brand.short} — taze beyaz et tedariği, toptan & perakende, 7/24 sipariş ve hızlı teslimat.`,
 };
 
 const values = [
   {
     icon: Award,
     title: "Tecrübe",
-    text: "2007'den bu yana sektörde aktif. Her yıl artan müşteri portföyü.",
+    text: "Beyaz et sektöründe yıllara dayanan tedarik bilgisi.",
   },
   {
     icon: Clock,
     title: "Süreklilik",
-    text: "7/24 hizmet — siparişiniz her zaman bizim önceliğimiz.",
+    text: "7/24 hizmet — siparişiniz her zaman önceliğimiz.",
   },
   {
     icon: ShieldCheck,
@@ -32,33 +32,31 @@ const values = [
 ];
 
 export default function AboutPage() {
-  const yearsActive = new Date().getFullYear() - site.brand.foundedYear;
-
   return (
     <>
-      <section className="bg-white border-b border-brand-border">
+      <section className="bg-brand-light border-b border-brand-border">
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
-            <p className="text-sm font-bold uppercase tracking-wider text-brand-primary mb-3">
+            <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-3">
               Hakkımızda
             </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight text-brand-navy">
-              {site.brand.foundedYear}'den Beri
+            <h1 className="font-serif text-4xl md:text-6xl mb-5 leading-[1.1] text-brand-navy">
+              Beyaz Etin
               <br />
-              <span className="text-brand-primary">Beyaz Etin Adresi</span>
+              <em className="text-brand-accent">premium adresi.</em>
             </h1>
             <p className="text-brand-text/85 text-lg leading-relaxed max-w-2xl">
-              {site.brand.legal} olarak {yearsActive} yıldır İstanbul Gıda
-              Toptancılar Çarşısı'nda hizmet veriyoruz. Toptan ve perakende
-              müşterilerimize 27+ farklı tavuk kesimi sunuyoruz.
+              {site.brand.short}, taze beyaz et tedariğinde toptan ve perakende
+              müşterilerine 27+ farklı kesim sunar. Günlük taze kesim, soğuk
+              zincir ve hijyenik paketleme bizim varsayılanımızdır.
             </p>
           </div>
           <div className="lg:col-span-5">
             <div className="grid grid-cols-2 gap-4">
-              <Stat icon={Building2} number={`${yearsActive}+`} label="Yıllık Tecrübe" />
-              <Stat icon={Users} number="1000+" label="Müşteri" />
+              <Stat icon={Building2} number="7/24" label="Sipariş Hattı" />
+              <Stat icon={Users} number="1000+" label="Müşteri Ağı" />
               <Stat icon={Award} number="27+" label="Ürün Çeşidi" />
-              <Stat icon={Clock} number="7/24" label="Hizmet" />
+              <Stat icon={Clock} number="Hızlı" label="Teslimat" />
             </div>
           </div>
         </div>
@@ -69,51 +67,52 @@ export default function AboutPage() {
           <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-3">
             Hikayemiz
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-brand-primary mb-6">
-            Küçük Bir Tezgahtan Güvenilir Tedarikçiye
+          <h2 className="font-serif text-3xl md:text-5xl text-brand-navy mb-6 leading-tight">
+            Tezgahtan dijital vitrine.
           </h2>
           <div className="prose prose-lg space-y-5 text-brand-text leading-relaxed">
             <p>
-              {site.brand.foundedYear} yılında İstanbul Gıda Toptancılar
-              Çarşısı'nda küçük bir tezgah olarak başladık. İlk günden bu yana
-              ilkemiz tek: <strong>taze ürün, dürüst fiyat, hızlı servis.</strong>
+              {site.brand.short} olarak ilkemiz tek:{" "}
+              <strong>taze ürün, dürüst fiyat, hızlı servis.</strong> Beyaz et
+              tedariğini geleneksel pazarlardan çağdaş bir dijital alışveriş
+              deneyimine taşıdık.
             </p>
             <p>
-              Bugün {yearsActive} yıllık tecrübemizle restoranlara, marketlere,
-              kasaplara ve ev müşterilerine 27+ farklı tavuk kesiminde tedarik
-              sağlıyoruz. <strong>{site.contact.hours}</strong> sipariş kabul
-              ediyor, en kısa sürede teslimat yapıyoruz.
+              Restoranlara, marketlere, kasaplara ve ev müşterilerine 27+ farklı
+              tavuk kesiminde tedarik sağlıyoruz.{" "}
+              <strong>{site.contact.hours}</strong> sipariş kabul ediyor, en
+              kısa sürede teslimat yapıyoruz.
             </p>
             <p>
-              Beyaz et ve donuk gıda alanında çalıştığımız partnerlerimizle
-              soğuk zinciri kırmadan, hijyenik paketleme ile size ulaştırıyoruz.
-              Şirket olarak Sanayi ve Ticaret Limited Şirketi statüsünde, vergi
-              ve standartlara uygun faaliyet gösteriyoruz.
+              Çalıştığımız tedarikçilerle soğuk zinciri kırmadan, hijyenik
+              paketleme ile size ulaştırıyoruz. Her sipariş bir güven ilişkisi
+              — biz bu ilişkiyi dijital vitrinin arkasında titizlikle
+              koruyoruz.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-brand-light">
+      <section className="bg-brand-soft">
         <div className="container-x py-16 md:py-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-2">
               Değerlerimiz
             </p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-primary">
-              Neden Bizi Tercih Etmelisiniz
+            <h2 className="font-serif text-3xl md:text-5xl text-brand-navy leading-tight">
+              Neden bizi tercih etmelisiniz.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ icon: Icon, title, text }) => (
               <div
                 key={title}
-                className="bg-white rounded-lg p-6 border border-brand-light"
+                className="bg-white rounded-lg p-6 border border-brand-border"
               >
-                <div className="w-12 h-12 rounded-lg bg-brand-primary/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-brand-primary" />
+                <div className="w-12 h-12 rounded-lg bg-brand-accent/10 flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-brand-accent" />
                 </div>
-                <h3 className="font-bold text-brand-primary text-lg mb-2">{title}</h3>
+                <h3 className="font-bold text-brand-navy text-lg mb-2">{title}</h3>
                 <p className="text-brand-muted leading-relaxed text-sm">{text}</p>
               </div>
             ))}
@@ -136,9 +135,9 @@ function Stat({
   label: string;
 }) {
   return (
-    <div className="bg-brand-soft border border-brand-border rounded-xl p-5">
-      <Icon className="w-6 h-6 text-brand-primary mb-3" />
-      <div className="text-3xl font-extrabold mb-1 text-brand-navy">{number}</div>
+    <div className="bg-white border border-brand-border rounded-xl p-5">
+      <Icon className="w-6 h-6 text-brand-accent mb-3" />
+      <div className="text-3xl font-serif text-brand-navy mb-1">{number}</div>
       <div className="text-sm text-brand-muted">{label}</div>
     </div>
   );

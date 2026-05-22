@@ -14,13 +14,13 @@ export default function ContactPage() {
     <>
       <section className="bg-white border-b border-brand-border">
         <div className="container-x py-16 md:py-20">
-          <p className="text-sm font-bold uppercase tracking-wider text-brand-primary mb-3">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-accent mb-3">
             İletişim
           </p>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-3 text-brand-navy">
-            Bize Ulaşın
+          <h1 className="text-4xl md:text-6xl font-serif italic mb-3 text-brand-navy leading-tight">
+            Bize ulaşın.
           </h1>
-          <p className="text-brand-text/80 text-lg max-w-2xl">
+          <p className="text-brand-text/80 text-lg max-w-2xl leading-relaxed">
             7/24 sipariş ve bilgi için WhatsApp hattımız hazır. Form da
             doldurabilirsiniz — direkt WhatsApp'a yönlendirir.
           </p>
@@ -57,10 +57,7 @@ export default function ContactPage() {
             <InfoCard
               icon={AtSign}
               title="Sosyal Medya"
-              lines={[
-                site.social.instagramMain.handle,
-                site.social.instagramFresh.handle,
-              ]}
+              lines={[site.social.instagramMain.handle]}
               cta={{
                 href: site.social.instagramMain.url,
                 label: "Instagram'da Takip Et",

@@ -30,7 +30,7 @@ type CartContextValue = {
 
 const CartContext = createContext<CartContextValue | null>(null);
 
-const STORAGE_KEY = "evka_cart_v2";
+const STORAGE_KEY = "es_cart_v1";
 
 function keyOf(slug: string, packaging: Packaging) {
   return `${slug}::${packaging}`;

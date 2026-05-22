@@ -1,4 +1,4 @@
-export type Packaging = "tabakli" | "dokme" | "fresh";
+export type Packaging = "tabakli" | "dokme";
 
 export type ProductCategory = {
   slug: string;
@@ -23,65 +23,6 @@ export type Product = {
   image?: string;
 };
 
-export const freshProducts: Product[] = [
-  {
-    slug: "fresh-misir",
-    name: "Donuk Mısır",
-    meatType: "fresh",
-    description: "Tazeliği, rengi ve lezzeti korunarak dondurulmuş tane mısır.",
-    externalUrl: "https://evkafresh.com/donuk-misir-1",
-  },
-  {
-    slug: "fresh-limonata",
-    name: "Limonata Özütü",
-    meatType: "fresh",
-    description: "Evka Fresh ile soğuk limonata özütü.",
-    externalUrl: "https://evkafresh.com/limonata-ozutu-1",
-  },
-  {
-    slug: "fresh-patates",
-    name: "Dondurulmuş Patates",
-    meatType: "fresh",
-    description: "Çıtır donuk patates çeşitleri.",
-    externalUrl: "https://evkafresh.com/dondurulmus-patates-cesitleri",
-  },
-  {
-    slug: "fresh-sebze",
-    name: "Dondurulmuş Sebze",
-    meatType: "fresh",
-    description: "Mevsimi taze, dondurulmuş sebze çeşitleri.",
-    externalUrl: "https://evkafresh.com/dondurulmus-sebze-cesitleri",
-  },
-  {
-    slug: "fresh-sos",
-    name: "Sos Çeşitleri",
-    meatType: "fresh",
-    description: "Restoran ve ev mutfağına sos seçenekleri.",
-    externalUrl: "https://evkafresh.com/sos-cesitleri-1",
-  },
-  {
-    slug: "fresh-pirinc",
-    name: "Pirinç & Bakliyat",
-    meatType: "fresh",
-    description: "Kuru gıda ve bakliyat çeşitleri.",
-    externalUrl: "https://evkafresh.com/pirinc-bakliyat-cesitleri",
-  },
-  {
-    slug: "fresh-yag",
-    name: "Yağ Çeşitleri",
-    meatType: "fresh",
-    description: "Toptan ve perakende yağ çeşitleri.",
-    externalUrl: "https://evkafresh.com/yag-cesitleri-1",
-  },
-  {
-    slug: "fresh-makarna",
-    name: "Makarna Çeşitleri",
-    meatType: "fresh",
-    description: "Restoran ve toplu mutfak için makarna.",
-    externalUrl: "https://evkafresh.com/makarna-cesitleri-1",
-  },
-];
-
 export const packagings: ProductCategory[] = [
   {
     slug: "tabakli",
@@ -94,12 +35,6 @@ export const packagings: ProductCategory[] = [
     name: "Dökme",
     description:
       "Dökme paketleme — restoran, kasap ve toptan kullanım için ekonomik döküm sevkiyat.",
-  },
-  {
-    slug: "fresh",
-    name: "Fresh",
-    description:
-      "evkafresh.com — dondurulmuş sebze, patates, mısır, sos, bakliyat ve yağ çeşitleri.",
   },
 ];
 
@@ -178,7 +113,7 @@ export const products: Product[] = [
 ];
 
 export function isValidPackaging(s: string): s is Packaging {
-  return s === "tabakli" || s === "dokme" || s === "fresh";
+  return s === "tabakli" || s === "dokme";
 }
 
 export function getPackagingBySlug(slug: string): ProductCategory | undefined {

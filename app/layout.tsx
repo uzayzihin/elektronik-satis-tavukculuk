@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,23 +8,17 @@ import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { CartProvider } from "@/lib/cart-context";
 import { site } from "@/content/site.config";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
-});
-
-const caveat = Caveat({
-  variable: "--font-caveat",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -39,9 +33,9 @@ export const metadata: Metadata = {
     "beyaz et",
     "toptan tavuk",
     "perakende tavuk",
-    "İstanbul gıda toptancılar çarşısı",
-    "donuk gıda",
-    "Evka Surur",
+    "elektronik satış tavuk",
+    "es tavukçuluk",
+    "online tavuk siparişi",
   ],
   openGraph: {
     title: site.brand.short,
@@ -56,8 +50,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-brand-text">
+    <html lang="tr" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-brand-light text-brand-text">
         <CartProvider>
           <AnnouncementBar />
           <Header />

@@ -2,20 +2,13 @@ import type { Packaging } from "@/content/products";
 
 export function ProductWatermark({
   packaging = "tabakli",
-  isExternal = false,
   compact = false,
 }: {
   productName?: string;
   packaging?: Packaging;
-  isExternal?: boolean;
   compact?: boolean;
 }) {
-  const isFresh = isExternal || packaging === "fresh";
-  const pack = isFresh
-    ? "Fresh"
-    : packaging === "dokme"
-    ? "Dökme"
-    : "Tabaklı";
+  const pack = packaging === "dokme" ? "Dökme" : "Tabaklı";
 
   return (
     <span

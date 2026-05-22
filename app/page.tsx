@@ -2,7 +2,6 @@ import { HeroSlider } from "@/components/HeroSlider";
 import { CollectionSwitcher } from "@/components/CollectionSwitcher";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { ProductRow } from "@/components/ProductRow";
-import { LimonataPromo } from "@/components/LimonataPromo";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { TrustBand } from "@/components/TrustBand";
@@ -11,7 +10,6 @@ import {
   getFeaturedProducts,
   getNewProducts,
   getRestaurantProducts,
-  freshProducts,
 } from "@/content/products";
 
 export default function HomePage() {
@@ -20,12 +18,6 @@ export default function HomePage() {
       title: "Çok Satan",
       products: getFeaturedProducts(),
       ctaHref: "/urunler",
-      ctaLabel: "Tüm Ürünleri Gör",
-    },
-    {
-      title: "Trending",
-      products: [...freshProducts],
-      ctaHref: "/urunler/fresh",
       ctaLabel: "Tüm Ürünleri Gör",
     },
     {
@@ -46,7 +38,6 @@ export default function HomePage() {
         products={getRestaurantProducts()}
         ctaHref="/urunler"
       />
-      <LimonataPromo />
       <FAQ />
       <TrustBand />
       <Testimonials />

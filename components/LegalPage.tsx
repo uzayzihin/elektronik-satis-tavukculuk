@@ -13,7 +13,7 @@ export function LegalPage({
     <article className="bg-white">
       <section className="border-b border-brand-border">
         <div className="container-x py-10 md:py-14">
-          <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.18em] text-brand-muted mb-3">
+          <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.04em] text-brand-muted mb-3">
             <Link href="/" className="hover:text-brand-accent">
               Anasayfa
             </Link>{" "}

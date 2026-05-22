@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { products, freshProducts, packagings } from "@/content/products";
+import { products, packagings } from "@/content/products";
 import { ProductsGrid } from "@/components/ProductsGrid";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Testimonials } from "@/components/Testimonials";
@@ -15,7 +15,7 @@ export default function ProductsPage() {
   return (
     <>
       <ProductsGrid
-        products={[...products, ...freshProducts]}
+        products={[...products]}
         packagings={packagings}
       />
       <PromoBanner />

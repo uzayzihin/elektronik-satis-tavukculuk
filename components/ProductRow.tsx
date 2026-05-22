@@ -18,15 +18,15 @@ export function ProductRow({
       <div className="container-x pt-12 md:pt-14 pb-2">
         <div className="flex items-end justify-between gap-4 mb-6 md:mb-8">
           <h2
-            className="font-extrabold uppercase tracking-tight text-brand-navy leading-none"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+            className="font-serif tracking-tight text-brand-navy leading-tight"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
           >
             {title}
           </h2>
           {ctaHref && (
             <Link
               href={ctaHref}
-              className="font-mono text-[11px] md:text-xs font-bold uppercase tracking-[0.15em] text-brand-primary hover:text-brand-accent-dark whitespace-nowrap pb-1"
+              className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-brand-accent hover:text-brand-accent-dark whitespace-nowrap pb-1"
             >
               {ctaLabel} →
             </Link>

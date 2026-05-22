@@ -26,8 +26,8 @@ const sections = [
   {
     title: "Alışveriş",
     items: [
-      { label: "Tavuk", href: "/urunler" },
-      { label: "Evka Fresh", href: "https://evkafresh.com", external: true },
+      { label: "Tüm Ürünler", href: "/urunler" },
+      { label: "Yeni Ürünler", href: "/urunler/yeni" },
     ],
   },
   {
@@ -69,10 +69,10 @@ export function Footer() {
       <div className="container-x pt-10 pb-6">
         <div className="flex flex-col items-center text-center mb-8">
           <div className="text-center">
-            <div className="font-black text-brand-navy text-3xl md:text-4xl tracking-tight leading-none uppercase">
-              Evka Surur
+            <div className="font-serif italic text-brand-navy text-4xl md:text-5xl leading-none">
+              ES
             </div>
-            <div className="font-bold text-brand-navy text-base md:text-lg tracking-[0.2em] uppercase mt-1">
+            <div className="font-semibold text-brand-navy text-xs md:text-sm tracking-[0.18em] uppercase mt-2">
               Tavukçuluk
             </div>
           </div>
@@ -89,15 +89,6 @@ export function Footer() {
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
-            <a
-              href={site.social.instagramFresh.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Instagram: ${site.social.instagramFresh.handle}`}
-              className="w-9 h-9 inline-flex items-center justify-center rounded-full text-brand-navy hover:text-brand-accent transition-colors"
-            >
-              <InstagramIcon className="w-4 h-4" />
-            </a>
           </div>
         </div>
 
@@ -105,7 +96,7 @@ export function Footer() {
           {sections.map((section) => (
             <details key={section.title} className="group border-b border-brand-border">
               <summary className="flex items-center justify-between py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                <span className="font-mono font-bold uppercase tracking-[0.15em] text-xs text-brand-navy">
+                <span className="font-mono font-black uppercase tracking-[0.04em] text-xs text-brand-navy">
                   {section.title}
                 </span>
                 <Plus className="w-4 h-4 text-brand-muted transition-transform group-open:rotate-45" />

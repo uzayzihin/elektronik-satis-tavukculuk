@@ -17,9 +17,8 @@ import { ProductDetailActions } from "@/components/ProductDetailActions";
 import { ProductImageNavigator } from "@/components/ProductImageNavigator";
 
 export function generateStaticParams() {
-  const internalPackagings = packagings.filter((pk) => pk.slug !== "fresh");
   return products.flatMap((p) =>
-    internalPackagings.map((pk) => ({
+    packagings.map((pk) => ({
       productSlug: p.slug,
       packaging: pk.slug,
     }))
@@ -39,7 +38,7 @@ export async function generateMetadata({
   
   const meatType = getMeatTypeBySlug(product.meatType);
   const title = `${product.name} (${pkg.name})`;
-  const desc = `${product.description} Toptan ve perakende ${product.name} satışı Evka Surur Tavukçuluk'ta. İstanbul içi 7/24 teslimat imkanı.`;
+  const desc = `${product.description} Toptan ve perakende ${product.name} satışı ES Tavukçuluk'ta. 7/24 sipariş ve hızlı teslimat.`;
   
   return {
     title,
@@ -50,14 +49,14 @@ export async function generateMetadata({
       meatType?.name ?? "",
       "toptan tavuk",
       "piliç eti",
-      "evka surur",
-      "istanbul toptancılar çarşısı"
+      "es tavukçuluk",
+      "online tavuk siparişi"
     ].filter(Boolean),
     openGraph: {
       title,
       description: desc,
       url: `https://estavukculuk.com/urunler/${product.slug}/${packaging}`,
-      siteName: "Evka Surur Tavukçuluk",
+      siteName: "ES Tavukçuluk",
       images: [
         {
           url: `https://estavukculuk.com/images/products/${packaging}/${product.slug}.webp`,
@@ -84,7 +83,7 @@ export default async function ProductDetailPage({
   params: Promise<{ productSlug: string; packaging: string }>;
 }) {
   const { productSlug, packaging } = await params;
-  if (!isValidPackaging(packaging) || packaging === "fresh") notFound();
+  if (!isValidPackaging(packaging)) notFound();
   const product = getProductBySlug(productSlug);
   if (!product) notFound();
 
@@ -125,10 +124,10 @@ export default async function ProductDetailPage({
           </div>
 
           <div>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-tight mb-2">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-brand-navy leading-tight mb-2">
               {product.name}
             </h1>
-            <p className="text-xs md:text-sm font-mono uppercase tracking-[0.12em] text-brand-muted mb-4">
+            <p className="text-xs md:text-sm font-mono uppercase tracking-[0.04em] text-brand-muted mb-4">
               {pkg.name} · {meatType?.name ?? "Tavuk"}
             </p>
 
@@ -162,8 +161,8 @@ export default async function ProductDetailPage({
               <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-2">
                 Aynı Kategoriden
               </p>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-brand-primary">
-                Benzer Ürünler
+              <h2 className="text-3xl md:text-4xl font-serif italic text-brand-navy">
+                Benzer ürünler.
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">

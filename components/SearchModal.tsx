@@ -4,9 +4,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X, Search } from "lucide-react";
-import { products, freshProducts, type Product } from "@/content/products";
+import { products, type Product } from "@/content/products";
 
-const ALL_PRODUCTS: Product[] = [...products, ...freshProducts];
+const ALL_PRODUCTS: Product[] = [...products];
 
 function normalize(s: string) {
   return s
@@ -99,52 +99,31 @@ export function SearchModal({
           ) : (
             <ul className="divide-y divide-brand-border">
               {results.map((p) => {
-                const isExternal = !!p.externalUrl;
-                const href = isExternal
-                  ? p.externalUrl!
-                  : `/urunler/${p.slug}/tabakli`;
-                const img = isExternal
-                  ? "/logo-v2.png"
-                  : `/images/products/tabakli/thumbnails/${p.slug}.webp`;
-                const inner = (
-                  <div className="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors">
-                    <div className="w-12 h-12 flex-shrink-0 rounded bg-brand-light overflow-hidden relative">
-                      <Image
-                        src={img}
-                        alt=""
-                        width={96}
-                        height={96}
-                        className={`absolute inset-0 w-full h-full ${
-                          isExternal ? "object-contain p-1" : "object-cover"
-                        }`}
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-sm text-brand-navy line-clamp-1">
-                        {p.name}
-                      </div>
-                      <div className="text-[11px] uppercase tracking-wider text-brand-muted mt-0.5">
-                        {isExternal ? "Evka Fresh" : "Evka Surur"}
-                      </div>
-                    </div>
-                  </div>
-                );
+                const href = `/urunler/${p.slug}/tabakli`;
+                const img = `/images/products/tabakli/thumbnails/${p.slug}.webp`;
                 return (
                   <li key={p.slug}>
-                    {isExternal ? (
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={onClose}
-                      >
-                        {inner}
-                      </a>
-                    ) : (
-                      <Link href={href} onClick={onClose}>
-                        {inner}
-                      </Link>
-                    )}
+                    <Link href={href} onClick={onClose}>
+                      <div className="flex items-center gap-3 px-4 py-3 hover:bg-brand-light transition-colors">
+                        <div className="w-12 h-12 flex-shrink-0 rounded bg-brand-light overflow-hidden relative">
+                          <Image
+                            src={img}
+                            alt=""
+                            width={96}
+                            height={96}
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-semibold text-sm text-brand-navy line-clamp-1">
+                            {p.name}
+                          </div>
+                          <div className="text-[11px] uppercase tracking-wider text-brand-muted mt-0.5">
+                            ES Tavukçuluk
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                   </li>
                 );
               })}

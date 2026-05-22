@@ -10,17 +10,18 @@ export function HeroSlider() {
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
           <Link href="/urunler" aria-label="Tüm ürünleri gör" className="block">
             <h1
-              className="font-extrabold leading-[0.95] mb-6 tracking-tight text-brand-navy uppercase hover:text-brand-accent transition-colors"
-              style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
+              className="font-serif leading-[1.05] mb-6 tracking-tight text-brand-navy hover:text-brand-accent transition-colors"
+              style={{ fontSize: "clamp(2.75rem, 7vw, 5.25rem)" }}
             >
-              Aradığınız Her Kesim Burada
+              Aradığınız her kesim,
+              <br />
+              <em className="text-brand-accent">tek vitrinde.</em>
             </h1>
           </Link>
 
-          <p className="font-mono text-xs md:text-sm uppercase tracking-[0.1em] text-brand-text/80 leading-relaxed mb-8 max-w-xl">
-            Beyaz etin adresi. {site.brand.foundedYear}'den beri.
-            <br />
-            Günlük taze kesim. İstanbul'da 7/24 teslimat.
+          <p className="text-sm md:text-base tracking-[0.02em] text-brand-text/85 leading-relaxed mb-8 max-w-xl">
+            Beyaz etin premium adresi — günlük taze kesim, 7/24 sipariş ve hızlı
+            teslimat.
           </p>
 
           <a

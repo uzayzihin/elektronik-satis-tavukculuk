@@ -11,22 +11,22 @@ type CategoryCard = {
 
 const cards: CategoryCard[] = [
   {
-    title: "Evka Surur",
-    label: "Evka Surur",
+    title: "Tabaklı",
+    label: "Perakende & Ev",
     image: "/images/products/tabakli/kovan-gogus.webp",
     href: "/urunler",
   },
   {
-    title: "Yeni Ürünler",
-    label: "Yeni Ürünler",
-    image: "/images/products/tabakli/citir.webp",
-    href: "/urunler/yeni",
+    title: "Dökme",
+    label: "Toptan & Restoran",
+    image: "/images/products/dokme/kovan-gogus.webp",
+    href: "/urunler",
   },
   {
-    title: "Evka Fresh",
-    label: "Evka Fresh",
-    image: "/products/fresh/limonata.webp",
-    href: "/urunler/fresh",
+    title: "Yeni Ürünler",
+    label: "Sezon Kesimleri",
+    image: "/images/products/tabakli/citir.webp",
+    href: "/urunler/yeni",
   },
 ];
 
@@ -35,8 +35,8 @@ export function CategoryGrid() {
     <section className="bg-white border-y border-brand-border">
       <div className="container-x pt-10 md:pt-14 pb-2">
         <h2
-          className="font-extrabold uppercase tracking-tight text-brand-navy leading-none mb-6 md:mb-8"
-          style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+          className="font-serif tracking-tight text-brand-navy leading-tight mb-6 md:mb-8"
+          style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
         >
           Kategoriler
         </h2>
@@ -58,23 +58,23 @@ export function CategoryGrid() {
                   className="absolute inset-x-0 top-6 md:top-8 flex justify-center px-6 pointer-events-none"
                 >
                   <h3
-                    className="font-extrabold uppercase tracking-tight text-brand-navy text-center leading-[0.9] drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]"
-                    style={{ fontSize: "clamp(1.75rem, 5vw, 3.25rem)" }}
+                    className="font-serif italic tracking-tight text-brand-navy text-center leading-[1] drop-shadow-[0_2px_8px_rgba(242,237,228,0.7)]"
+                    style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
                   >
                     {c.title}
                   </h3>
                 </div>
 
                 <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-stretch shadow-lg">
-                  <span className="bg-brand-navy text-white px-5 md:px-6 py-3 font-mono text-[11px] md:text-xs font-bold uppercase tracking-[0.18em]">
-                    Shop Now
+                  <span className="bg-brand-navy text-brand-light px-5 md:px-6 py-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em]">
+                    İncele
                   </span>
                   <span className="bg-brand-accent text-white px-3 py-3 flex items-center justify-center group-hover:bg-brand-accent-dark transition-colors">
                     <ChevronRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
-              <p className="text-center mt-3 font-mono text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-brand-navy">
+              <p className="text-center mt-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.2em] text-brand-muted">
                 {c.label}
               </p>
             </Link>

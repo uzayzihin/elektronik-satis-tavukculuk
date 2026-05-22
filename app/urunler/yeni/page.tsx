@@ -8,7 +8,7 @@ import { FAQ } from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "Yeni Ürünler",
   description:
-    "Evka Surur Tavukçuluk'tan yeni ürünler — sarma, çıtır, ızgara tava ve daha fazlası. Toptan & perakende, WhatsApp'tan sipariş.",
+    "ES Tavukçuluk'tan yeni ürünler — sarma, çıtır, ızgara tava ve daha fazlası. Toptan & perakende, WhatsApp'tan sipariş.",
 };
 
 export default function NewProductsPage() {

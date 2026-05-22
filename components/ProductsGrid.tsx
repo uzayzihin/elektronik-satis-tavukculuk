@@ -30,11 +30,7 @@ export function ProductsGrid({
         setColsState(parseInt(savedCols) as GridCols);
       }
       const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER);
-      if (
-        savedFilter === "tabakli" ||
-        savedFilter === "dokme" ||
-        savedFilter === "fresh"
-      ) {
+      if (savedFilter === "tabakli" || savedFilter === "dokme") {
         setFilter(savedFilter);
       }
     } catch {
@@ -65,14 +61,11 @@ export function ProductsGrid({
     }
   }
 
-  const visibleProducts = products.filter((p) =>
-    filter === "fresh" ? !!p.externalUrl : !p.externalUrl
-  );
+  const visibleProducts = products;
 
   const counts: Record<string, number> = {
-    tabakli: products.filter((p) => !p.externalUrl).length,
-    dokme: products.filter((p) => !p.externalUrl).length,
-    fresh: products.filter((p) => !!p.externalUrl).length,
+    tabakli: products.length,
+    dokme: products.length,
   };
 
   const gridClass =

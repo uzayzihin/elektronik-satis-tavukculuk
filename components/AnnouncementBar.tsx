@@ -22,10 +22,10 @@ export function AnnouncementBar() {
         }}
       >
         <div className="flex shrink-0 animate-[marquee_45s_linear_infinite]">
-          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
+          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.04em]">
             {line}
           </span>
-          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
+          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.04em]">
             {line}
           </span>
         </div>
@@ -33,10 +33,10 @@ export function AnnouncementBar() {
           aria-hidden="true"
           className="flex shrink-0 animate-[marquee_45s_linear_infinite]"
         >
-          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
+          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.04em]">
             {line}
           </span>
-          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
+          <span className="px-6 text-xs md:text-sm font-medium uppercase tracking-[0.04em]">
             {line}
           </span>
         </div>
