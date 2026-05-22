@@ -5,7 +5,7 @@ export function Testimonials() {
   return (
     <section className="bg-white border-t border-brand-border">
       <div className="container-x pt-10 pb-12 md:pt-12 md:pb-14">
-        <h2 className="text-4xl md:text-6xl font-serif italic text-brand-navy tracking-tight mb-3 leading-tight">
+        <h2 className="text-4xl md:text-6xl font-serif text-brand-navy tracking-tight mb-3 leading-tight">
           Yorumlar.
         </h2>
         <p className="text-sm md:text-base text-brand-muted mb-8 italic">

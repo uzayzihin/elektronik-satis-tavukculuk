@@ -11,7 +11,7 @@ export function CTABanner() {
           <Clock className="w-4 h-4" />
           7/24 Sipariş Hattı
         </div>
-        <h2 className="text-4xl md:text-6xl font-serif italic mb-4 leading-tight">
+        <h2 className="text-4xl md:text-6xl font-serif mb-4 leading-tight">
           Hemen sipariş verin.
         </h2>
         <p className="text-brand-light/75 max-w-xl mx-auto mb-8 text-lg leading-relaxed">

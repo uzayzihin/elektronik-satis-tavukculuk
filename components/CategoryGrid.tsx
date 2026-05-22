@@ -58,7 +58,7 @@ export function CategoryGrid() {
                   className="absolute inset-x-0 top-6 md:top-8 flex justify-center px-6 pointer-events-none"
                 >
                   <h3
-                    className="font-serif italic tracking-tight text-brand-navy text-center leading-[1] drop-shadow-[0_2px_8px_rgba(242,237,228,0.7)]"
+                    className="font-serif tracking-tight text-brand-navy text-center leading-[1] drop-shadow-[0_2px_8px_rgba(242,237,228,0.7)]"
                     style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
                   >
                     {c.title}

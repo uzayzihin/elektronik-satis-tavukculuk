@@ -17,7 +17,7 @@ export default function ContactPage() {
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-accent mb-3">
             İletişim
           </p>
-          <h1 className="text-4xl md:text-6xl font-serif italic mb-3 text-brand-navy leading-tight">
+          <h1 className="text-4xl md:text-6xl font-serif mb-3 text-brand-navy leading-tight">
             Bize ulaşın.
           </h1>
           <p className="text-brand-text/80 text-lg max-w-2xl leading-relaxed">

@@ -161,7 +161,7 @@ export default async function ProductDetailPage({
               <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-2">
                 Aynı Kategoriden
               </p>
-              <h2 className="text-3xl md:text-4xl font-serif italic text-brand-navy">
+              <h2 className="text-3xl md:text-4xl font-serif text-brand-navy">
                 Benzer ürünler.
               </h2>
             </div>
