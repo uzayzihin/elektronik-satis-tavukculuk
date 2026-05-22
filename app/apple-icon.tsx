@@ -25,11 +25,10 @@ export default function AppleIcon() {
       >
         <div
           style={{
-            fontStyle: "italic",
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: 110,
             lineHeight: 1,
-            letterSpacing: "-0.04em",
+            letterSpacing: "-0.03em",
           }}
         >
           ES

@@ -19,12 +19,11 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "Georgia, 'Times New Roman', serif",
-          fontStyle: "italic",
-          fontWeight: 500,
+          fontWeight: 600,
           fontSize: 180,
           lineHeight: 1,
           color: "#2E3B2C",
-          letterSpacing: "-0.04em",
+          letterSpacing: "-0.03em",
         }}
       >
         ES

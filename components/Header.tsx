@@ -67,7 +67,7 @@ export function Header() {
           aria-label={site.brand.short}
           className="flex flex-col items-center justify-center leading-none"
         >
-          <span className="font-serif italic text-brand-navy text-3xl md:text-4xl">
+          <span className="font-serif text-brand-navy text-3xl md:text-4xl font-semibold tracking-[-0.02em]">
             ES
           </span>
           <span className="font-semibold text-brand-navy text-[9px] md:text-[10px] tracking-[0.22em] uppercase mt-1">

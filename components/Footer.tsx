@@ -69,7 +69,7 @@ export function Footer() {
       <div className="container-x pt-10 pb-6">
         <div className="flex flex-col items-center text-center mb-8">
           <div className="text-center">
-            <div className="font-serif italic text-brand-navy text-4xl md:text-5xl leading-none">
+            <div className="font-serif text-brand-navy text-4xl md:text-5xl leading-none font-semibold tracking-[-0.02em]">
               ES
             </div>
             <div className="font-semibold text-brand-navy text-xs md:text-sm tracking-[0.18em] uppercase mt-2">
