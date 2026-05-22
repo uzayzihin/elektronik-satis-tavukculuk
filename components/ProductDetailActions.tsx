@@ -26,7 +26,7 @@ export function ProductDetailActions({
 
   return (
     <div className="space-y-3">
-      <div className="inline-flex items-center border border-brand-border rounded-md overflow-hidden">
+      <div className="inline-flex items-center border border-brand-border rounded-sm overflow-hidden">
         <button
           type="button"
           aria-label="Miktarı azalt"
@@ -58,7 +58,7 @@ export function ProductDetailActions({
           href={waProductOrder(`${product.name} (${qty} adet)`, packaging)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-4 py-3 rounded-md text-sm md:text-base transition-colors"
+          className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-4 py-3 rounded-sm text-sm md:text-base transition-colors"
         >
           <WhatsAppIcon className="w-4 h-4 md:w-5 md:h-5" />
           Hızlı Sipariş
@@ -66,10 +66,10 @@ export function ProductDetailActions({
         <button
           type="button"
           onClick={handleAdd}
-          className={`inline-flex items-center justify-center gap-2 font-bold px-4 py-3 rounded-md text-sm md:text-base transition-colors ${
+          className={`inline-flex items-center justify-center gap-2 font-bold px-4 py-3 rounded-sm text-sm md:text-base transition-colors ${
             added
-              ? "bg-brand-purple-dark text-white"
-              : "bg-brand-purple hover:bg-brand-purple-dark text-white"
+              ? "bg-brand-accent-dark text-brand-navy"
+              : "bg-brand-accent hover:bg-brand-accent-dark text-brand-navy"
           }`}
         >
           {added ? (

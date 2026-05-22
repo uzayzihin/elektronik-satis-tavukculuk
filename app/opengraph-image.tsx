@@ -14,23 +14,24 @@ export default function OpengraphImage() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#F2EDE4",
+          background: "#FAF7F0",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "60px 80px",
           fontFamily: "Georgia, 'Times New Roman', serif",
-          color: "#1A1F18",
+          color: "#0A0A0A",
           position: "relative",
         }}
       >
         <div
           style={{
             position: "absolute",
-            inset: 0,
-            border: "1px solid #DDD4C4",
-            margin: 24,
-            pointerEvents: "none",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: "38%",
+            background: "#F2C200",
           }}
         />
 
@@ -39,6 +40,7 @@ export default function OpengraphImage() {
             display: "flex",
             alignItems: "baseline",
             gap: 18,
+            position: "relative",
           }}
         >
           <div
@@ -47,7 +49,7 @@ export default function OpengraphImage() {
               fontSize: 92,
               lineHeight: 1,
               letterSpacing: "-0.03em",
-              color: "#2E3B2C",
+              color: "#0A0A0A",
             }}
           >
             ES
@@ -59,7 +61,7 @@ export default function OpengraphImage() {
               fontWeight: 600,
               letterSpacing: "0.28em",
               textTransform: "uppercase",
-              color: "#2E3B2C",
+              color: "#0A0A0A",
             }}
           >
             Tavukçuluk
@@ -70,7 +72,9 @@ export default function OpengraphImage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: 12,
+            gap: 14,
+            position: "relative",
+            maxWidth: 720,
           }}
         >
           <div
@@ -78,27 +82,25 @@ export default function OpengraphImage() {
               fontFamily: "system-ui, sans-serif",
               fontSize: 16,
               fontWeight: 600,
-              letterSpacing: "0.24em",
+              letterSpacing: "0.26em",
               textTransform: "uppercase",
-              color: "#5C6157",
+              color: "#6B6B6B",
             }}
           >
             Premium Tavuk Tedariği
           </div>
           <div
             style={{
-              fontSize: 88,
-              lineHeight: 1.05,
-              letterSpacing: "-0.02em",
-              color: "#1A1F18",
+              fontSize: 92,
+              lineHeight: 1.02,
+              letterSpacing: "-0.025em",
+              color: "#0A0A0A",
               display: "flex",
               flexDirection: "column",
             }}
           >
             <span>Beyaz etin</span>
-            <span style={{ fontStyle: "italic", color: "#B8421F" }}>
-              premium adresi.
-            </span>
+            <span style={{ fontStyle: "italic" }}>premium adresi.</span>
           </div>
         </div>
 
@@ -109,7 +111,8 @@ export default function OpengraphImage() {
             alignItems: "center",
             fontFamily: "system-ui, sans-serif",
             fontSize: 18,
-            color: "#5C6157",
+            color: "#0A0A0A",
+            position: "relative",
           }}
         >
           <div
@@ -117,7 +120,6 @@ export default function OpengraphImage() {
               fontWeight: 600,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#2E3B2C",
             }}
           >
             estavukculuk.com
@@ -128,16 +130,15 @@ export default function OpengraphImage() {
               alignItems: "center",
               gap: 10,
               padding: "10px 18px",
-              border: "1px solid #DDD4C4",
-              borderRadius: 999,
+              background: "#0A0A0A",
               fontSize: 14,
               fontWeight: 600,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#B8421F",
+              color: "#F2C200",
             }}
           >
-            7/24 Sipariş Hattı
+            7/24 Sipariş
           </div>
         </div>
       </div>

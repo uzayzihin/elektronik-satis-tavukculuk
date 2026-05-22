@@ -29,7 +29,7 @@ export function HeroSlider() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp'tan hızlı sipariş"
-            className="inline-flex items-center justify-center gap-3 rounded-md bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-7 py-3 uppercase tracking-wider transition-colors text-base md:text-lg"
+            className="inline-flex items-center justify-center gap-3 rounded-sm bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-7 py-3 uppercase tracking-wider transition-colors text-base md:text-lg"
           >
             <WhatsAppIcon className="w-5 h-5" />
             Hızlı Sipariş

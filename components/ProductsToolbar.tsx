@@ -64,14 +64,14 @@ export function ProductsToolbar({
             onClick={() => setOpen((o) => !o)}
             aria-label="Paketleme filtresini aç"
             aria-expanded={open}
-            className="inline-flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-md bg-brand-dark hover:bg-brand-accent text-white transition-colors"
+            className="inline-flex items-center justify-center w-10 md:w-11 h-10 md:h-11 rounded-sm bg-brand-dark hover:bg-brand-accent text-white transition-colors"
           >
             <SlidersHorizontal className="w-5 h-5" />
           </button>
           {open && (
             <div
               role="menu"
-              className="absolute top-full left-0 mt-2 z-40 w-56 bg-white border border-brand-border rounded-md shadow-xl py-2"
+              className="absolute top-full left-0 mt-2 z-40 w-56 bg-white border border-brand-border rounded-sm shadow-xl py-2"
             >
               {packagings.map((p) => {
                 const active = filter === p.slug;
@@ -104,7 +104,7 @@ export function ProductsToolbar({
           )}
         </div>
 
-        <div className="flex items-center bg-brand-dark rounded-md overflow-hidden">
+        <div className="flex items-center bg-brand-dark rounded-sm overflow-hidden">
           <button
             type="button"
             onClick={() => setCols(1)}

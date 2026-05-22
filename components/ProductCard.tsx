@@ -73,10 +73,10 @@ export function ProductCard({
           type="button"
           onClick={handleAdd}
           aria-label={`${product.name} sepete ekle`}
-          className={`absolute bottom-2 right-2 z-10 w-10 h-10 rounded-md flex items-center justify-center shadow-md transition-all ${
+          className={`absolute bottom-2 right-2 z-10 w-10 h-10 rounded-sm flex items-center justify-center shadow-md transition-all ${
             added
-              ? "bg-brand-accent-dark text-white"
-              : "bg-brand-accent text-white hover:bg-brand-accent-dark"
+              ? "bg-brand-accent-dark text-brand-navy"
+              : "bg-brand-accent text-brand-navy hover:bg-brand-accent-dark"
           }`}
         >
           {added ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -126,10 +126,10 @@ export function ProductCard({
         <button
           type="button"
           onClick={handleAdd}
-          className={`inline-flex items-center justify-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-md transition-colors ${
+          className={`inline-flex items-center justify-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-sm transition-colors ${
             added
-              ? "bg-brand-accent-dark text-white"
-              : "bg-brand-accent hover:bg-brand-accent-dark text-white"
+              ? "bg-brand-accent-dark text-brand-navy"
+              : "bg-brand-accent hover:bg-brand-accent-dark text-brand-navy"
           }`}
         >
           {added ? (

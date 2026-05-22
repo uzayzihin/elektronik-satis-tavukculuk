@@ -78,7 +78,7 @@ export function CartDrawer() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="bg-brand-primary hover:bg-brand-accent text-white font-semibold px-5 py-2.5 rounded-md text-sm transition-colors"
+                className="bg-brand-primary hover:bg-brand-accent text-white font-semibold px-5 py-2.5 rounded-sm text-sm transition-colors"
               >
                 Alışverişe Devam Et
               </button>
@@ -90,7 +90,7 @@ export function CartDrawer() {
                   key={`${item.slug}-${item.packaging}`}
                   className="flex gap-3 pb-4 border-b border-brand-light last:border-0 last:pb-0"
                 >
-                  <div className="w-16 h-16 flex-shrink-0 rounded-md bg-brand-light overflow-hidden relative">
+                  <div className="w-16 h-16 flex-shrink-0 rounded-sm bg-brand-light overflow-hidden relative">
                     <Image
                       src={`/images/products/${item.packaging}/thumbnails/${item.slug}.webp`}
                       alt=""
@@ -107,7 +107,7 @@ export function CartDrawer() {
                       {packagingLabel(item.packaging)}
                     </span>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center border border-brand-light rounded-md">
+                      <div className="flex items-center border border-brand-light rounded-sm">
                         <button
                           type="button"
                           onClick={() => setQty(item.slug, item.packaging, item.qty - 1)}
@@ -158,7 +158,7 @@ export function CartDrawer() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-5 py-3.5 rounded-md transition-colors"
+              className="flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-5 py-3.5 rounded-sm transition-colors"
             >
               <WhatsAppIcon className="w-5 h-5" />
               Siparişi Gönder ({site.whatsapp.primaryDisplay})
@@ -184,7 +184,7 @@ export function CartButton() {
       type="button"
       onClick={() => setOpen(true)}
       aria-label={`Sepeti aç (${totalQty} ürün)`}
-      className="relative inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
+      className="relative inline-flex items-center justify-center w-10 h-10 rounded-sm text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
     >
       <ShoppingCart className="w-5 h-5" />
       {totalQty > 0 && (

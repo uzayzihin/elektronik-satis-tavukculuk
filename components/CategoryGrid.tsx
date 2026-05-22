@@ -46,7 +46,7 @@ export function CategoryGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {cards.map((c) => (
             <Link key={c.label} href={c.href} className="group block">
-              <div className="relative aspect-square bg-brand-light overflow-hidden rounded-md">
+              <div className="relative aspect-square bg-brand-light overflow-hidden rounded-sm">
                 <Image
                   src={c.image}
                   alt={c.title}
@@ -58,7 +58,7 @@ export function CategoryGrid() {
                   className="absolute inset-x-0 top-6 md:top-8 flex justify-center px-6 pointer-events-none"
                 >
                   <h3
-                    className="font-serif tracking-tight text-brand-navy text-center leading-[1] drop-shadow-[0_2px_8px_rgba(242,237,228,0.7)]"
+                    className="font-serif tracking-tight text-brand-navy text-center leading-[1] drop-shadow-[0_2px_8px_rgba(250,247,240,0.85)]"
                     style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
                   >
                     {c.title}
@@ -69,7 +69,7 @@ export function CategoryGrid() {
                   <span className="bg-brand-navy text-brand-light px-5 md:px-6 py-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em]">
                     İncele
                   </span>
-                  <span className="bg-brand-accent text-white px-3 py-3 flex items-center justify-center group-hover:bg-brand-accent-dark transition-colors">
+                  <span className="bg-brand-accent text-brand-navy px-3 py-3 flex items-center justify-center group-hover:bg-brand-accent-dark transition-colors">
                     <ChevronRight className="w-4 h-4" />
                   </span>
                 </div>

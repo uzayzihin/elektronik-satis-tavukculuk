@@ -14,13 +14,13 @@ export default function AppleIcon() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#F2EDE4",
+          background: "#F2C200",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "Georgia, 'Times New Roman', serif",
-          color: "#2E3B2C",
+          color: "#0A0A0A",
         }}
       >
         <div
@@ -36,11 +36,11 @@ export default function AppleIcon() {
         <div
           style={{
             fontFamily: "system-ui, sans-serif",
-            fontSize: 14,
+            fontSize: 13,
             fontWeight: 600,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
-            marginTop: 8,
+            marginTop: 6,
           }}
         >
           Tavukçuluk

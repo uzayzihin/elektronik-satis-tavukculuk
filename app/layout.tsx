@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter_Tight, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,8 +8,8 @@ import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { CartProvider } from "@/lib/cart-context";
 import { site } from "@/content/site.config";
 
-const inter = Inter({
-  variable: "--font-inter",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
   display: "swap",
 });
@@ -50,7 +50,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" className={`${inter.variable} ${fraunces.variable} h-full antialiased`}>
+    <html lang="tr" className={`${interTight.variable} ${fraunces.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-brand-light text-brand-text">
         <CartProvider>
           <AnnouncementBar />

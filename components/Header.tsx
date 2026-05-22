@@ -15,7 +15,7 @@ function NavLink({ item, onClick, mobile }: { item: NavChild; onClick?: () => vo
   const baseDesktop =
     "px-2 xl:px-3 py-2 text-xs xl:text-sm font-semibold uppercase tracking-[0.14em] text-brand-navy hover:text-brand-accent transition-colors whitespace-nowrap";
   const baseMobile =
-    "px-3 py-3 rounded-md text-base font-semibold uppercase tracking-[0.14em] text-brand-navy hover:bg-brand-soft hover:text-brand-accent";
+    "px-3 py-3 rounded-sm text-base font-semibold uppercase tracking-[0.14em] text-brand-navy hover:bg-brand-soft hover:text-brand-accent";
   const className = mobile ? baseMobile : baseDesktop;
 
   if (item.external) {
@@ -80,7 +80,7 @@ export function Header() {
             type="button"
             onClick={() => setSearchOpen(true)}
             aria-label="Ürün ara"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-sm text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
           >
             <Search className="w-5 h-5" />
           </button>
@@ -89,7 +89,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp ile sipariş ver"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-sm text-brand-navy hover:bg-brand-soft hover:text-brand-accent transition-colors"
           >
             <WhatsAppIcon className="w-5 h-5" />
           </a>
@@ -107,7 +107,7 @@ export function Header() {
               href={waGeneralOrder()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-semibold px-5 py-3 rounded-md"
+              className="mt-2 inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-semibold px-5 py-3 rounded-sm"
             >
               <WhatsAppIcon className="w-4 h-4" />
               WhatsApp Sipariş

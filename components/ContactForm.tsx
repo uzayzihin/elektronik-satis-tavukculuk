@@ -34,7 +34,7 @@ export function ContactForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-3 rounded-md border border-brand-light bg-white text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary"
+            className="w-full px-4 py-3 rounded-sm border border-brand-light bg-white text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary"
             placeholder="Adınız Soyadınız"
           />
         </Field>
@@ -45,7 +45,7 @@ export function ContactForm() {
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full px-4 py-3 rounded-md border border-brand-light bg-white text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary"
+            className="w-full px-4 py-3 rounded-sm border border-brand-light bg-white text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary"
             placeholder="+90 5__ ___ __ __"
           />
         </Field>
@@ -57,14 +57,14 @@ export function ContactForm() {
             rows={5}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-3 rounded-md border border-brand-light bg-white text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary resize-y"
+            className="w-full px-4 py-3 rounded-sm border border-brand-light bg-white text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary resize-y"
             placeholder="Sipariş, fiyat sorgusu veya genel bilgi talebinizi yazın..."
           />
         </Field>
 
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-dark text-white font-bold px-6 py-3.5 rounded-md transition-colors mt-2"
+          className="inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-dark text-white font-bold px-6 py-3.5 rounded-sm transition-colors mt-2"
         >
           <Send className="w-4 h-4" />
           WhatsApp ile Gönder
