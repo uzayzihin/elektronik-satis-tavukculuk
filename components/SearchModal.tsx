@@ -119,7 +119,7 @@ export function SearchModal({
                             {p.name}
                           </div>
                           <div className="text-[11px] uppercase tracking-wider text-brand-muted mt-0.5">
-                            ES Tavukçuluk
+                            Elektronik Satış Tavukçuluk
                           </div>
                         </div>
                       </div>

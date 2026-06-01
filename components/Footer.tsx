@@ -72,8 +72,8 @@ export function Footer() {
             <div className="font-serif text-brand-navy text-4xl md:text-5xl leading-none font-semibold tracking-[-0.02em]">
               ES
             </div>
-            <div className="font-semibold text-brand-navy text-xs md:text-sm tracking-[0.18em] uppercase mt-2">
-              Tavukçuluk
+            <div className="font-semibold text-brand-navy text-[10px] md:text-xs tracking-[0.18em] uppercase mt-2">
+              Elektronik Satış · Tavukçuluk
             </div>
           </div>
           <p className="mt-4 text-sm text-brand-muted italic">

@@ -36,14 +36,14 @@ export default function AppleIcon() {
         <div
           style={{
             fontFamily: "system-ui, sans-serif",
-            fontSize: 13,
+            fontSize: 9,
             fontWeight: 600,
-            letterSpacing: "0.22em",
+            letterSpacing: "0.15em",
             textTransform: "uppercase",
             marginTop: 6,
           }}
         >
-          Tavukçuluk
+          Elektronik Satış Tavukçuluk
         </div>
       </div>
     ),

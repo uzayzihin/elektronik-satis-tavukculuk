@@ -3,12 +3,12 @@ export const site = {
   url: "https://estavukculuk.com",
 
   brand: {
-    short: "ES Tavukçuluk",
+    short: "Elektronik Satış Tavukçuluk",
     legal: "Elektronik Satış Tavukçuluk",
     tagline: "Beyaz Et • Toptan & Perakende • 7/24 Tedarik",
     foundedYear: 2020,
     description:
-      "ES Tavukçuluk — günlük taze beyaz et tedariği, toptan ve perakende. 7/24 sipariş ve hızlı teslimat.",
+      "Elektronik Satış Tavukçuluk — günlük taze beyaz et tedariği, toptan ve perakende. 7/24 sipariş ve hızlı teslimat.",
   },
 
   whatsapp: {

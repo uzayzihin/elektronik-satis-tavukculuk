@@ -70,8 +70,8 @@ export function Header() {
           <span className="font-serif text-brand-navy text-3xl md:text-4xl font-semibold tracking-[-0.02em]">
             ES
           </span>
-          <span className="font-semibold text-brand-navy text-[9px] md:text-[10px] tracking-[0.22em] uppercase mt-1">
-            Tavukçuluk
+          <span className="font-semibold text-brand-navy text-[7px] md:text-[9px] tracking-[0.18em] uppercase mt-1 whitespace-nowrap">
+            Elektronik Satış · Tavukçuluk
           </span>
         </Link>
 

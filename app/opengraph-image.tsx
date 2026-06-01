@@ -57,14 +57,14 @@ export default function OpengraphImage() {
           <div
             style={{
               fontFamily: "system-ui, sans-serif",
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: 600,
-              letterSpacing: "0.28em",
+              letterSpacing: "0.20em",
               textTransform: "uppercase",
               color: "#0A0A0A",
             }}
           >
-            Tavukçuluk
+            Elektronik Satış Tavukçuluk
           </div>
         </div>
 

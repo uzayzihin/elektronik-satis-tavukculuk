@@ -42,11 +42,13 @@ export function ProductWatermark({
           ES
         </span>
         <span
-          className={`text-brand-navy uppercase font-semibold tracking-[0.22em] mt-0.5 ${
-            compact ? "text-[5px]" : "text-[6px] md:text-[7px]"
+          className={`text-brand-navy uppercase font-semibold mt-0.5 ${
+            compact
+              ? "text-[5px] tracking-[0.22em]"
+              : "text-[5px] md:text-[6px] tracking-[0.15em] whitespace-nowrap"
           }`}
         >
-          Tavukçuluk
+          {compact ? "Tavukçuluk" : "Elektronik Satış · Tavukçuluk"}
         </span>
       </div>
     </>
