@@ -15,6 +15,7 @@ import {
 import { ProductCard } from "@/components/ProductCard";
 import { ProductDetailActions } from "@/components/ProductDetailActions";
 import { ProductImageNavigator } from "@/components/ProductImageNavigator";
+import { ProductTrustBadges } from "@/components/ProductTrustBadges";
 
 export function generateStaticParams() {
   return products.flatMap((p) =>
@@ -143,13 +144,17 @@ export default async function ProductDetailPage({
               {product.description}
             </p>
 
-            <Link
-              href={`/urunler/${product.slug}/${otherPackaging}`}
-              className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-brand-muted hover:text-brand-accent mt-4"
-            >
-              {otherPkg.name} olarak gör
-              <ChevronRight className="w-3 h-3" />
-            </Link>
+            <div className="flex flex-col gap-4">
+              <Link
+                href={`/urunler/${product.slug}/${otherPackaging}`}
+                className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-brand-muted hover:text-brand-accent mt-4 w-max"
+              >
+                {otherPkg.name} olarak gör
+                <ChevronRight className="w-3 h-3" />
+              </Link>
+              
+              <ProductTrustBadges />
+            </div>
           </div>
         </div>
       </section>

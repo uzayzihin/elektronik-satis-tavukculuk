@@ -22,7 +22,7 @@ export function CTABanner() {
             href={waLink(message)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-7 py-4 rounded-sm text-base transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow text-white font-bold px-8 py-4 rounded-md text-base transition-all"
           >
             <MessageCircle className="w-5 h-5" />
             {site.whatsapp.primaryDisplay}

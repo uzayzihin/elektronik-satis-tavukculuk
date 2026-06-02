@@ -26,12 +26,12 @@ export function ProductDetailActions({
 
   return (
     <div className="space-y-3">
-      <div className="inline-flex items-center border border-brand-border rounded-sm overflow-hidden">
+      <div className="inline-flex items-center border border-brand-border rounded-md overflow-hidden bg-white shadow-sm">
         <button
           type="button"
           aria-label="Miktarı azalt"
           onClick={() => setQty((q) => Math.max(1, q - 1))}
-          className="w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-brand-light"
+          className="w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-brand-light transition-colors"
         >
           <Minus className="w-4 h-4" />
         </button>
@@ -47,18 +47,18 @@ export function ProductDetailActions({
           type="button"
           aria-label="Miktarı artır"
           onClick={() => setQty((q) => q + 1)}
-          className="w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-brand-light"
+          className="w-10 h-10 flex items-center justify-center text-brand-navy hover:bg-brand-light transition-colors"
         >
           <Plus className="w-4 h-4" />
         </button>
       </div>
 
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-3">
         <a
           href={waProductOrder(`${product.name} (${qty} adet)`, packaging)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-4 py-3 rounded-sm text-sm md:text-base transition-colors"
+          className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark hover:-translate-y-0.5 active:translate-y-0 text-white font-bold px-4 py-3.5 rounded-md text-sm md:text-base shadow-sm hover:shadow transition-all"
         >
           <WhatsAppIcon className="w-4 h-4 md:w-5 md:h-5" />
           Hızlı Sipariş
@@ -66,7 +66,7 @@ export function ProductDetailActions({
         <button
           type="button"
           onClick={handleAdd}
-          className={`inline-flex items-center justify-center gap-2 font-bold px-4 py-3 rounded-sm text-sm md:text-base transition-colors ${
+          className={`inline-flex items-center justify-center gap-2 font-bold px-4 py-3.5 rounded-md text-sm md:text-base hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow transition-all ${
             added
               ? "bg-brand-accent-dark text-brand-navy"
               : "bg-brand-accent hover:bg-brand-accent-dark text-brand-navy"

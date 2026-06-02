@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { site } from "@/content/site.config";
 import { waLink } from "@/lib/whatsapp";
+import { Logo } from "@/components/Logo";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -68,11 +69,9 @@ export function Footer() {
     <footer className="bg-brand-light border-t border-brand-border">
       <div className="container-x pt-10 pb-6">
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="text-center">
-            <div className="font-serif text-brand-navy text-4xl md:text-5xl leading-none font-semibold tracking-[-0.02em]">
-              ES
-            </div>
-            <div className="font-semibold text-brand-navy text-[10px] md:text-xs tracking-[0.18em] uppercase mt-2">
+          <div className="text-center flex flex-col items-center">
+            <Logo className="w-12 h-12 md:w-14 md:h-14" />
+            <div className="font-semibold text-brand-navy text-[10px] md:text-xs tracking-[0.18em] uppercase mt-3">
               Elektronik Satış · Tavukçuluk
             </div>
           </div>

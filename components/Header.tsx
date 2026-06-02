@@ -8,6 +8,7 @@ import { waGeneralOrder } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { CartButton } from "@/components/CartDrawer";
 import { SearchModal } from "@/components/SearchModal";
+import { Logo } from "@/components/Logo";
 
 type NavChild = { label: string; href: string; external?: boolean };
 
@@ -65,12 +66,10 @@ export function Header() {
         <Link
           href="/"
           aria-label={site.brand.short}
-          className="flex flex-col items-center justify-center leading-none"
+          className="flex flex-col items-center justify-center leading-none hover:opacity-90 transition-opacity"
         >
-          <span className="font-serif text-brand-navy text-3xl md:text-4xl font-semibold tracking-[-0.02em]">
-            ES
-          </span>
-          <span className="font-semibold text-brand-navy text-[7px] md:text-[9px] tracking-[0.18em] uppercase mt-1 whitespace-nowrap">
+          <Logo className="w-10 h-10 md:w-11 md:h-11" />
+          <span className="font-semibold text-brand-navy text-[7px] md:text-[9px] tracking-[0.18em] uppercase mt-2 whitespace-nowrap">
             Elektronik Satış · Tavukçuluk
           </span>
         </Link>
