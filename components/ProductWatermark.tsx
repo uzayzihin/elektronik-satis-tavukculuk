@@ -25,32 +25,6 @@ export function ProductWatermark({
       >
         {pack}
       </span>
-
-      <div
-        aria-hidden="true"
-        className={`absolute z-[6] pointer-events-none bg-brand-light flex flex-col items-center justify-center leading-none border border-brand-border ${
-          compact
-            ? "bottom-2 right-2 px-2.5 py-1.5"
-            : "bottom-3 right-3 px-3.5 py-2 md:px-4 md:py-2.5"
-        }`}
-      >
-        <span
-          className={`font-serif font-semibold text-brand-navy tracking-[-0.02em] ${
-            compact ? "text-[18px]" : "text-[24px] md:text-[30px]"
-          }`}
-        >
-          ES
-        </span>
-        <span
-          className={`text-brand-navy uppercase font-semibold mt-0.5 ${
-            compact
-              ? "text-[5px] tracking-[0.22em]"
-              : "text-[5px] md:text-[6px] tracking-[0.15em] whitespace-nowrap"
-          }`}
-        >
-          {compact ? "Tavukçuluk" : "Elektronik Satış · Tavukçuluk"}
-        </span>
-      </div>
     </>
   );
 }
