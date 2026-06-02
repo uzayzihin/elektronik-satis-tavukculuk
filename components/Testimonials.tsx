@@ -5,11 +5,11 @@ export function Testimonials() {
   return (
     <section className="bg-white border-t border-brand-border">
       <div className="container-x pt-10 pb-12 md:pt-12 md:pb-14">
-        <h2 className="text-4xl md:text-6xl font-serif text-brand-navy tracking-tight mb-3 leading-tight">
-          Yorumlar.
+        <h2 className="text-4xl md:text-5xl font-serif font-medium text-brand-navy tracking-[-0.03em] mb-3 leading-tight">
+          Müşteri Değerlendirmeleri
         </h2>
         <p className="text-sm md:text-base text-brand-muted mb-8 italic">
-          Restoran, market ve perakende müşterilerimizden.
+          Restoran, kasap, şarküteri ve bireysel müşterilerimizin yorumları.
         </p>
       </div>
 
@@ -19,7 +19,7 @@ export function Testimonials() {
             {testimonials.map((t) => (
               <article
                 key={t.id}
-                className="flex-shrink-0 w-[78%] sm:w-[55%] md:w-[40%] lg:w-[30%] snap-start bg-white border border-brand-border rounded-lg p-5 flex flex-col"
+                className="flex-shrink-0 w-[78%] sm:w-[55%] md:w-[40%] lg:w-[30%] snap-start bg-white border border-brand-border/60 hover:border-brand-accent/40 rounded-lg p-5 flex flex-col hover:shadow-sm transition-all duration-300"
               >
                 <div className="flex mb-3" aria-label={`${t.rating} yıldız`}>
                   {Array.from({ length: t.rating }).map((_, i) => (

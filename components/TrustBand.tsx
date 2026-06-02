@@ -28,10 +28,10 @@ export function TrustBand() {
             className="flex flex-col items-center text-center"
           >
             <Icon className="w-7 h-7 md:w-9 md:h-9 text-brand-navy mb-2 md:mb-3" />
-            <div className="font-mono font-black text-brand-navy text-[11px] md:text-sm uppercase tracking-[0.04em] leading-tight">
+            <div className="font-bold text-brand-navy text-[10px] md:text-xs uppercase tracking-[0.2em] leading-tight">
               {title}
             </div>
-            <div className="font-mono text-[9px] md:text-[11px] text-brand-muted mt-1 uppercase tracking-[0.04em] leading-tight">
+            <div className="text-[8px] md:text-[10px] text-brand-muted mt-1.5 uppercase tracking-[0.14em] leading-tight font-medium">
               {sub}
             </div>
           </div>

@@ -7,11 +7,11 @@ export function CTABanner() {
   return (
     <section className="bg-brand-light border-y border-brand-border text-brand-navy">
       <div className="container-x py-16 md:py-20 text-center">
-        <div className="inline-flex items-center gap-2 bg-brand-accent/15 border border-brand-accent px-3 py-1.5 rounded-sm text-sm font-semibold text-brand-navy mb-5 tracking-[0.04em]">
-          <Clock className="w-4 h-4" />
+        <div className="inline-flex items-center gap-2 bg-brand-accent/15 border border-brand-accent/30 px-3 py-1.5 rounded-md text-[10px] md:text-xs font-bold text-brand-navy mb-5 tracking-[0.14em] uppercase">
+          <Clock className="w-3.5 h-3.5" />
           7/24 Sipariş Hattı
         </div>
-        <h2 className="text-4xl md:text-6xl font-serif mb-4 leading-tight">
+        <h2 className="text-4xl md:text-6xl font-serif font-medium tracking-[-0.03em] mb-4 leading-tight">
           Hemen sipariş verin.
         </h2>
         <p className="text-brand-muted max-w-xl mx-auto mb-8 text-lg leading-relaxed">

@@ -25,7 +25,7 @@ export function CollectionSwitcher({
       <div className="container-x pt-12 md:pt-14 pb-2">
         <div className="flex items-end justify-between gap-4 mb-4">
           <h2
-            className="font-serif tracking-tight text-brand-navy leading-tight"
+            className="font-serif tracking-[-0.03em] font-medium text-brand-navy leading-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
           >
             {collection.title}
@@ -33,14 +33,14 @@ export function CollectionSwitcher({
           {collection.ctaHref && (
             <Link
               href={collection.ctaHref}
-              className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-brand-accent hover:text-brand-accent-dark whitespace-nowrap pb-1"
+              className="text-[10px] md:text-xs font-bold uppercase tracking-[0.22em] text-brand-accent hover:text-brand-accent-dark whitespace-nowrap pb-1 transition-colors"
             >
               {collection.ctaLabel ?? "Tümünü Gör"} →
             </Link>
           )}
         </div>
 
-        <div className="flex flex-wrap items-end gap-x-5 gap-y-2 mb-6 md:mb-8 border-b border-brand-border">
+        <div className="flex flex-wrap items-end gap-x-6 gap-y-2 mb-6 md:mb-8 border-b border-brand-border">
           {collections.map((c, i) => {
             const active = i === index;
             return (
@@ -49,7 +49,7 @@ export function CollectionSwitcher({
                 type="button"
                 onClick={() => setIndex(i)}
                 aria-current={active}
-                className={`pb-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
+                className={`pb-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.22em] transition-colors ${
                   active
                     ? "text-brand-navy border-b-2 border-brand-accent -mb-px"
                     : "text-brand-muted hover:text-brand-navy"

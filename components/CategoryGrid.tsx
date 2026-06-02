@@ -35,7 +35,7 @@ export function CategoryGrid() {
     <section className="bg-white border-y border-brand-border">
       <div className="container-x pt-10 md:pt-14 pb-2">
         <h2
-          className="font-serif tracking-tight text-brand-navy leading-tight mb-6 md:mb-8"
+          className="font-serif tracking-[-0.03em] font-medium text-brand-navy leading-tight mb-6 md:mb-8"
           style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
         >
           Kategoriler
@@ -46,27 +46,27 @@ export function CategoryGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {cards.map((c) => (
             <Link key={c.label} href={c.href} className="group block">
-              <div className="relative aspect-square bg-brand-light overflow-hidden rounded-sm">
+              <div className="relative aspect-square bg-brand-light overflow-hidden rounded-md border border-brand-border/40 shadow-sm hover:shadow-md transition-shadow">
                 <Image
                   src={c.image}
                   alt={c.title}
                   width={1024}
                   height={1280}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                 />
                 <div
                   className="absolute inset-x-0 top-6 md:top-8 flex justify-center px-6 pointer-events-none"
                 >
                   <h3
-                    className="font-serif tracking-tight text-brand-navy text-center leading-[1] drop-shadow-[0_2px_8px_rgba(250,247,240,0.85)]"
+                    className="font-serif tracking-[-0.03em] font-medium text-brand-navy text-center leading-[1] drop-shadow-[0_2px_8px_rgba(250,247,240,0.85)]"
                     style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
                   >
                     {c.title}
                   </h3>
                 </div>
 
-                <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-stretch shadow-lg">
-                  <span className="bg-brand-navy text-brand-light px-5 md:px-6 py-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em]">
+                <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-stretch rounded-md overflow-hidden shadow hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all">
+                  <span className="bg-brand-navy text-brand-light px-5 md:px-6 py-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.22em]">
                     İncele
                   </span>
                   <span className="bg-brand-accent text-brand-navy px-3 py-3 flex items-center justify-center group-hover:bg-brand-accent-dark transition-colors">
@@ -74,7 +74,7 @@ export function CategoryGrid() {
                   </span>
                 </div>
               </div>
-              <p className="text-center mt-3 text-[11px] md:text-xs font-semibold uppercase tracking-[0.2em] text-brand-muted">
+              <p className="text-center mt-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.22em] text-brand-muted">
                 {c.label}
               </p>
             </Link>

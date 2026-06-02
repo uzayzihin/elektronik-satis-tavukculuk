@@ -31,8 +31,8 @@ export function FAQ() {
   return (
     <section className="bg-white border-t border-brand-border">
       <div className="container-x pt-10 pb-10 md:pt-12 md:pb-12">
-        <h2 className="text-4xl md:text-5xl font-black italic text-brand-navy tracking-tight mb-6 uppercase">
-          SSS
+        <h2 className="text-4xl md:text-5xl font-serif font-medium text-brand-navy tracking-[-0.03em] mb-6">
+          Sıkça Sorulan Sorular
         </h2>
         <div className="divide-y divide-brand-border border-y border-brand-border">
           {items.map((item) => (
