@@ -7,9 +7,20 @@ import { useCart } from "@/lib/cart-context";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { waCartCheckout, packagingLabel } from "@/lib/whatsapp";
 import { site } from "@/content/site.config";
+import { getProductBySlug } from "@/content/products";
 
 export function CartDrawer() {
   const { items, totalQty, setQty, remove, clear, open, setOpen } = useCart();
+
+  const totalPrice = items.reduce((sum, item) => {
+    if (item.packaging === "tabakli") {
+      const p = getProductBySlug(item.slug);
+      return sum + (p?.basePrice ?? 0) * item.qty;
+    }
+    return sum;
+  }, 0);
+
+  const hasDokme = items.some((item) => item.packaging === "dokme");
 
   useEffect(() => {
     if (!open) return;
@@ -146,27 +157,40 @@ export function CartDrawer() {
 
         {items.length > 0 && (
           <footer className="border-t border-brand-light p-5 space-y-3 bg-brand-light/30">
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-brand-muted">Toplam ürün</span>
-              <span className="font-bold text-brand-primary">{totalQty} adet</span>
+            <div className="flex flex-col gap-2 text-sm mb-2">
+              <div className="flex items-center justify-between text-brand-muted">
+                <span>Toplam Ürün:</span>
+                <span className="font-bold text-brand-primary">{totalQty} adet/paket</span>
+              </div>
+              <div className="flex items-baseline justify-between border-t border-brand-light/60 pt-2">
+                <span className="text-brand-muted">Tahmini Tutar:</span>
+                <span className="text-lg font-black text-brand-navy">
+                  ₺{totalPrice},00
+                </span>
+              </div>
+              {hasDokme && (
+                <p className="text-[10px] text-brand-accent-dark font-bold uppercase tracking-wider mt-1 leading-tight">
+                  * Toptan (Dökme) ürün fiyatları WhatsApp görüşmesinde belirlenir.
+                </p>
+              )}
             </div>
-            <p className="text-xs text-brand-muted">
-              Fiyat ve teslimat WhatsApp üzerinden teyit edilir.
+            <p className="text-[10px] text-brand-muted uppercase tracking-wider leading-tight">
+              Fiyat ve teslimat koşulları WhatsApp üzerinden teyit edilir.
             </p>
             <a
               href={waCartCheckout(items)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark text-white font-bold px-5 py-3.5 rounded-sm transition-colors"
+              className="flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark hover:-translate-y-0.5 active:translate-y-0 text-white font-bold px-5 py-3.5 rounded-md text-sm md:text-base shadow-sm hover:shadow transition-all"
             >
               <WhatsAppIcon className="w-5 h-5" />
-              Siparişi Gönder ({site.whatsapp.primaryDisplay})
+              {hasDokme ? "Teklif Talebi Gönder" : "Siparişi Gönder"}
             </a>
             <button
               type="button"
               onClick={clear}
-              className="w-full text-xs text-brand-muted hover:text-brand-accent text-center pt-1"
+              className="w-full text-xs text-brand-muted hover:text-brand-accent text-center pt-1 font-semibold uppercase tracking-wider"
             >
               Sepeti temizle
             </button>

@@ -132,6 +132,29 @@ export default async function ProductDetailPage({
               {pkg.name} · {meatType?.name ?? "Tavuk"}
             </p>
 
+            <div className="mb-6 p-4 rounded-md bg-brand-light border border-brand-border/40">
+              {packaging === "tabakli" ? (
+                <>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-black text-brand-navy">₺{product.basePrice},00</span>
+                    <span className="text-xs text-brand-muted font-bold uppercase tracking-[0.14em]">/ kg</span>
+                  </div>
+                  <p className="text-[10px] text-brand-muted mt-1.5 font-semibold tracking-wide uppercase">
+                    Tavsiye edilen perakende satış fiyatıdır. Teslimatta KDV dahildir.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-black text-brand-navy">Toptan Fiyat Talebi</span>
+                  </div>
+                  <p className="text-[10px] text-brand-muted mt-1.5 font-semibold tracking-wide uppercase">
+                    Piyasa koşullarına göre günlük güncellenir. Toptan alımlar için lütfen teklif isteyin.
+                  </p>
+                </>
+              )}
+            </div>
+
             <ProductDetailActions
               product={{
                 slug: product.slug,

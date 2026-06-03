@@ -17,6 +17,7 @@ export type Product = {
   name: string;
   meatType: string;
   description: string;
+  basePrice: number;
   featured?: boolean;
   isNew?: boolean;
   externalUrl?: string;
@@ -73,43 +74,43 @@ export const meatTypes: MeatType[] = [
 
 export const products: Product[] = [
   // Bütün Piliç
-  { slug: "acik-butun-pilic", name: "Açık Bütün Piliç", meatType: "butun-pilic", description: "Tazeliği korunmuş açık bütün piliç.", featured: true },
-  { slug: "poseti-butun-pilic", name: "Poşetli Bütün Piliç", meatType: "butun-pilic", description: "Hijyenik poşetli bütün piliç." },
+  { slug: "acik-butun-pilic", name: "Açık Bütün Piliç", meatType: "butun-pilic", description: "Tazeliği korunmuş açık bütün piliç.", basePrice: 115, featured: true },
+  { slug: "poseti-butun-pilic", name: "Poşetli Bütün Piliç", meatType: "butun-pilic", description: "Hijyenik poşetli bütün piliç.", basePrice: 120 },
 
   // Kanat
-  { slug: "kanat", name: "Kanat", meatType: "kanat", description: "Klasik tavuk kanat." },
-  { slug: "izgara-kanat", name: "Izgara Kanat", meatType: "kanat", description: "Izgaraya hazır özel kesim kanat.", featured: true },
-  { slug: "kok-kanat", name: "Kök Kanat", meatType: "kanat", description: "Etli kök kanat." },
-  { slug: "yaprak-kanat", name: "Yaprak Kanat", meatType: "kanat", description: "İnce kesim yaprak kanat." },
+  { slug: "kanat", name: "Kanat", meatType: "kanat", description: "Klasik tavuk kanat.", basePrice: 210 },
+  { slug: "izgara-kanat", name: "Izgara Kanat", meatType: "kanat", description: "Izgaraya hazır özel kesim kanat.", basePrice: 230, featured: true },
+  { slug: "kok-kanat", name: "Kök Kanat", meatType: "kanat", description: "Etli kök kanat.", basePrice: 180 },
+  { slug: "yaprak-kanat", name: "Yaprak Kanat", meatType: "kanat", description: "İnce kesim yaprak kanat.", basePrice: 240 },
 
   // But
-  { slug: "baket", name: "Baket", meatType: "but", description: "Klasik baket but." },
-  { slug: "catalbut", name: "Çatalbut", meatType: "but", description: "Çatal kesim but." },
-  { slug: "kalcali-but", name: "Kalçalı But", meatType: "but", description: "Kalçası ile birlikte but." },
-  { slug: "special-but", name: "Special But", meatType: "but", description: "Özel kesim premium but.", featured: true },
-  { slug: "kemiksiz-but-donerlik", name: "Kemiksiz But Dönerlik", meatType: "but", description: "Dönerlik kemiksiz but." },
-  { slug: "derili-but-izgara", name: "Derili But Izgara", meatType: "but", description: "Derisi ile ızgaralık but." },
+  { slug: "baket", name: "Baket", meatType: "but", description: "Klasik baket but.", basePrice: 145 },
+  { slug: "catalbut", name: "Çatalbut", meatType: "but", description: "Çatal kesim but.", basePrice: 135 },
+  { slug: "kalcali-but", name: "Kalçalı But", meatType: "but", description: "Kalçası ile birlikte but.", basePrice: 125 },
+  { slug: "special-but", name: "Special But", meatType: "but", description: "Özel kesim premium but.", basePrice: 165, featured: true },
+  { slug: "kemiksiz-but-donerlik", name: "Kemiksiz But Dönerlik", meatType: "but", description: "Dönerlik kemiksiz but.", basePrice: 195 },
+  { slug: "derili-but-izgara", name: "Derili But Izgara", meatType: "but", description: "Derisi ile ızgaralık but.", basePrice: 175 },
 
   // Göğüs
-  { slug: "bonfile", name: "Bonfile", meatType: "gogus", description: "Tavuk bonfile.", featured: true },
-  { slug: "kovan-gogus", name: "Kovan Göğüs", meatType: "gogus", description: "Bütün kovan göğüs." },
-  { slug: "kemiksiz-gogus-donerlik", name: "Kemiksiz Göğüs Dönerlik", meatType: "gogus", description: "Dönerlik kemiksiz göğüs." },
-  { slug: "muz-gogus", name: "Muz Göğüs", meatType: "gogus", description: "Muz şeklinde kesim göğüs." },
-  { slug: "sacasiz-gogus", name: "Saçaksız Göğüs", meatType: "gogus", description: "Temizlenmiş saçaksız göğüs." },
-  { slug: "derisiz-gogus-kus-basi", name: "Derisiz Göğüs Kuş Başı", meatType: "gogus", description: "Kuş başı doğranmış derisiz göğüs." },
-  { slug: "derisiz-gogus-julyen", name: "Derisiz Göğüs Jülyen", meatType: "gogus", description: "Jülyen kesim derisiz göğüs." },
-  { slug: "derisiz-gogus-sinitzel", name: "Derisiz Göğüs Şinitzel", meatType: "gogus", description: "Şinitzel için ince dövme göğüs.", featured: true },
+  { slug: "bonfile", name: "Bonfile", meatType: "gogus", description: "Tavuk bonfile.", basePrice: 250, featured: true },
+  { slug: "kovan-gogus", name: "Kovan Göğüs", meatType: "gogus", description: "Bütün kovan göğüs.", basePrice: 230 },
+  { slug: "kemiksiz-gogus-donerlik", name: "Kemiksiz Göğüs Dönerlik", meatType: "gogus", description: "Dönerlik kemiksiz göğüs.", basePrice: 240 },
+  { slug: "muz-gogus", name: "Muz Göğüs", meatType: "gogus", description: "Muz şeklinde kesim göğüs.", basePrice: 235 },
+  { slug: "sacasiz-gogus", name: "Saçaksız Göğüs", meatType: "gogus", description: "Temizlenmiş saçaksız göğüs.", basePrice: 225 },
+  { slug: "derisiz-gogus-kus-basi", name: "Derisiz Göğüs Kuş Başı", meatType: "gogus", description: "Kuş başı doğranmış derisiz göğüs.", basePrice: 255 },
+  { slug: "derisiz-gogus-julyen", name: "Derisiz Göğüs Jülyen", meatType: "gogus", description: "Jülyen kesim derisiz göğüs.", basePrice: 260 },
+  { slug: "derisiz-gogus-sinitzel", name: "Derisiz Göğüs Şinitzel", meatType: "gogus", description: "Şinitzel için ince dövme göğüs.", basePrice: 265, featured: true },
 
   // Sakatat
-  { slug: "tavuk-ciger", name: "Tavuk Ciğer", meatType: "sakatat", description: "Taze tavuk ciğer." },
-  { slug: "tavuk-taslik", name: "Tavuk Taşlık", meatType: "sakatat", description: "Temizlenmiş tavuk taşlık." },
+  { slug: "tavuk-ciger", name: "Tavuk Ciğer", meatType: "sakatat", description: "Taze tavuk ciğer.", basePrice: 95 },
+  { slug: "tavuk-taslik", name: "Tavuk Taşlık", meatType: "sakatat", description: "Temizlenmiş tavuk taşlık.", basePrice: 90 },
 
   // Hazır & Özel
-  { slug: "sarma", name: "Sarma", meatType: "hazir-ozel", description: "Hazır sarma tavuk.", isNew: true },
-  { slug: "corbalik", name: "Çorbalık", meatType: "hazir-ozel", description: "Çorba için hazırlanmış parçalar." },
-  { slug: "citir", name: "Çıtır", meatType: "hazir-ozel", description: "Çıtır için hazır kesim.", featured: true, isNew: true },
-  { slug: "izgara-tava", name: "Izgara Tava", meatType: "hazir-ozel", description: "Izgara/tava için hazır karışım.", isNew: true },
-  { slug: "tavuk-kirinti", name: "Tavuk Kırıntı", meatType: "hazir-ozel", description: "Köfte/sucuk için tavuk kırıntı." },
+  { slug: "sarma", name: "Sarma", meatType: "hazir-ozel", description: "Hazır sarma tavuk.", basePrice: 190, isNew: true },
+  { slug: "corbalik", name: "Çorbalık", meatType: "hazir-ozel", description: "Çorba için hazırlanmış parçalar.", basePrice: 75 },
+  { slug: "citir", name: "Çıtır", meatType: "hazir-ozel", description: "Çıtır için hazır kesim.", basePrice: 215, featured: true, isNew: true },
+  { slug: "izgara-tava", name: "Izgara Tava", meatType: "hazir-ozel", description: "Izgara/tava için hazır karışım.", basePrice: 205, isNew: true },
+  { slug: "tavuk-kirinti", name: "Tavuk Kırıntı", meatType: "hazir-ozel", description: "Köfte/sucuk için tavuk kırıntı.", basePrice: 80 },
 ];
 
 export function isValidPackaging(s: string): s is Packaging {

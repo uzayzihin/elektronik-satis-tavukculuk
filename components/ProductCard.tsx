@@ -100,8 +100,8 @@ export function ProductCard({
               {product.name}
             </h3>
           </Link>
-          <p className="font-mono text-[10px] uppercase tracking-wider text-brand-muted mt-1.5">
-            WhatsApp'tan Fiyat
+          <p className="text-[11px] font-bold text-brand-navy mt-1.5">
+            {packaging === "tabakli" ? `₺${product.basePrice},00` : "Toptan Fiyat"}
           </p>
         </div>
       </article>
@@ -120,9 +120,17 @@ export function ProductCard({
             {product.name}
           </h3>
         </Link>
-        <p className="text-sm text-brand-muted mb-4 flex-1 line-clamp-2">
+        <p className="text-sm text-brand-muted mb-4 line-clamp-2">
           {product.description}
         </p>
+        <div className="flex items-baseline justify-between mb-4 mt-auto pt-2 border-t border-brand-light">
+          <span className="text-[10px] text-brand-muted uppercase tracking-[0.14em] font-semibold">
+            {packaging === "tabakli" ? "Perakende Fiyat" : "Toptan / Restoran"}
+          </span>
+          <span className="text-base font-bold text-brand-navy">
+            {packaging === "tabakli" ? `₺${product.basePrice},00` : "Teklif Alın"}
+          </span>
+        </div>
         <button
           type="button"
           onClick={handleAdd}

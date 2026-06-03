@@ -55,13 +55,18 @@ export function ProductDetailActions({
 
       <div className="grid grid-cols-2 gap-3">
         <a
-          href={waProductOrder(`${product.name} (${qty} adet)`, packaging)}
+          href={waProductOrder(
+            packaging === "dokme"
+              ? `${product.name} Toptan Teklif Talebi (${qty} kg)`
+              : `${product.name} (${qty} paket)`,
+            packaging
+          )}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsapp-dark hover:-translate-y-0.5 active:translate-y-0 text-white font-bold px-4 py-3.5 rounded-md text-sm md:text-base shadow-sm hover:shadow transition-all"
         >
           <WhatsAppIcon className="w-4 h-4 md:w-5 md:h-5" />
-          Hızlı Sipariş
+          {packaging === "dokme" ? "Hızlı Teklif Al" : "Hızlı Sipariş"}
         </a>
         <button
           type="button"
@@ -75,12 +80,12 @@ export function ProductDetailActions({
           {added ? (
             <>
               <Check className="w-4 h-4 md:w-5 md:h-5" />
-              Eklendi
+              {packaging === "dokme" ? "Listeye Eklendi" : "Sepete Eklendi"}
             </>
           ) : (
             <>
               <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" />
-              Sepete Ekle
+              {packaging === "dokme" ? "Teklif Listesine Ekle" : "Sepete Ekle"}
             </>
           )}
         </button>
