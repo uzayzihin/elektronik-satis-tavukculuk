@@ -14,10 +14,10 @@ export default function ContactPage() {
     <>
       <section className="bg-white border-b border-brand-border">
         <div className="container-x py-16 md:py-20">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-accent mb-3">
+          <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-brand-accent mb-3">
             İletişim
           </p>
-          <h1 className="text-4xl md:text-6xl font-serif mb-3 text-brand-navy leading-tight">
+          <h1 className="text-4xl md:text-6xl font-serif font-medium tracking-[-0.03em] mb-3 text-brand-navy leading-tight">
             Bize ulaşın.
           </h1>
           <p className="text-brand-text/80 text-lg max-w-2xl leading-relaxed">

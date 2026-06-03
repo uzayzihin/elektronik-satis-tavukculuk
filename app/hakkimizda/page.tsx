@@ -37,10 +37,10 @@ export default function AboutPage() {
       <section className="bg-brand-light border-b border-brand-border">
         <div className="container-x py-16 md:py-24 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
-            <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-3">
+            <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-brand-accent mb-3">
               Hakkımızda
             </p>
-            <h1 className="font-serif text-4xl md:text-6xl mb-5 leading-[1.1] text-brand-navy">
+            <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-[-0.03em] mb-5 leading-[1.1] text-brand-navy">
               Beyaz Etin
               <br />
               <em className="text-brand-accent">premium adresi.</em>
@@ -64,10 +64,10 @@ export default function AboutPage() {
 
       <section className="bg-white">
         <div className="container-x py-16 md:py-20 max-w-3xl">
-          <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-3">
+          <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-brand-accent mb-3">
             Hikayemiz
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl text-brand-navy mb-6 leading-tight">
+          <h2 className="font-serif text-3xl md:text-5xl font-medium tracking-[-0.03em] text-brand-navy mb-6 leading-tight">
             Tezgahtan dijital vitrine.
           </h2>
           <div className="prose prose-lg space-y-5 text-brand-text leading-relaxed">
@@ -96,10 +96,10 @@ export default function AboutPage() {
       <section className="bg-brand-soft">
         <div className="container-x py-16 md:py-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-bold uppercase tracking-wider text-brand-accent mb-2">
+            <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-brand-accent mb-2">
               Değerlerimiz
             </p>
-            <h2 className="font-serif text-3xl md:text-5xl text-brand-navy leading-tight">
+            <h2 className="font-serif text-3xl md:text-5xl font-medium tracking-[-0.03em] text-brand-navy leading-tight">
               Neden bizi tercih etmelisiniz.
             </h2>
           </div>
@@ -137,8 +137,8 @@ function Stat({
   return (
     <div className="bg-white border border-brand-border rounded-xl p-5">
       <Icon className="w-6 h-6 text-brand-accent mb-3" />
-      <div className="text-3xl font-serif text-brand-navy mb-1">{number}</div>
-      <div className="text-sm text-brand-muted">{label}</div>
+      <div className="text-3xl font-serif font-medium tracking-[-0.03em] text-brand-navy mb-1">{number}</div>
+      <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.14em] text-brand-muted">{label}</div>
     </div>
   );
 }
